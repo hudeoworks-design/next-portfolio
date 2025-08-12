@@ -1,6 +1,7 @@
 // app/StyledRoot.tsx
 import { ThemeProvider } from '@mui/material/styles';
-import theme from './theme';
+import { CssBaseline } from '@mui/material';
+import theme from './theme'; // Import the theme from theme.ts
 
 export default function StyledRoot({
   children,
@@ -8,7 +9,8 @@ export default function StyledRoot({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme} disableTransitionOnChange>
+      <CssBaseline />
       {children}
     </ThemeProvider>
   );
