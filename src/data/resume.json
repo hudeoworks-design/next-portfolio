@@ -1,0 +1,149 @@
+{
+  "biography": {
+    "name": "Subash Maharjan",
+    "title": "Software Developer",
+    "email": "hudeoworks@gmail.com",
+    "location": "Charlottesville, Virginia, USA",
+    "github": "https://github.com/hudeoworks-design",
+    "linkedin": "https://www.linkedin.com/in/subashmaharjan/",
+    "website": "https://subashmaharjan.com",
+    "summary": "Result driven Software Developer specializing in crafting scalable, visually polished and efficient web applications using modern frameworks like React, Angular, and Vue, with a deep focus on UI/UX design, performance optimization, and seamless usability and enhanced with AI-powered features that drive smarter user experiences.",
+    "image": "https://avatars.githubusercontent.com/u/40724828?v=4"
+  },
+  "experience": [
+    {
+      "company": "CACI",
+      "position": "Senior Software Engineer",
+      "startDate": "December 2023",
+      "endDate": "Present",
+      "description": "Engineered accessible and reusable UI components with Angular Material and Syncfusion, accelerating development time across teams by 20% through strategic customization and support collaboration. Developed advanced GIS-based Single Page Applications, significantly enhancing spatial data visualization and user interactivity.",
+      "companyUrl": "https://www.caci.com",
+      "location": "Remote - USA"
+    },
+    {
+      "company": "Travelers Insurance",
+      "position": "Software Engineer",
+      "startDate": "September 2020",
+      "endDate": "November 2023",
+      "description": "Architected and built an accessible, company-wide component library eliminating redundant UI development efforts Developed a comprehensive design system with Storybook, ensuring consistent UI/UX across applications. Spearheaded the development of a real-time data visualization dashboard using React and D3.js, enhancing data-driven decision-making capabilities. Developed innovative internal tools, including 'Codebank' (code sharing tool) and 'Dependency Matrix (registered for patent), driving organizational innovation and efficiency.",
+      "companyUrl": "https://www.travelers.com",
+      "location": "Remote - USA"
+    },
+    {
+      "company": "Sabre Systems",
+      "position": "Senior Software Engineer",
+      "startDate": "November 2018",
+      "endDate": "August 2020",
+      "description": "Developed scalable Single Page Applications (SPAs) using Vue3, and AgGrid for real-time performance across large datasets. Collaborated effectively within a large-scale, multi-vendor government subcontracting environment, ensuring seamless module integration. Led cross-functional teams to integrate APIs with frontend interfaces, ensuring seamless functionality and reducing development cycles.",
+      "companyUrl": "https://www.sabresystems.com",
+      "location": "Remote - USA"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Everest University",
+      "degree": "Masters in Business Administration",
+      "startDate": "August 2006",
+      "endDate": "May 2008",
+      "description": "Major in General Management with a focus on strategic decision-making and organizational leadership. Minor in Accounting, providing a solid foundation in financial principles and practices."
+    },
+    {
+      "institution": "Kantipur City College",
+      "degree": "Bachelor in Computer Applications",
+      "startDate": "August 2002",
+      "endDate": "May 2006",
+      "description": "Major in Computer Science with a focus on software development, database management, and web technologies. Developed a strong foundation in programming languages and software engineering principles.",
+      "institutionUrl": "https://kcc.edu.np/"
+    }
+  ],
+  "skills": [
+    "React",
+    "NextJs",
+    "Angular",
+    "Vue", 
+    "Stencil",
+    "Storybook",
+    "Javascript",
+    "TypeScript",
+    "HTML5",
+    "CSS3",
+    "Tailwind CSS",
+    "PHP",
+    "Node.js",
+    "Express.js",
+    "Laravel",
+    "Python",
+    "JAVA",
+    "ASP.NET/C#",
+    "MySQL",
+    "MongoDB",
+    "Git",
+    "Docker",
+    "Jest",
+    "Puppeteer",
+    "Cypress",
+    "Playwright",
+    "Dynatrace",
+    "Terraform",
+    "AWS",
+    "AgGrid",
+    "D3.js",   
+    "CI/CD",
+    "VS Code",
+    "OpenAI",
+    "Langchain",
+    "Accessibility (WCAG)",
+    "AXE Devtools",
+    "Figma",
+    "GraphQL",
+    "REST APIs"
+  ],
+  "softSkills": [
+    "Problem Solving",
+    "Team Collaboration",
+    "Effective Communication",
+    "Adaptability",
+    "Time Management"
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "B2"
+    },
+    {
+      "language": "French",
+      "proficiency": "B1"
+    },
+    {
+      "language": "Hindi",
+      "proficiency": "Native"
+    },
+    {
+      "language": "Nepalese",
+      "proficiency": "Native"
+    },
+    {
+      "language": "Newari",
+      "proficiency": "Native"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Next Portfolio",
+      "description": "A personal portfolio website showcasing my skills, projects, and professional journey, built with React, NextJs and Tailwind CSS.",
+      "url": "https://subashmaharjan.com"
+    },
+    {
+      "name": "Codebank",
+      "description": "An internal tool for code sharing and collaboration within teams, enhancing productivity and code reuse.",
+      "url": "https://subashmaharjan.com"
+    }
+ ],
+  "interests": [
+    "Web Development",
+    "AI and Machine Learning",
+    "Open Source Contributions",
+    "Traveling",
+    "Photography"
+  ]
+}
