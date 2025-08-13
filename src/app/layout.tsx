@@ -1,10 +1,13 @@
 // app/layout.tsx
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import StyledRoot from './StyledRoot';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Next Portfolio",
+  title: {
+    template: "%s | Subash Maharjan",
+    default: "Subash Maharjan",
+  },
   description: "This is smart portfolio website with custom AI chatbot.",
 };
 
@@ -26,7 +29,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
         <AppRouterCacheProvider>
-          <StyledRoot>{children}</StyledRoot>
+          <StyledRoot>
+            {children}
+          </StyledRoot>
         </AppRouterCacheProvider>
       </body>
     </html>
