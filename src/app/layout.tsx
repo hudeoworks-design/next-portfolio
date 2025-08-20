@@ -2,6 +2,7 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import StyledRoot from './StyledRoot';
 import type { Metadata } from 'next';
+import "@/app/assets/globals.css";
 
 export const metadata: Metadata = {
   title: {
