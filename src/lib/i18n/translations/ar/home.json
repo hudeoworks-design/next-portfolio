@@ -1,0 +1,10 @@
+{
+  "welcome": "أهلا",
+  "description": "هذا وصف باللغة الإنجليزية.",
+  "experience": {
+    "heading": "هذا قسم الخبرة"
+  },
+  "feedbacks": {
+    "heading": "هذا قسم التقييمات"
+  }
+}

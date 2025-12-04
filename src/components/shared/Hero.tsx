@@ -1,4 +1,5 @@
 import React from "react";
+import { Box, Container, Button, Typography, Grid } from '@mui/material/';
 
 interface HeroProps {
     title: string;
@@ -14,27 +15,39 @@ const Hero: React.FC<HeroProps> = ({
     children,
 }) => {
     return (
-        <section
-            className="relative flex items-center justify-center h-96 bg-gray-900 text-white"
-            style={
-                backgroundImageUrl
-                    ? {
-                            backgroundImage: `url(${backgroundImageUrl})`,
-                            backgroundSize: "cover",
-                            backgroundPosition: "center",
-                        }
-                    : undefined
-            }
-        >
-            <div className="absolute inset-0 bg-black bg-opacity-60" />
-            <div className="relative z-10 flex flex-col items-center text-center px-4">
-                <h1 className="text-4xl md:text-6xl font-bold mb-4">{title}</h1>
+        <Box component="section" id="home">
+            <Container 
+                sx={{ 
+                    minHeight: {
+                        xs: '100vh',
+                        lg: '95vh',
+                    },
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    backgroundImage: {
+                        lg: backgroundImageUrl ? `url(${backgroundImageUrl})` : 'none',
+                        xs: 'none'
+                    },
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'right -2rem bottom',
+                    backgroundSize: '60%'
+                }}>
+                {title && (
+                    <Box sx={{ mb: 7 }}>
+                        <Typography variant="h5" component="h4" gutterBottom sx={{ fontWeight: 'bold' }}>
+                            {title}
+                        </Typography>
+                    </Box>
+                )}
                 {subtitle && (
-                    <p className="text-lg md:text-2xl font-medium mb-6">{subtitle}</p>
+                    <Typography variant="h5" component="h2" gutterBottom sx={{ fontWeight: 'medium' }}>
+                        {subtitle}
+                    </Typography>
                 )}
                 {children}
-            </div>
-        </section>
+            </Container>
+        </Box>
     );
 };
 

@@ -1,7 +1,10 @@
 // app/layout.tsx
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import StyledRoot from './StyledRoot';
+import StyledRoot from '../StyledRoot';
+import LocaleSwitch from '@/components/i18n/local-switch';
 import type { Metadata } from 'next';
+import { getLayoutDirection } from '@/lib/utils';
+import { Locale } from '@/lib/types';
 import "@/app/assets/globals.css";
 
 export const metadata: Metadata = {
@@ -10,6 +13,11 @@ export const metadata: Metadata = {
     default: "Subash Maharjan",
   },
   description: "This is smart portfolio website with custom AI chatbot.",
+};
+
+type RootLayoutProps = {
+  children: React.ReactNode;
+  params: Promise<{ locale: Locale }>;
 };
 
 // This is the root layout for the application.
@@ -21,17 +29,18 @@ export const metadata: Metadata = {
 // The `suppressHydrationWarning` is used to prevent hydration warnings in Next.js.
 // The `antialiased` class is applied to the body for better font rendering.  
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+  params,
+}: RootLayoutProps) {
+  const { locale } = await params;
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning dir={getLayoutDirection(locale)}>
       <body className="antialiased" suppressHydrationWarning>
-        <AppRouterCacheProvider>
+        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <StyledRoot>
             {children}
+            <LocaleSwitch />
           </StyledRoot>
         </AppRouterCacheProvider>
       </body>

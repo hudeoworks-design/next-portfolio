@@ -1,0 +1,62 @@
+import { createInstance, TFunction } from "i18next";
+import type { Resource } from "i18next";
+import { initReactI18next } from "react-i18next/initReactI18next";
+import resourcesToBackend from "i18next-resources-to-backend";
+import { i18nConfig } from "@/lib/i18n/index";
+
+type Locale = string;
+
+interface InitOptions {
+  keyPrefix?: string;
+  i18nInstance?: ReturnType<typeof createInstance>;
+  resources?: Resource;
+}
+
+async function initTranslations(
+  locale: string,
+  namespaces: string[],
+  options?: InitOptions
+) {
+  const i18nInstance = options?.i18nInstance || createInstance();
+
+  i18nInstance.use(initReactI18next);
+
+  if (!options?.resources) {
+    i18nInstance.use(
+      resourcesToBackend(
+        (language: string, namespace: string) =>
+          import(`@/lib/i18n/translations/${language}/${namespace}.json`)
+      )
+    );
+  }
+
+  await i18nInstance.init({
+    lng: locale,
+    resources: options?.resources,
+    fallbackLng: i18nConfig.defaultLocale,
+    supportedLngs: i18nConfig.locales,
+    defaultNS: namespaces[0],
+    fallbackNS: namespaces[0],
+    ns: namespaces,
+    preload: options?.resources ? [] : i18nConfig.locales,
+  });
+
+  return {
+    i18n: i18nInstance,
+    resources: i18nInstance.services.resourceStore.data,
+    t: i18nInstance.getFixedT(
+      locale,
+      namespaces[0],
+      options?.keyPrefix
+    ) as TFunction<Locale, undefined>,
+  };
+}
+
+// Exported function to fetch translations on server components
+export async function serverSideTranslations(
+  locale: string,
+  namespaces: string[],
+  options?: InitOptions
+) {
+  return await initTranslations(locale, namespaces, options);
+}

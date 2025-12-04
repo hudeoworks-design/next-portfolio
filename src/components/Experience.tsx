@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 interface ExperienceItem {
     company: string;
@@ -22,19 +23,24 @@ const experiences: ExperienceItem[] = [
     },
 ];
 
-const Experience: React.FC = () => (
-    <section>
-        <h2>Experience</h2>
-        <ul>
-            {experiences.map((exp, idx) => (
-                <li key={idx}>
-                    <h3>{exp.role} @ {exp.company}</h3>
-                    <span>{exp.period}</span>
-                    <p>{exp.description}</p>
-                </li>
-            ))}
-        </ul>
-    </section>
-);
+const Experience: React.FC = () => {
+    const { t } = useTranslation("home", {
+        keyPrefix: "content.experience"
+    });
+    return (
+        <section>
+            <h2>{t("heading")}</h2>
+            <ul>
+                {experiences.map((exp, idx) => (
+                    <li key={idx}>
+                        <h3>{exp.role} @ {exp.company}</h3>
+                        <span>{exp.period}</span>
+                        <p>{exp.description}</p>
+                    </li>
+                ))}
+            </ul>
+        </section>
+    );
+}
 
 export default Experience;
