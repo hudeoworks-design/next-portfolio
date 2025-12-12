@@ -1,4 +1,10 @@
 {
+  "ThemeSwitcher": {
+    "toggleTheme": "تغيير السمة",
+    "light": "فاتح",
+    "dark": "داكن",
+    "system": "النظام"
+  },
   "defaultSeo": {
     "title": "Subash Maharjan | Senior Software Engineer - Frontend Developer | مهندس برمجيات أول",
     "description": "سوباش مهارجان هو مهندس برمجيات أول، لديه خبرة في إنشاء مواقع الويب وتطبيقات الويب الجميلة والفعالة.",

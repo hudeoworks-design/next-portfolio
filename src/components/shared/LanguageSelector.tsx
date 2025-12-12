@@ -4,7 +4,7 @@ import React from 'react';
 import { useRouter, usePathname, useParams } from 'next/navigation';
 import { Button, FormControl, Menu, MenuItem } from '@mui/material';
 import {
-  // Translate as TranslateIcon,
+  Translate as TranslateIcon,
   KeyboardArrowDown as KeyboardArrowDownIcon,
 } from '@mui/icons-material';
 
@@ -12,6 +12,7 @@ const languages = [
   { code: 'ar', text: 'العربية' },
   { code: 'en', text: 'English' },
   { code: 'es', text: 'Español' },
+  { code: 'ne', text: 'नेपाली' },
 ];
 
 export default function LanguageSelector() {
@@ -51,6 +52,7 @@ export default function LanguageSelector() {
         aria-haspopup="true"
         aria-expanded={Boolean(anchorEl)}
         aria-controls={anchorEl ? 'language-menu' : undefined}
+        startIcon={<TranslateIcon />}
         endIcon={<KeyboardArrowDownIcon />}
         variant="outlined"
         onClick={handleButtonClick}

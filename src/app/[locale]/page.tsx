@@ -1,5 +1,5 @@
-import Hero from "@/components/shared/Hero";
-import Navbar from "@/components/shared/Navbar";
+import Navbar from "@/components/layout/Navbar";
+import Hero from "@/components/pages/home/Hero";
 
 // import content from '../../lib/i18n/locales/en.json';
 // import Navbar from "@/components/shared/Navbar";
@@ -15,9 +15,9 @@ import Navbar from "@/components/shared/Navbar";
 export default async function Page() {
 
   return (
-    <div> 
+    <> 
       <Navbar />      
       <Hero />
-    </div>
+    </>
   );
 }

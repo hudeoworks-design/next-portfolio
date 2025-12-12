@@ -1,4 +1,10 @@
 {
+  "ThemeSwitcher": {
+    "toggleTheme": "Cambiar tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema"
+  },
   "defaultSeo": {
     "title": "Kelvin Sanchez | Ingeniero de Software Senior",
     "description": "Kelvin Sanchez es un Ingeniero de Software Senior, con experiencia en la creación de sitios y aplicaciones web hermosas y funcionales.",

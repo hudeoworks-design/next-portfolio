@@ -7,6 +7,7 @@ import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import MuiLink, { LinkProps as MuiLinkProps } from '@mui/material/Link';
 import { styled } from '@mui/material/styles';
 
+// Styled anchor for internal use to prevent multiple nested <a> tags
 const Anchor = styled('a')({});
 
 interface NextLinkComposedProps
@@ -18,7 +19,7 @@ interface NextLinkComposedProps
 
 export const NextLinkComposed = React.forwardRef<HTMLAnchorElement, NextLinkComposedProps>(
   function NextLinkComposed(props, ref) {
-    const { to, linkAs, replace, scroll, prefetch, legacyBehavior = false, ...other } = props;
+    const { to, linkAs, replace, scroll, prefetch, ...other } = props;
 
     return (
       <NextLink
@@ -27,11 +28,9 @@ export const NextLinkComposed = React.forwardRef<HTMLAnchorElement, NextLinkComp
         as={linkAs}
         replace={replace}
         scroll={scroll}
-        passHref
-        legacyBehavior={legacyBehavior}
-      >
-        <Anchor ref={ref} {...other} suppressHydrationWarning />
-      </NextLink>
+        ref={ref}
+        {...other}
+      />
     );
   }
 );
@@ -51,7 +50,6 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(props,
     as,
     className: classNameProps,
     href,
-    legacyBehavior,
     linkAs: linkAsProp,
     noLinkStyle,
     prefetch,
@@ -61,24 +59,24 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(props,
     ...other
   } = props;
 
-  const pathname = usePathname(); // Correctly retrieve pathname in App Router
+  const pathname = usePathname();
   const hrefPathname = typeof href === 'string' ? href : href.pathname;
   
   const className = clsx(classNameProps, {
-    [activeClassName]: pathname === hrefPathname && activeClassName,
+    [activeClassName]: pathname === hrefPathname,
   });
 
   const isExternal = typeof href === 'string' && (href.startsWith('http') || href.startsWith('mailto:'));
 
   if (isExternal) {
     if (noLinkStyle) {
-      return <Anchor className={className} href={href} ref={ref} {...other} />;
+      return <Anchor className={className} href={href as string} ref={ref} {...other} />;
     }
-    return <MuiLink className={className} href={href} ref={ref} {...other} />;
+    return <MuiLink className={className} href={href as string} ref={ref} {...other} />;
   }
 
   const linkAs = linkAsProp || as;
-  const nextjsProps = { to: href, linkAs, replace, scroll, prefetch, legacyBehavior };
+  const nextjsProps = { to: href, linkAs, replace, scroll, prefetch };
 
   if (noLinkStyle) {
     return <NextLinkComposed className={className} ref={ref} {...nextjsProps} {...other} />;

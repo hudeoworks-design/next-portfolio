@@ -1,4 +1,10 @@
 {
+  "ThemeSwitcher": {
+    "toggleTheme": "Change Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
   "defaultSeo": {
     "title": "Subash Maharjan | Senior Software Engineer/Frontend Developer",
     "description": "Subash Maharjan is a Senior Software Engineer, experienced in creating beautiful and functional websites and web applications.",

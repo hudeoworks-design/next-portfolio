@@ -21,10 +21,11 @@ import {
 } from '@mui/icons-material';
 import { useParams } from 'next/navigation'; // Correct hook for App Router locale
 
-import Link from '../Link';
-import AnimatedLink from '../AnimatedLink';
-import LanguageSelector from '../i18n/LanguageSelector';
-import NavigationDrawer from './NavigationDrawer';
+import Link from '../shared/Link';
+import AnimatedLink from '../shared/AnimatedLink';
+import LanguageSelector from '../shared/LanguageSelector';
+import NavigationDrawer from '../shared/NavigationDrawer';
+import ThemeSwitcher from '../shared/ThemeSwitcher';
 
 interface Props {
   children: React.ReactElement;
@@ -39,10 +40,11 @@ function HideOnScroll({ children }: Props) {
   );
 }
 
-type LocaleKeys = 'home' | 'about' | 'portfolio' | 'contact' | 'blog';
+type NavbarKeys = 'logo' | 'home' | 'about' | 'portfolio' | 'contact' | 'blog';
 
-const localeNames: Record<string, Record<LocaleKeys, string>> = {
+const localeNames: Record<string, Record<NavbarKeys, string>> = {
   ar: {
+    logo: 'سوباش',
     home: 'الرئيسية',
     about: 'من أنا',
     portfolio: 'أعمالي',
@@ -50,6 +52,7 @@ const localeNames: Record<string, Record<LocaleKeys, string>> = {
     blog: 'المدونة',
   },
   en: {
+    logo: 'Subash',
     home: 'HOME',
     about: 'ABOUT',
     portfolio: 'PORTFOLIO',
@@ -57,11 +60,20 @@ const localeNames: Record<string, Record<LocaleKeys, string>> = {
     blog: 'BLOG',
   },
   es: {
+    logo: 'Subash',
     home: 'INICIO',
     about: 'ACERCA DE MI',
     portfolio: 'PORTAFOLIO',
     contact: 'CONTACTO',
     blog: 'BLOG',
+  },
+  ne: {
+    logo: 'सुबास',
+    home: 'गृहपृष्ठ',
+    about: 'मेरो बारेमा',
+    portfolio: 'मेरो कामहरू',
+    contact: 'सम्पर्क गर्नुहोस्',
+    blog: 'ब्लग',
   },
 };
 
@@ -97,7 +109,7 @@ export default function ElevateAppBar() {
                 color="primary"
                 sx={{ flexGrow: 1, textDecoration: 'none', fontWeight: 'bold' }}
               >
-                SM
+                {localeNames[currentLocale].logo}
               </Typography>
 
               {/* Desktop Menu */}
@@ -112,10 +124,11 @@ export default function ElevateAppBar() {
                     {item.name}
                   </AnimatedLink>
                 ))}
-                {/* <LocaleSwitch /> */}
               </Box>
 
               <LanguageSelector />
+
+              <ThemeSwitcher />
 
               <IconButton
                 aria-label="Open Navigation"
