@@ -1,15 +1,9 @@
 import { Box, Container, Grid, Button, Typography } from '@mui/material';
+import {useTranslations} from 'next-intl';
 
-interface HeroData {
-  greetings: string;
-  introduction: string;
-  role: string;
-  paragraph: string;
-  button1: string;
-  button2: string;
-}
+export default function Hero() {
+  const t = useTranslations('heroData');
 
-export default function Hero({ heroData: t }: { heroData: HeroData }) {
   return (
     <Box component="section" id="home">
       <Container
@@ -32,17 +26,17 @@ export default function Hero({ heroData: t }: { heroData: HeroData }) {
         <Box mb={7}>
           <Typography gutterBottom component="h4" variant="h5">
             <Typography color="primary" component="span" variant="inherit">
-              {t?.greetings}
+              {t('greetings')}
             </Typography>
-            {t?.introduction}
+            {t('introduction')}
           </Typography>
 
           <Typography gutterBottom component="h1" variant="h2">
-            {t?.role}
+            {t('role')}
           </Typography>
 
           <Typography color="textSecondary" component="p" variant="subtitle1">
-            {t?.paragraph}
+            {t('paragraph')}
           </Typography>
         </Box>
 
@@ -54,7 +48,7 @@ export default function Hero({ heroData: t }: { heroData: HeroData }) {
                 size="large"
                 variant="contained"
               >
-                {t.button1}
+                {t('button1')}
               </Button>
           </Grid>
           <Grid>
@@ -64,7 +58,7 @@ export default function Hero({ heroData: t }: { heroData: HeroData }) {
                 size="large"
                 variant="outlined"
               >
-                {t.button2}
+                {t('button2')}
               </Button>
           </Grid>
         </Grid>

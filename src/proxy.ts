@@ -1,11 +1,15 @@
-import { i18nRouter } from "next-i18n-router";
-import { i18nConfig } from "./lib/i18n/index";
-
-export function proxy(request: any) {
-  return i18nRouter(request, i18nConfig);
-}
-
-// Apply middleware only to relevant routes (excluding API, static files, and internal Next.js paths)
+import createMiddleware from 'next-intl/middleware';
+import {routing} from './i18n/routing';
+ 
+export default createMiddleware(routing);
+ 
 export const config = {
-  matcher: "/((?!api|static|.*\\..*|_next).*)",
+  // Match all pathnames except for
+  // - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
+  // - … the ones containing a dot (e.g. `favicon.ico`)
+  matcher: [
+    '/((?!api|trpc|_next|_vercel|.*\\..*).*)',
+    // Match all pathnames within `{/:locale}/users`
+    // '/([\\w-]+)?/users/(.+)'
+  ]
 };
