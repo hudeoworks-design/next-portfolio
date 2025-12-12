@@ -1,7 +1,6 @@
 // app/layout.tsx
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import StyledRoot from '../StyledRoot';
-import LocaleSwitch from '@/components/i18n/local-switch';
+import StyledRoot from './StyledRoot';
 import type { Metadata } from 'next';
 import { getLayoutDirection } from '@/lib/utils';
 import { Locale } from '@/lib/types';
@@ -35,12 +34,11 @@ export default async function RootLayout({
 }: RootLayoutProps) {
   const { locale } = await params;
   return (
-    <html lang={locale} suppressHydrationWarning dir={getLayoutDirection(locale)}>
+    <html lang={locale} suppressHydrationWarning dir={getLayoutDirection(locale)} data-scroll-behavior="smooth">
       <body className="antialiased" suppressHydrationWarning>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <StyledRoot>
             {children}
-            <LocaleSwitch />
           </StyledRoot>
         </AppRouterCacheProvider>
       </body>

@@ -1,32 +1,44 @@
+import I18NProvider from "@/components/i18n/i18n-provider";
+import Hero from "@/components/shared/Hero";
+import { serverSideTranslations } from "@/lib/i18n/i18n";
+import LocaleSwitch from '@/components/i18n/local-switch';
+import { promises as fs } from 'fs';
+import path from 'path';
+
+// import content from '../../lib/i18n/locales/en.json';
+// import Navbar from "@/components/shared/Navbar";
+// import StarsCanvas from "@/components/shared/StarsCanvas";
+// import Tech from "@/components/Tech";
 // import Experience from "@/components/Experience";
 // import Feedbacks from "@/components/Feedbacks";
 // import About from "@/components/pages/About";
 // import Contact from "@/components/pages/Contact";
 // import Works from "@/components/pages/Works";
-import I18NProvider from "@/components/i18n/i18n-provider";
-import Hero from "@/components/shared/Hero";
-import { serverSideTranslations } from "@/lib/i18n/i18n";
-// import Navbar from "@/components/shared/Navbar";
-// import StarsCanvas from "@/components/shared/StarsCanvas";
-// import Tech from "@/components/Tech";
+
 
 type Props = {
   params: Promise<{ locale: string }>
 }
 
-export default async function Page({ params }: Props) {
+async function getData(locale: string) {
+  const filePath = path.join(process.cwd(), `src/lib/i18n/locales/${locale}.json`);
+  const fileContent = await fs.readFile(filePath, 'utf8');
+  const translations = JSON.parse(fileContent);
+
+  return translations;
+}
+
+export default async function Page({params}: Props) {
+  
   const {locale} = await params
   const ns = ["home"]; // namespace used for this page
-  const { t, resources } = await serverSideTranslations(locale, ns);
+  const { resources } = await serverSideTranslations(locale, ns);
+
+  const { heroData } = await getData(locale) ?? {};
 
   return (
-    <div>
-      <h1>{t("welcome")}</h1>
-      <p>{t("description")}</p>
-      
-      <I18NProvider locale={locale} namespaces={ns} resources={resources}>
-        <Hero title={""} />
-      </I18NProvider>
-    </div>
+    <I18NProvider locale={locale} namespaces={ns} resources={resources}>       
+      <Hero heroData={heroData} />
+    </I18NProvider>
   );
 }

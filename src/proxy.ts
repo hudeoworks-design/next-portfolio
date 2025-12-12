@@ -1,7 +1,7 @@
 import { i18nRouter } from "next-i18n-router";
 import { i18nConfig } from "./lib/i18n/index";
 
-export function middleware(request: any) {
+export function proxy(request: any) {
   return i18nRouter(request, i18nConfig);
 }
 

@@ -1,0 +1,139 @@
+{
+  "defaultSeo": {
+    "title": "Subash Maharjan | Senior Software Engineer - Frontend Developer | مهندس برمجيات أول",
+    "description": "سوباش مهارجان هو مهندس برمجيات أول، لديه خبرة في إنشاء مواقع الويب وتطبيقات الويب الجميلة والفعالة.",
+    "url": "https://www.subashmaharjan.com/",
+    "previewImage": "https://user-images.githubusercontent.com/4708484/93688063-050a8980-fa91-11ea-89ca-3530a9038393.png"
+  },
+  "heroData": {
+    "greetings": "أهلاً،",
+    "introduction": "أنا سوباش مهارجان",
+    "role": "مهندس برمجيات أول",
+    "paragraph": "شغوف بالبرمجة، وأعمل على تحقيق أفكار عملائي.",
+    "button1": "تصفح أعمالي",
+    "button2": "تواصل معي"
+  },
+  "aboutData": {
+    "aboutTitle": "عني",
+    "aboutItems": [
+      "مهندس برمجيات أول مقيم في سبرينغ، تكساس.",
+      "شغوف بتصميم وبناء مواقع وتطبيقات تركز على المستخدم وجميلة المظهر، مع التركيز على الأكواد النظيفة وسهلة الصيانة.",
+      "لاعب فريق متحمس يقدّر التواصل الواضح، ويتقبل الملاحظات، ويتوق دائمًا للتعلم والنمو.",
+      "خارج العمل، أستمتع بالعزف على الجيتار والقراءة وألعاب الفيديو."
+    ],
+    "resumeTitle": "السيرة الذاتية",
+    "resumeParagraph": "يمكنك الاطلاع على سيرتي الذاتية في الرابط أدناه.",
+    "resumeButton": "السيرة الذاتية",
+    "resumeLink": "/resume/resume-en.pdf",
+    "skillsTitle": "المهارات"
+  },
+  "portfolioData": {
+    "portfolioTitle": "الأعمال",
+    "projects": [
+      {
+        "name": "alacartadigital",
+        "projectUrl": "https://www.alacartadigital.es/",
+        "repoUrl": "https://github.com/alacartadigital-team",
+        "imgPath": "projectMedia/alacartadigital.png",
+        "imgAlt": "alacartadigital site mocked device preview",
+        "summary": "منصة قائمة مطعم عبر الإنترنت مع تكامل رمز الاستجابة السريعة (QR code).",
+        "keyFeatures": [
+          "لوحة تحكم سهلة الاستخدام",
+          "معاينة مباشرة",
+          "تخصيص العلامة التجارية",
+          "اشتراكات مدفوعة"
+        ],
+        "technologies": [
+          "React",
+          "NextJS",
+          "Firebase",
+          "Material-UI",
+          "Stripe"
+        ]
+      },
+      {
+        "name": "Issueless",
+        "projectUrl": "https://issueless.vercel.app",
+        "repoUrl": "https://github.com/kelvinsanchez15/issueless",
+        "imgPath": "projectMedia/issueless.png",
+        "imgAlt": "Issueless preview",
+        "summary": "مشروع تعقب مشاكل JAMStack مستوحى من مشاكل GitHub.",
+        "keyFeatures": [
+          "تقديم هجين ثابت وخادم",
+          "خدمات تسجيل الدخول عبر OAuth",
+          "دعم Markdown",
+          "ثيم MUI مخصص"
+        ],
+        "technologies": [
+          "React",
+          "NextJS",
+          "PostgreSQL",
+          "Prisma",
+          "Material-UI"
+        ]
+      },
+      {
+        "name": "Easybank",
+        "projectUrl": "https://easybank-web.vercel.app/",
+        "repoUrl": "https://github.com/kelvinsanchez15/easybank-landing-page",
+        "imgPath": "projectMedia/easybank.png",
+        "imgAlt": "Easybank website preview",
+        "summary": "صفحة هبوط منتج SAAS متجاوبة بالكامل ومصممة باستخدام Tailwind CSS.",
+        "keyFeatures": [
+          "تصميم دقيق للبكسل",
+          "تحديد المواقع المطلق",
+          "فئات مخصصة"
+        ],
+        "technologies": [
+          "Tailwind",
+          "TypeScript",
+          "React",
+          "NextJS"
+        ]
+      },
+      {
+        "name": "BombaiMTY",
+        "projectUrl": "https://bombai-mty-menu.vercel.app/",
+        "repoUrl": "https://github.com/kelvinsanchez15/bombai-menu",
+        "imgPath": "projectMedia/bombai-mty.png",
+        "imgAlt": "BombaiMTY website preview",
+        "summary": "بوابة مبيعات طعام سريع مع الدفع عبر واتساب.",
+        "keyFeatures": [
+          "فلتر المنتجات",
+          "عربة التسوق",
+          "صورة الغلاف",
+          "تكامل Google Sheets"
+        ],
+        "technologies": [
+          "Chakra UI",
+          "TypeScript",
+          "React",
+          "NextJS"
+        ]
+      }
+    ]
+  },
+  "blogData": {
+    "featuredArticle": "مقالة مميزة",
+    "mostRecent": "الأحدث",
+    "button": "المزيد من المقالات"
+  },
+  "contactData": {
+    "title": "تواصل",
+    "p1": "إذا كنت مهتمًا بتوظيفي في مشروعك، فيرجى استخدام النموذج أدناه للتواصل. هل تريد معرفة كيف أعمل وماذا يمكنني أن أقدم؟ تفضل بزيارة ",
+    "p2": "أعمالي",
+    "p3": "و",
+    "p4": "سيرتي الذاتية",
+    "resumeLink": "/resume/resume-en.pdf",
+    "subtitle": "يمكنك أيضًا العثور عليّ على القنوات التالية",
+    "formTitle": "تواصل معي",
+    "firstNameLabel": "الاسم الأول",
+    "lastNameLabel": "الاسم الأخير",
+    "emailLabel": "البريد الإلكتروني",
+    "messageLabel": "الرسالة",
+    "placeholder": "لا تتردد في تضمين أي تفاصيل.",
+    "submitButton": "إرسال",
+    "requiredErrorMessage": "مطلوب",
+    "invalidEmailErrorMessage": "صيغة بريد إلكتروني غير صالحة"
+  }
+}

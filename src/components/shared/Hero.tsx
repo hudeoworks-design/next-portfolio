@@ -1,54 +1,74 @@
-import React from "react";
-import { Box, Container, Button, Typography, Grid } from '@mui/material/';
+import { Box, Container, Grid, Button, Typography } from '@mui/material';
 
-interface HeroProps {
-    title: string;
-    subtitle?: string;
-    backgroundImageUrl?: string;
-    children?: React.ReactNode;
+interface HeroData {
+  greetings: string;
+  introduction: string;
+  role: string;
+  paragraph: string;
+  button1: string;
+  button2: string;
 }
 
-const Hero: React.FC<HeroProps> = ({
-    title,
-    subtitle,
-    backgroundImageUrl,
-    children,
-}) => {
-    return (
-        <Box component="section" id="home">
-            <Container 
-                sx={{ 
-                    minHeight: {
-                        xs: '100vh',
-                        lg: '95vh',
-                    },
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    backgroundImage: {
-                        lg: backgroundImageUrl ? `url(${backgroundImageUrl})` : 'none',
-                        xs: 'none'
-                    },
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'right -2rem bottom',
-                    backgroundSize: '60%'
-                }}>
-                {title && (
-                    <Box sx={{ mb: 7 }}>
-                        <Typography variant="h5" component="h4" gutterBottom sx={{ fontWeight: 'bold' }}>
-                            {title}
-                        </Typography>
-                    </Box>
-                )}
-                {subtitle && (
-                    <Typography variant="h5" component="h2" gutterBottom sx={{ fontWeight: 'medium' }}>
-                        {subtitle}
-                    </Typography>
-                )}
-                {children}
-            </Container>
-        </Box>
-    );
-};
+export default function Hero({ heroData: t }: { heroData: HeroData }) {
+  return (
+    <Box component="section" id="home">
+      <Container
+        sx={{
+          minHeight: {
+            xs: '100vh',
+            lg: '95vh',
+          },
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          backgroundImage: {
+            lg: `url('/hero-graphic.svg')`,
+          },
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'right -2rem bottom',
+          backgroundSize: '60%'
+        }}
+      >
+        <Box mb={7}>
+          <Typography gutterBottom component="h4" variant="h5">
+            <Typography color="primary" component="span" variant="inherit">
+              {t?.greetings}
+            </Typography>
+            {t?.introduction}
+          </Typography>
 
-export default Hero;
+          <Typography gutterBottom component="h1" variant="h2">
+            {t?.role}
+          </Typography>
+
+          <Typography color="textSecondary" component="p" variant="subtitle1">
+            {t?.paragraph}
+          </Typography>
+        </Box>
+
+        <Grid container spacing={2}>
+          <Grid>
+            <Button
+                color="primary"
+                href="#portfolio"
+                size="large"
+                variant="contained"
+              >
+                {t.button1}
+              </Button>
+          </Grid>
+          <Grid>
+            <Button
+                color="primary"
+                href="#contact"
+                size="large"
+                variant="outlined"
+              >
+                {t.button2}
+              </Button>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
+  );
+}
