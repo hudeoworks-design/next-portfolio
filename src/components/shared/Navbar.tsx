@@ -1,3 +1,5 @@
+'use client'; // Required for MUI hooks and interactivity in App Router
+
 import { useState } from 'react';
 import {
   AppBar,
@@ -7,6 +9,7 @@ import {
   Typography,
   IconButton,
   Container,
+  Box,
 } from '@mui/material/';
 import {
   Menu as MenuIcon,
@@ -16,23 +19,19 @@ import {
   Mail as MailIcon,
   PermIdentity as PermIdentityIcon,
 } from '@mui/icons-material';
-import { useRouter } from 'next/router';
+import { useParams } from 'next/navigation'; // Correct hook for App Router locale
 
 import Link from '../Link';
 import AnimatedLink from '../AnimatedLink';
-import LanguageSelector from '../LanguageSelector';
-
+import LanguageSelector from '../i18n/LanguageSelector';
 import NavigationDrawer from './NavigationDrawer';
-import LocaleSwitch from '../i18n/local-switch';
 
 interface Props {
   children: React.ReactElement;
 }
 
-function HideOnScroll(props: Props) {
-  const { children } = props;
+function HideOnScroll({ children }: Props) {
   const trigger = useScrollTrigger();
-
   return (
     <Slide appear={false} direction="down" in={!trigger}>
       {children}
@@ -40,81 +39,89 @@ function HideOnScroll(props: Props) {
   );
 }
 
+type LocaleKeys = 'home' | 'about' | 'portfolio' | 'contact' | 'blog';
+
+const localeNames: Record<string, Record<LocaleKeys, string>> = {
+  ar: {
+    home: 'الرئيسية',
+    about: 'من أنا',
+    portfolio: 'أعمالي',
+    contact: 'اتصل بي',
+    blog: 'المدونة',
+  },
+  en: {
+    home: 'HOME',
+    about: 'ABOUT',
+    portfolio: 'PORTFOLIO',
+    contact: 'CONTACT',
+    blog: 'BLOG',
+  },
+  es: {
+    home: 'INICIO',
+    about: 'ACERCA DE MI',
+    portfolio: 'PORTAFOLIO',
+    contact: 'CONTACTO',
+    blog: 'BLOG',
+  },
+};
+
+
 export default function ElevateAppBar() {
-  const router = useRouter();
+  const params = useParams();
+  
+  // App Router typically uses a dynamic [lang] or [locale] segment
+  // Assumes your folder is app/[lang]/page.tsx
+  const currentLocale = params.locale as string || 'en';
 
   const [mobileOpen, setMobileOpen] = useState(false);
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
   const menuItems = [
-    {
-      link: '/#',
-      name: `${router.locale === 'en' ? 'HOME' : 'INICIO'}`,
-      icon: <HomeIcon />,
-    },
-    {
-      link: '/#about',
-      name: `${router.locale === 'en' ? 'ABOUT' : 'ACERCA DE MI'}`,
-      icon: <PermIdentityIcon />,
-    },
-    {
-      link: '/#portfolio',
-      name: `${router.locale === 'en' ? 'PORTFOLIO' : 'PORTAFOLIO'}`,
-      icon: <WorkIcon />,
-    },
-    {
-      link: '/#blog',
-      name: 'BLOG',
-      icon: <AssignmentIcon />,
-    },
-    {
-      link: '/#contact',
-      name: `${router.locale === 'en' ? 'CONTACT' : 'CONTACTO'}`,
-      icon: <MailIcon />,
-    },
-    {
-      icon: <LocaleSwitch />
-    }
+    { link: '/', name: localeNames[currentLocale].home, icon: <HomeIcon /> },
+    { link: '/#about', name: localeNames[currentLocale].about, icon: <PermIdentityIcon /> },
+    { link: '/#portfolio', name: localeNames[currentLocale].portfolio, icon: <WorkIcon /> },
+    { link: '/#blog', name: localeNames[currentLocale].blog, icon: <AssignmentIcon /> },
+    { link: '/#contact', name: localeNames[currentLocale].contact, icon: <MailIcon /> },
   ];
 
   return (
     <nav id="navbar">
       <HideOnScroll>
-        <AppBar elevation={0}>
+        <AppBar elevation={0} color="inherit" sx={{ borderBottom: '1px solid', borderColor: 'divider' }}>
           <Container maxWidth="lg">
-            <Toolbar disableGutters sx={{ display: 'flex' }}>
-              <Link
+            <Toolbar disableGutters>
+              <Typography
+                variant="h3"
+                component={Link}
                 href="/"
-                sx={{ textDecoration: 'none !important', flexGrow: 1 }}
-                variant="button"
+                color="primary"
+                sx={{ flexGrow: 1, textDecoration: 'none', fontWeight: 'bold' }}
               >
-                <Typography color="primary" variant="h3">
-                  K
-                </Typography>
-              </Link>
+                SM
+              </Typography>
 
-              {menuItems.map((item) => (
-                <AnimatedLink
-                  key={item.name}
-                  color="inherit"
-                  href={item.link}
-                  sx={{ display: { xs: 'none', md: 'block' } }}
-                  underline="none"
-                  variant="button"
-                >
-                  {item.name}
-                </AnimatedLink>
-              ))}
+              {/* Desktop Menu */}
+              <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 2 }}>
+                {menuItems.map((item) => (
+                  <AnimatedLink
+                    key={item.name}
+                    href={item.link}
+                    variant="button"
+                    color="text.primary"
+                  >
+                    {item.name}
+                  </AnimatedLink>
+                ))}
+                {/* <LocaleSwitch /> */}
+              </Box>
 
               <LanguageSelector />
 
               <IconButton
                 aria-label="Open Navigation"
-                size="large"
-                sx={{ display: { md: 'none' } }}
+                edge="end"
                 onClick={handleDrawerToggle}
+                sx={{ display: { md: 'none' }, ml: 1 }}
               >
                 <MenuIcon color="secondary" fontSize="large" />
               </IconButton>
@@ -131,35 +138,3 @@ export default function ElevateAppBar() {
     </nav>
   );
 }
-
-
-// import React from 'react';
-// import Link from 'next/link';
-
-// const navLinks = [
-//     { href: '/', label: 'Home' },
-//     { href: '/about', label: 'About' },
-//     { href: '/works', label: 'Works' },
-//     { href: '/contact', label: 'Contact' },
-// ];
-
-// const Navbar: React.FC = () => (
-//     <nav className="w-full bg-gray-900 text-white px-6 py-4 shadow-md">
-//         <div className="max-w-6xl mx-auto flex items-center justify-between">
-//             <div className="text-2xl font-bold">
-//                 <Link href="/">MyPortfolio</Link>
-//             </div>
-//             <ul className="flex space-x-6">
-//                 {navLinks.map((link) => (
-//                     <li key={link.href}>
-//                         <Link href={link.href} className="hover:text-blue-400 transition-colors">
-//                             {link.label}
-//                         </Link>
-//                     </li>
-//                 ))}
-//             </ul>
-//         </div>
-//     </nav>
-// );
-
-// export default Navbar;

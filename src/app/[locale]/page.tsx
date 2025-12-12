@@ -1,9 +1,9 @@
 import I18NProvider from "@/components/i18n/i18n-provider";
 import Hero from "@/components/shared/Hero";
 import { serverSideTranslations } from "@/lib/i18n/i18n";
-import LocaleSwitch from '@/components/i18n/local-switch';
 import { promises as fs } from 'fs';
 import path from 'path';
+import Navbar from "@/components/shared/Navbar";
 
 // import content from '../../lib/i18n/locales/en.json';
 // import Navbar from "@/components/shared/Navbar";
@@ -37,7 +37,8 @@ export default async function Page({params}: Props) {
   const { heroData } = await getData(locale) ?? {};
 
   return (
-    <I18NProvider locale={locale} namespaces={ns} resources={resources}>       
+    <I18NProvider locale={locale} namespaces={ns} resources={resources}> 
+      <Navbar />      
       <Hero heroData={heroData} />
     </I18NProvider>
   );

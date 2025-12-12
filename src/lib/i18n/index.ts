@@ -1,8 +1,8 @@
-import { AllowedLocales, Locale, I18NConfig } from "@/lib/types";
+import { AllowedLocales, I18NConfig } from "@/lib/types";
 
 export const defaultLocale = "en";
 
-export const allowedLocales: AllowedLocales = [defaultLocale, "ar"];
+export const allowedLocales: AllowedLocales = [defaultLocale, "ar", "es"];
 
 const i18nConfig: I18NConfig = {
   locales: allowedLocales,

@@ -1,6 +1,8 @@
+'use client';
+
 import * as React from 'react';
 import clsx from 'clsx';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import MuiLink, { LinkProps as MuiLinkProps } from '@mui/material/Link';
 import { styled } from '@mui/material/styles';
@@ -16,7 +18,7 @@ interface NextLinkComposedProps
 
 export const NextLinkComposed = React.forwardRef<HTMLAnchorElement, NextLinkComposedProps>(
   function NextLinkComposed(props, ref) {
-    const { to, linkAs, replace, scroll, shallow, prefetch, legacyBehavior = false, locale, ...other } = props;
+    const { to, linkAs, replace, scroll, prefetch, legacyBehavior = false, ...other } = props;
 
     return (
       <NextLink
@@ -25,12 +27,10 @@ export const NextLinkComposed = React.forwardRef<HTMLAnchorElement, NextLinkComp
         as={linkAs}
         replace={replace}
         scroll={scroll}
-        shallow={shallow}
         passHref
-        locale={locale}
         legacyBehavior={legacyBehavior}
       >
-        <Anchor ref={ref} {...other} />
+        <Anchor ref={ref} {...other} suppressHydrationWarning />
       </NextLink>
     );
   }
@@ -53,20 +53,19 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(props,
     href,
     legacyBehavior,
     linkAs: linkAsProp,
-    locale,
     noLinkStyle,
     prefetch,
     replace,
     role,
     scroll,
-    shallow,
     ...other
   } = props;
 
-  const router = useRouter();
-  const pathname = typeof href === 'string' ? href : href.pathname;
+  const pathname = usePathname(); // Correctly retrieve pathname in App Router
+  const hrefPathname = typeof href === 'string' ? href : href.pathname;
+  
   const className = clsx(classNameProps, {
-    [activeClassName]: router.pathname === pathname && activeClassName,
+    [activeClassName]: pathname === hrefPathname && activeClassName,
   });
 
   const isExternal = typeof href === 'string' && (href.startsWith('http') || href.startsWith('mailto:'));
@@ -79,7 +78,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(props,
   }
 
   const linkAs = linkAsProp || as;
-  const nextjsProps = { to: href, linkAs, replace, scroll, shallow, prefetch, legacyBehavior, locale };
+  const nextjsProps = { to: href, linkAs, replace, scroll, prefetch, legacyBehavior };
 
   if (noLinkStyle) {
     return <NextLinkComposed className={className} ref={ref} {...nextjsProps} {...other} />;
