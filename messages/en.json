@@ -5,35 +5,91 @@
     "dark": "Dark",
     "system": "System"
   },
-  "defaultSeo": {
-    "title": "Subash Maharjan | Senior Software Engineer/Frontend Developer",
-    "description": "Subash Maharjan is a Senior Software Engineer, experienced in creating beautiful and functional websites and web applications.",
+  "metadata": {
+    "title": "Subash Maharjan | Senior Frontend Developer",
+    "description": "Subash Maharjan is a Senior Frontend Developer, experienced in creating beautiful and functional websites and web applications.",
     "url": "https://www.subashmaharjan.com/",
-    "previewImage": "https://user-images.githubusercontent.com/4708484/93688063-050a8980-fa91-11ea-89ca-3530a9038393.png"
+    "previewImage": "https://avatars.githubusercontent.com/u/6002073?v=4"
   },
-  "heroData": {
+  "hero": {
     "greetings": "HELLO, ",
     "introduction": "I'm Subash Maharjan",
-    "role": "Senior Software Engineer",
+    "role": "Senior Frontend Developer",
     "paragraph": "Passionate about coding, and making my client ideas come true.",
     "button1": "Check my work",
     "button2": "Contact me"
   },
-  "aboutData": {
+  "about": {
     "aboutTitle": "About me",
-    "aboutItems": [
-      "Senior Software Engineer based in Spring, Texas.",
-      "Passionate about designing and building beautiful, user-centric websites and applications, with a focus on clean, maintainable code.",
-      "Enthusiastic team player who values clear communication, embraces feedback, and is always eager to learn and grow.",
-      "Outside of work, I enjoy playing guitar, reading, and indulging in video games."
-    ],
-    "resumeTitle": "Resumé",
-    "resumeParagraph": "You can check my resumé in the link below.",
-    "resumeButton": "Resumé",
-    "resumeLink": "/resume/resume-en.pdf",
+    "aboutItems": {
+      "profileAltText": "Subash Maharjan's profile picture",
+      "name": "Subash Maharjan",
+      "handle": "@hudeoworks-design",
+      "aboutTitle": "About Me",
+      "bioParagraph1": "I'm a Senior Frontend Developer with 10+ years of experience building fast, scalable, and visually polished web applications — now enhanced with AI-powered features that drive smarter user experiences.",
+      "bioParagraph2": "I specialize in modern frameworks like React, Angular, and Vue, with a deep focus on UI/UX design, performance optimization, and seamless usability. My recent work leverages AI tools and APIs to build more dynamic, personalized, and intelligent interfaces — from predictive components to conversational UIs and real-time insights.",
+      "bioParagraph3": "I thrive on turning complex ideas into intuitive, high-impact digital products. Whether collaborating with startups or enterprise teams, I bring a mix of technical leadership, design thinking, and a future-forward mindset that helps teams innovate with confidence."
+    },
+    "socialLinks": {
+      "title": "Find me on",
+      "twitter": {
+        "ariaLabel": "Twitter Profile",
+        "buttonText": "Twitter",
+        "url": "https://twitter.com/hudeoworks-design"
+      },
+      "github": {
+        "ariaLabel": "GitHub Profile",
+        "buttonText": "GitHub",
+        "url": "https://github.com/hudeoworks-design"
+      },
+      "linkedin": {
+        "ariaLabel": "LinkedIn Profile",
+        "buttonText": "LinkedIn",
+        "url": "https://linkedin.com/in/subashmaharjan"
+      }
+    },
+    "resume": {
+      "resumeTitle": "Resumé",
+      "resumeParagraph": "You can check my resumé in the link below.",
+      "resumeButton": "Resumé",
+      "resumeLink": "/resume/resume-en.pdf"
+    },
     "skillsTitle": "Skills"
   },
-  "portfolioData": {
+  "Timeline": {
+    "title": "Professional Path",
+    "experience": "Experience",
+    "education": "Education",
+    "items": {
+      "mba": {
+        "title": "Masters in Business Administration (MBA)",
+        "org": "Everest University, Orlando, Florida",
+        "date": "Aug 2021 - May 2024",
+        "desc": "Focus on modern web technologies and agile software development practices."
+      },
+      "bca": {
+        "title": "Bachelor in Computer Applications",
+        "org": "Kantipur City College, Kathmandu, Nepal",
+        "date": "Oct 2018 - Nov 2019",
+        "desc": "Focusing on network administration, IT security, and web development."
+      },
+      "caci": {
+        "title": "Senior Software Engineer",
+        "org": "CACI",
+        "date": "Dec 2023 - Present",
+        "location": "Remote",
+        "desc": "Designed a standardized library of accessible UI components using Angular Material UI."
+      },
+      "travelers": {
+        "title": "Software Engineer II",
+        "org": "Travelers Insurance",
+        "date": "Sep 2020 - Nov 2023",
+        "location": "Remote",
+        "desc": "Created an accessible component library adopted company-wide using StencilJS."
+      }
+    }
+  },
+  "portfolio": {
     "portfolioTitle": "Portfolio",
     "projects": [
       {
@@ -73,11 +129,11 @@
         ]
       },
       {
-        "name": "Easybank",
-        "projectUrl": "https://easybank-web.vercel.app/",
-        "repoUrl": "https://github.com/kelvinsanchez15/easybank-landing-page",
-        "imgPath": "projectMedia/easybank.png",
-        "imgAlt": "Easybank website preview",
+        "name": "Codebank",
+        "projectUrl": "https://codebank-web.vercel.app/",
+        "repoUrl": "https://github.com/submjn/codebank-landing-page",
+        "imgPath": "projectMedia/codebank.png",
+        "imgAlt": "Codebank website preview",
         "summary": "Fully responsive SAAS product landing page designed with Tailwind CSS.",
         "keyFeatures": [
           "Pixel perfect design",
@@ -103,12 +159,12 @@
       }
     ]
   },
-  "blogData": {
+  "blog": {
     "featuredArticle": "Featured Article",
     "mostRecent": "Most Recent",
     "button": "More Articles"
   },
-  "contactData": {
+  "contact": {
     "title": "Contact",
     "p1": "If you are interested in hiring me for your project please use the form below to get in touch. Want to know how I work and what I can offer? Check out my ",
     "p2": "portfolio",

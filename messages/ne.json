@@ -1,68 +1,124 @@
 {
   "ThemeSwitcher": {
-    "toggleTheme": "थीम परिवर्तन गर्नुहोस्",
+    "toggleTheme": "थिम परिवर्तन गर्नुहोस्",
     "light": "उज्यालो",
-    "dark": "अँधेरो",
-    "system": "प्रणाली"
+    "dark": "अध्यारो",
+    "system": "सिस्टम"
   },
-  "defaultSeo": {
-    "title": "सुबाश महर्जन | वरिष्ठ सफ्टवेयर इन्जिनियर/फ्रन्टइन्ड डेभलपर",
-    "description": "सुबाश महर्जन एक वरिष्ठ सफ्टवेयर इन्जिनियर हुन्, जो सुन्दर र कार्यात्मक वेबसाइटहरू र वेब एप्लिकेसनहरू सिर्जना गर्न अनुभवी छन्।",
-    "url": "https://www.subashmaharjan.com/",
-    "previewImage": "https://user-images.githubusercontent.com/4708484/93688063-050a8980-fa91-11ea-89ca-3530a9038393.png"
+  "metadata": {
+    "title": "सुभाष महर्जन | सिनियर फ्रन्टइन्ड डेभलपर",
+    "description": "सुभाष महर्जन एक सिनियर फ्रन्टइन्ड डेभलपर हुन्, जो सुन्दर र उपयोगी वेबसाइट तथा वेब एप्लिकेसनहरू निर्माण गर्न अनुभवी छन्।",
+    "url": "www.subashmaharjan.com",
+    "previewImage": "avatars.githubusercontent.com"
   },
-  "heroData": {
+  "hero": {
     "greetings": "नमस्ते, ",
-    "introduction": "म सुबाश महर्जन हुँ",
-    "role": "वरिष्ठ सफ्टवेयर इन्जिनियर",
-    "paragraph": "म कोडिङप्रति भावुक छु र मेरा ग्राहकका विचारहरूलाई वास्तविकतामा बदल्न मन पराउँछु।",
+    "introduction": "म सुभाष महर्जन",
+    "role": "सिनियर फ्रन्टइन्ड डेभलपर",
+    "paragraph": "म कोडिङ र ग्राहकको विचारलाई वास्तविकतामा बदल्नमा रुचि राख्छु।",
     "button1": "मेरो काम हेर्नुहोस्",
-    "button2": "मलाई सम्पर्क गर्नुहोस्"
+    "button2": "सम्पर्क गर्नुहोस्"
   },
-  "aboutData": {
+  "about": {
     "aboutTitle": "मेरो बारेमा",
-    "aboutItems": [
-      "स्प्रिङ, टेक्सासमा आधारित वरिष्ठ सफ्टवेयर इन्जिनियर।",
-      "म सफा र मर्मत गर्न योग्य कोडमा ध्यान केन्द्रित गर्दै सुन्दर, प्रयोगकर्ता-केन्द्रित वेबसाइटहरू र एप्लिकेसनहरू डिजाइन र निर्माण गर्न उत्साहित छु।",
-      "एक उत्साही टिम प्लेयर जसले स्पष्ट सञ्चारलाई महत्त्व दिन्छ, प्रतिक्रिया स्वीकार गर्छ, र सधैं सिक्न र बढ्न उत्सुक रहन्छ।",
-      "काम बाहिर, म गितार बजाउन, पढ्न र भिडियो गेमहरू खेल्न मन पराउँछु।"
-    ],
-    "resumeTitle": "बायोडाटा (Resumé)",
-    "resumeParagraph": "तपाईं तलको लिङ्कमा मेरो बायोडाटा हेर्न सक्नुहुन्छ।",
-    "resumeButton": "बायोडाटा",
-    "resumeLink": "/resume/resume-ne.pdf",
-    "skillsTitle": "सिपहरु"
+    "aboutItems": {
+      "profileAltText": "सुभाष महर्जनको प्रोफाइल तस्वीर",
+      "name": "Subash Maharjan",
+      "handle": "@hudeoworks-design",
+      "aboutTitle": "मेरो बारेमा",
+      "bioParagraph1": "म एक वरिष्ठ फ्रन्टएन्ड विकासकर्ता हुँ, जससँग छिटो, स्केलेबल, र दृश्यात्मक रूपमा आकर्षक वेब अनुप्रयोगहरू निर्माण गर्ने १०+ वर्षको अनुभव छ — जुन अब स्मार्ट प्रयोगकर्ता अनुभवहरू प्रदान गर्ने एआई-संचालित सुविधाहरूद्वारा परिष्कृत गरिएको छ।",
+      "bioParagraph2": "म React, Angular, र Vue जस्ता आधुनिक फ्रेमवर्कहरूमा विशेषज्ञ छु, UI/UX डिजाइन, कार्यसम्पादन अप्टिमाइजेसन, र सहज उपयोगितामा गहिरो ध्यान केन्द्रित गर्छु। मेरो हालैको कामले भविष्यसूचक कम्पोनेन्टहरूदेखि संवादात्मक UI र वास्तविक-समय अन्तर्दृष्टिहरूसम्म — अझ गतिशील, व्यक्तिगत, र बौद्धिक इन्टरफेसहरू निर्माण गर्न एआई उपकरणहरू र एपीआईहरूको लाभ उठाउँछ।",
+      "bioParagraph3": "म जटिल विचारहरूलाई सहज, उच्च-प्रभावकारी डिजिटल उत्पादनहरूमा परिणत गर्नमा रम्छु। चाहे स्टार्टअपहरू वा उद्यम टोलीहरूसँग सहकार्य गर्दैछु, म प्राविधिक नेतृत्व, डिजाइन सोच, र भविष्य-उन्मुख मानसिकताको मिश्रण ल्याउँछु जसले टोलीहरूलाई आत्मविश्वासका साथ नवीनता ल्याउन मद्दत गर्दछ।"
+    },
+    "socialLinks": {
+      "title": "मलाई यहाँ भेट्नुहोस्",
+      "twitter": {
+        "ariaLabel": "ट्विटर प्रोफाइल",
+        "buttonText": "ट्विटर",
+        "url": "https://twitter.com/hudeoworks-design"
+      },
+      "github": {
+        "ariaLabel": "GitHub प्रोफाइल",
+        "buttonText": "GitHub",
+        "url": "https://github.com/hudeoworks-design"
+      },
+      "linkedin": {
+        "ariaLabel": "LinkedIn प्रोफाइल",
+        "buttonText": "LinkedIn",
+        "url": "https://linkedin.com/in/subashmaharjan"
+      }
+    },
+    "resume": {
+      "resumeTitle": "बायोडाटा (Resumé)",
+      "resumeParagraph": "तपाईं मेरो बायोडाटा तलको लिङ्कमा हेर्न सक्नुहुन्छ।",
+      "resumeButton": "बायोडाटा",
+      "resumeLink": "/resume/resume-ne.pdf"
+    },
+    "skillsTitle": "सीपहरू"
   },
-  "portfolioData": {
+  "Timeline": {
+    "title": "व्यावसायिक यात्रा",
+    "experience": "अनुभव",
+    "education": "शिक्षा",
+    "items": {
+      "mba": {
+        "title": "Masters in Business Administration (MBA)", 
+        "org": "Everest University, Orlando, Florida",
+        "date": "Aug 2021 - May 2024",
+        "desc": "Focus on modern web technologies and agile software development practices."
+      },
+      "bca": {
+        "title": "Bachelor in Computer Applications",
+        "org": "Kantipur City College, Kathmandu, Nepal",
+        "date": "Oct 2018 - Nov 2019",
+        "desc": "Focusing on network administration, IT security, and web development."
+      },
+      "caci": {
+        "title": "Senior Software Engineer",
+        "org": "CACI",
+        "date": "Dec 2023 - Present",
+        "location": "Remote",
+        "desc": "Designed a standardized library of accessible UI components using Angular Material UI."
+      },
+      "travelers": {
+        "title": "Software Engineer II",
+        "org": "Travelers Insurance",
+        "date": "Sep 2020 - Nov 2023",
+        "location": "Remote",
+        "desc": "Created an accessible component library adopted company-wide using StencilJS."
+      }
+    }
+  },
+  "portfolio": {
     "portfolioTitle": "पोर्टफोलियो",
     "projects": [
       {
         "name": "alacartadigital",
-        "projectUrl": "https://www.alacartadigital.es/",
-        "repoUrl": "https://github.com/alacartadigital-team",
+        "projectUrl": "www.alacartadigital.es",
+        "repoUrl": "github.com",
         "imgPath": "projectMedia/alacartadigital.png",
-        "imgAlt": "alacartadigital साइट प्रिभ्यू",
-        "summary": "QR कोड एकीकरणको साथ अनलाइन रेस्टुरेन्ट मेनु प्लेटफर्म।",
+        "imgAlt": "alacartadigital साइटको प्रिभ्यु",
+        "summary": "QR कोड एकीकरण भएको अनलाइन रेस्टुरेन्ट मेनु प्लेटफर्म।",
         "keyFeatures": [
           "प्रयोगकर्ता-मैत्री ड्यासबोर्ड",
-          "प्रत्यक्ष पूर्वावलोकन (Live preview)",
-          "ब्रान्ड अनुकूलन",
-          "सशुल्क सदस्यताहरू"
+          "लाइभ प्रिभ्यु",
+          "ब्रान्ड कस्टमाइजेशन",
+          "भुक्तान गरिएका सब्स्क्रिप्शनहरू"
         ],
         "technologies": ["React", "NextJS", "Firebase", "Material-UI", "Stripe"]
       },
       {
         "name": "Issueless",
         "projectUrl": "https://issueless.vercel.app",
-        "repoUrl": "https://github.com/kelvinsanchez15/issueless",
+        "repoUrl": "github.com",
         "imgPath": "projectMedia/issueless.png",
-        "imgAlt": "Issueless प्रिभ्यू",
-        "summary": "GitHub Issues बाट प्रेरित JAMStack इस्यू ट्र्याकर प्रोजेक्ट।",
+        "imgAlt": "Issueless प्रिभ्यु",
+        "summary": "GitHub issues बाट प्रेरित JAMStack इस्यु ट्रयाकर परियोजना।",
         "keyFeatures": [
-          "Hybrid static र server rendering",
-          "OAuth साइन-इन सेवाहरू",
+          "हाइब्रिड स्ट्याटिक र सर्भर रेन्डरिङ",
+          "OAuth साइन-इन सुविधाहरू",
           "Markdown समर्थन",
-          "Custom MUI थीम"
+          "कस्टम MUI थिम"
         ],
         "technologies": [
           "React",
@@ -73,26 +129,26 @@
         ]
       },
       {
-        "name": "Easybank",
-        "projectUrl": "https://easybank-web.vercel.app/",
-        "repoUrl": "https://github.com/kelvinsanchez15/easybank-landing-page",
-        "imgPath": "projectMedia/easybank.png",
-        "imgAlt": "Easybank वेबसाइट प्रिभ्यू",
-        "summary": "Tailwind CSS को प्रयोग गरेर डिजाइन गरिएको पूर्ण रूपमा रेस्पोन्सिभ SAAS उत्पादन ल्यान्डिङ पेज।",
+        "name": "Codebank",
+        "projectUrl": "codebank-web.vercel.app",
+        "repoUrl": "github.com",
+        "imgPath": "projectMedia/codebank.png",
+        "imgAlt": "Codebank वेबसाइट प्रिभ्यु",
+        "summary": "Tailwind CSS मार्फत डिजाइन गरिएको पूर्ण रूपमा रेस्पोन्सिभ SAAS उत्पादन ल्यान्डिङ पेज।",
         "keyFeatures": [
-          "Pixel perfect डिजाइन",
-          "Absolute positioning",
-          "Custom classes"
+          "पिक्सेल पर्फेक्ट डिजाइन",
+          "एब्सोलुट पोजिसनिङ",
+          "कस्टम क्लासहरू"
         ],
         "technologies": ["Tailwind", "TypeScript", "React", "NextJS"]
       },
       {
         "name": "BombaiMTY",
-        "projectUrl": "https://bombai-mty-menu.vercel.app/",
-        "repoUrl": "https://github.com/kelvinsanchez15/bombai-menu",
+        "projectUrl": "bombai-mty-menu.vercel.app",
+        "repoUrl": "github.com",
         "imgPath": "projectMedia/bombai-mty.png",
-        "imgAlt": "BombaiMTY वेबसाइट प्रिभ्यू",
-        "summary": "WhatsApp चेकआउटको साथ फास्ट फूड बिक्री पोर्टल।",
+        "imgAlt": "BombaiMTY वेबसाइट प्रिभ्यु",
+        "summary": "WhatsApp बाट चेकआउट गर्न मिल्ने फास्ट फुड बिक्री पोर्टल।",
         "keyFeatures": [
           "उत्पादन फिल्टर",
           "सपिङ कार्ट",
@@ -103,25 +159,25 @@
       }
     ]
   },
-  "blogData": {
+  "blog": {
     "featuredArticle": "विशेष लेख",
-    "mostRecent": "भर्खरका लेखहरू",
+    "mostRecent": "हालैका लेखहरू",
     "button": "थप लेखहरू"
   },
-  "contactData": {
+  "contact": {
     "title": "सम्पर्क",
-    "p1": "यदि तपाईं मलाई आफ्नो प्रोजेक्टको लागि नियुक्त गर्न चाहनुहुन्छ भने, कृपया सम्पर्क गर्न तलको फारम प्रयोग गर्नुहोस्। म कसरी काम गर्छु र के अफर गर्न सक्छु भन्ने जान्न चाहनुहुन्छ? मेरो ",
+    "p1": "यदि तपाईं मलाई आफ्नो परियोजनाको लागि काममा राख्न चाहनुहुन्छ भने, कृपया सम्पर्क गर्न तलको फारम प्रयोग गर्नुहोस्। म कसरी काम गर्छु र के के सेवा दिन सक्छु भन्ने जान्नको लागि मेरो ",
     "p2": "पोर्टफोलियो",
     "p3": " र ",
     "p4": "बायोडाटा",
     "resumeLink": "/resume/resume-ne.pdf",
-    "subtitle": "तपाईं मलाई निम्न माध्यमहरूमा पनि भेट्टाउन सक्नुहुन्छ",
+    "subtitle": "तपाईं मलाई निम्न माध्यमहरूबाट पनि भेट्टाउन सक्नुहुन्छ",
     "formTitle": "सम्पर्कमा रहनुहोस्",
     "firstNameLabel": "पहिलो नाम",
     "lastNameLabel": "थर",
     "emailLabel": "इमेल",
     "messageLabel": "सन्देश",
-    "placeholder": "कुनै पनि विवरणहरू समावेश गर्न सक्नुहुन्छ।",
+    "placeholder": "थप विवरणहरू समावेश गर्न सक्नुहुन्छ।",
     "submitButton": "पठाउनुहोस्",
     "requiredErrorMessage": "अनिवार्य",
     "invalidEmailErrorMessage": "अमान्य इमेल ढाँचा"

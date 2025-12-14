@@ -2,7 +2,7 @@ import { Box, Container, Grid, Button, Typography } from '@mui/material';
 import {useTranslations} from 'next-intl';
 
 export default function Hero() {
-  const t = useTranslations('heroData');
+  const t = useTranslations('hero');
 
   return (
     <Box component="section" id="home">

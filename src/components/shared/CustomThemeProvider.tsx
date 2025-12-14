@@ -45,8 +45,9 @@ export function CustomThemeProvider({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     messages: Record<string, any>;
 }) {
+    const timeZone = 'Europe/Vienna';
     return (
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages} timeZone={timeZone}>
             <AppRouterCacheProvider>
                 <NextThemesProvider attribute="class" defaultTheme="system" enableSystem>
                     <MUIThemeProvider>{children}</MUIThemeProvider>

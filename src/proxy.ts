@@ -10,6 +10,6 @@ export const config = {
   matcher: [
     '/((?!api|trpc|_next|_vercel|.*\\..*).*)',
     // Match all pathnames within `{/:locale}/users`
-    // '/([\\w-]+)?/users/(.+)'
+    '/([\\w-]+)?/home/(.+)'
   ]
 };

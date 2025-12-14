@@ -5,63 +5,119 @@
     "dark": "Oscuro",
     "system": "Sistema"
   },
-  "defaultSeo": {
-    "title": "Kelvin Sanchez | Ingeniero de Software Senior",
-    "description": "Kelvin Sanchez es un Ingeniero de Software Senior, con experiencia en la creación de sitios y aplicaciones web hermosas y funcionales.",
-    "url": "https://www.kelvinsanchez15.com/",
-    "previewImage": "https://user-images.githubusercontent.com/4708484/93688063-050a8980-fa91-11ea-89ca-3530a9038393.png"
+  "metadata": {
+    "title": "Subash Maharjan | Desarrollador Frontend Senior",
+    "description": "Subash Maharjan es un Desarrollador Frontend Senior, con experiencia en la creación de sitios web y aplicaciones web hermosas y funcionales.",
+    "url": "www.subashmaharjan.com",
+    "previewImage": "avatars.githubusercontent.com"
   },
-  "heroData": {
+  "hero": {
     "greetings": "HOLA, ",
-    "introduction": "soy Kelvin Sanchez",
-    "role": "Ingeniero de Software Senior",
-    "paragraph": "Me apasiona programar, y hacer las ideas de mis clientes realidad.",
-    "button1": "Revisa mis proyectos",
+    "introduction": "Soy Subash Maharjan",
+    "role": "Desarrollador Frontend Senior",
+    "paragraph": "Apasionado por la programación y por hacer realidad las ideas de mis clientes.",
+    "button1": "Ver mi trabajo",
     "button2": "Contáctame"
   },
-  "aboutData": {
-    "aboutTitle": "Acerca de mi",
-    "aboutItems": [
-      "Ingeniero de Software Senior con base en Spring, Texas.",
-      "Apasionado por diseñar y construir sitios web y aplicaciones centrados en el usuario, con un enfoque en código limpio y mantenible.",
-      "Jugador entusiasta de equipo que valora la comunicación clara, acepta retroalimentación y siempre está dispuesto a aprender y crecer.",
-      "Fuera del trabajo, disfruto tocar la guitarra, leer y disfrutar de los videojuegos."
-    ],
-    "resumeTitle": "Curriculum",
-    "resumeParagraph": "Puedes revisar mi curriculum en el siguiente enlace.",
-    "resumeButton": "Curriculum",
-    "resumeLink": "/resume/resume-es.pdf",
+  "about": {
+    "aboutTitle": "Sobre mí",
+    "aboutItems": {
+      "profileAltText": "Foto de perfil de Subash Maharjan",
+      "name": "Subash Maharjan",
+      "handle": "@hudeoworks-design",
+      "aboutTitle": "Acerca de mí",
+      "bioParagraph1": "Soy un desarrollador frontend senior con más de 10 años de experiencia creando aplicaciones web rápidas, escalables y visualmente pulidas, ahora mejoradas con funciones impulsadas por IA que ofrecen experiencias de usuario más inteligentes.",
+      "bioParagraph2": "Me especializo en frameworks modernos como React, Angular y Vue, con un enfoque profundo en diseño UI/UX, optimización del rendimiento y usabilidad fluida. Mi trabajo reciente aprovecha herramientas de IA y APIs para construir interfaces más dinámicas, personalizadas e inteligentes, desde componentes predictivos hasta UIs conversacionales y perspectivas en tiempo real.",
+      "bioParagraph3": "Me encanta convertir ideas complejas en productos digitales intuitivos y de alto impacto. Ya sea colaborando con startups o equipos empresariales, aporto una combinación de liderazgo técnico, pensamiento de diseño y una mentalidad orientada al futuro que ayuda a los equipos a innovar con confianza." 
+    },
+    "socialLinks": {
+      "title": "Encuéntrame en",
+      "twitter": {
+        "ariaLabel": "Perfil de Twitter",
+        "buttonText": "Twitter",
+        "url": "https://twitter.com/hudeoworks-design"
+      },
+      "github": {
+        "ariaLabel": "Perfil de GitHub",
+        "buttonText": "GitHub",
+        "url": "https://github.com/hudeoworks-design"
+      },
+      "linkedin": {
+        "ariaLabel": "Perfil de LinkedIn",
+        "buttonText": "LinkedIn",
+        "url": "https://linkedin.com/in/subashmaharjan"
+      }
+    },
+    "resume": {
+      "resumeTitle": "Currículum",
+      "resumeParagraph": "Puedes consultar mi currículum en el siguiente enlace.",
+      "resumeButton": "Currículum",
+      "resumeLink": "/resume/resume-es.pdf"
+    },
     "skillsTitle": "Habilidades"
   },
-  "portfolioData": {
+  "Timeline": {
+    "title": "Trayectoria Profesional",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "items": {
+      "mba": {
+        "title": "Masters in Business Administration (MBA)",
+        "org": "Everest University, Orlando, Florida",
+        "date": "Aug 2021 - May 2024",
+        "desc": "Focus on modern web technologies and agile software development practices."
+      },
+      "bca": {
+        "title": "Bachelor in Computer Applications",
+        "org": "Kantipur City College, Kathmandu, Nepal",
+        "date": "Oct 2018 - Nov 2019",
+        "desc": "Focusing on network administration, IT security, and web development."
+      },
+      "caci": {
+        "title": "Senior Software Engineer",
+        "org": "CACI",
+        "date": "Dec 2023 - Present",
+        "location": "Remote",
+        "desc": "Designed a standardized library of accessible UI components using Angular Material UI."
+      },
+      "travelers": {
+        "title": "Software Engineer II",
+        "org": "Travelers Insurance",
+        "date": "Sep 2020 - Nov 2023",
+        "location": "Remote",
+        "desc": "Created an accessible component library adopted company-wide using StencilJS."
+      }
+    }
+  },
+  "portfolio": {
     "portfolioTitle": "Portafolio",
     "projects": [
       {
         "name": "alacartadigital",
-        "projectUrl": "https://www.alacartadigital.es/",
-        "repoUrl": "https://github.com/alacartadigital-team",
+        "projectUrl": "www.alacartadigital.es",
+        "repoUrl": "github.com",
         "imgPath": "projectMedia/alacartadigital.png",
-        "imgAlt": "Vista previa del sitio alacartadigital en varios dispositivos",
-        "summary": "Plataforma online para menús de restaurantes con integracion QR.",
+        "imgAlt": "vista previa de alacartadigital en dispositivos",
+        "summary": "Plataforma de menú digital para restaurantes con integración de códigos QR.",
         "keyFeatures": [
-          "Dashboard amigable para el usuario",
+          "Panel de control intuitivo",
           "Vista previa en vivo",
           "Personalización de marca",
           "Suscripciones de pago"
         ],
-        "technologies": ["React", "NextJS", "MongoDB", "Material-UI", "SWR"]
+        "technologies": ["React", "NextJS", "Firebase", "Material-UI", "Stripe"]
       },
       {
         "name": "Issueless",
         "projectUrl": "https://issueless.vercel.app",
-        "repoUrl": "https://github.com/kelvinsanchez15/issueless",
+        "repoUrl": "github.com",
         "imgPath": "projectMedia/issueless.png",
         "imgAlt": "Vista previa de Issueless",
-        "summary": "Rastreador de problemas (Issue Tracker) inspirado en Github Issues.",
+        "summary": "Proyecto de rastreo de incidencias JAMStack inspirado en los issues de GitHub.",
         "keyFeatures": [
-          "Renderizado híbrido de forma estática (SSG) y en el servidor (SSR)",
-          "Servicios de registro múltiple con OAuth",
-          "Soporte de Markdown",
+          "Renderizado híbrido estático y de servidor",
+          "Servicios de inicio de sesión OAuth",
+          "Soporte para Markdown",
           "Tema MUI personalizado"
         ],
         "technologies": [
@@ -73,14 +129,14 @@
         ]
       },
       {
-        "name": "Easybank",
-        "projectUrl": "https://easybank-web.vercel.app/",
-        "repoUrl": "https://github.com/kelvinsanchez15/easybank-landing-page",
-        "imgPath": "projectMedia/easybank.png",
-        "imgAlt": "Vista previa del sitio Easybank",
-        "summary": "Página de producto SAAS completamente responsiva diseñada con Tailwind CSS.",
+        "name": "Codebank",
+        "projectUrl": "codebank-web.vercel.app",
+        "repoUrl": "github.com",
+        "imgPath": "projectMedia/codebank.png",
+        "imgAlt": "Vista previa del sitio Codebank",
+        "summary": "Página de aterrizaje para producto SAAS totalmente responsiva diseñada con Tailwind CSS.",
         "keyFeatures": [
-          "Diseño pixel perfect",
+          "Diseño Pixel Perfect",
           "Posicionamiento absoluto",
           "Clases personalizadas"
         ],
@@ -88,11 +144,11 @@
       },
       {
         "name": "BombaiMTY",
-        "projectUrl": "https://bombai-mty-menu.vercel.app/",
-        "repoUrl": "https://github.com/kelvinsanchez15/bombai-menu",
+        "projectUrl": "bombai-mty-menu.vercel.app",
+        "repoUrl": "github.com",
         "imgPath": "projectMedia/bombai-mty.png",
         "imgAlt": "Vista previa del sitio BombaiMTY",
-        "summary": "Portal de venta de comida rápida con pagos por WhatsApp.",
+        "summary": "Portal de ventas de comida rápida con finalización de compra vía WhatsApp.",
         "keyFeatures": [
           "Filtro de productos",
           "Carrito de compras",
@@ -103,25 +159,25 @@
       }
     ]
   },
-  "blogData": {
-    "featuredArticle": "Artículo Destacado",
-    "mostRecent": "Más recientes",
-    "button": "Más Artículos"
+  "blog": {
+    "featuredArticle": "Artículo destacado",
+    "mostRecent": "Más reciente",
+    "button": "Más artículos"
   },
-  "contactData": {
+  "contact": {
     "title": "Contacto",
-    "p1": "Si estas interesado en contratarme para tu proyecto puedes usar la forma de abajo para ponerte en contacto. ¿Quieres saber como trabajo y que puedo ofrecer? Revisa mi ",
+    "p1": "Si estás interesado en contratarme para tu proyecto, por favor utiliza el siguiente formulario para ponerte en contacto. ¿Quieres saber cómo trabajo y qué puedo ofrecer? Echa un vistazo a mi ",
     "p2": "portafolio",
-    "p3": " y ",
-    "p4": "curriculum",
+    "p3": " y a mi ",
+    "p4": "currículum",
     "resumeLink": "/resume/resume-es.pdf",
-    "subtitle": "Tambien puedes encontrarme a traves de los siguientes canales",
-    "formTitle": "Llena el formulario",
+    "subtitle": "También puedes encontrarme en los siguientes canales",
+    "formTitle": "Ponte en contacto",
     "firstNameLabel": "Nombre",
     "lastNameLabel": "Apellido",
-    "emailLabel": "Correo Electrónico",
+    "emailLabel": "Correo electrónico",
     "messageLabel": "Mensaje",
-    "placeholder": "Puedes incluir cualquier detalle adicional que desees.",
+    "placeholder": "Siéntete libre de incluir cualquier detalle.",
     "submitButton": "enviar",
     "requiredErrorMessage": "Requerido",
     "invalidEmailErrorMessage": "Formato de correo inválido"

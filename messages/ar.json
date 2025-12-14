@@ -1,74 +1,91 @@
 {
   "ThemeSwitcher": {
-    "toggleTheme": "تغيير السمة",
+    "toggleTheme": "تغيير المظهر",
     "light": "فاتح",
     "dark": "داكن",
-    "system": "النظام"
+    "system": "تلقائي"
   },
-  "defaultSeo": {
-    "title": "Subash Maharjan | Senior Software Engineer - Frontend Developer | مهندس برمجيات أول",
-    "description": "سوباش مهارجان هو مهندس برمجيات أول، لديه خبرة في إنشاء مواقع الويب وتطبيقات الويب الجميلة والفعالة.",
+  "metadata": {
+    "title": "سوباش ماهارجان | مطور واجهات أمامية أول",
+    "description": "سوباش ماهارجان هو مطور واجهات أمامية أول، ذو خبرة في إنشاء مواقع وتطبيقات ويب جميلة وعملية.",
     "url": "https://www.subashmaharjan.com/",
-    "previewImage": "https://user-images.githubusercontent.com/4708484/93688063-050a8980-fa91-11ea-89ca-3530a9038393.png"
+    "previewImage": "https://avatars.githubusercontent.com/u/6002073?v=4"
   },
-  "heroData": {
-    "greetings": "أهلاً،",
-    "introduction": "أنا سوباش مهارجان",
-    "role": "مهندس برمجيات أول",
-    "paragraph": "شغوف بالبرمجة، وأعمل على تحقيق أفكار عملائي.",
+  "hero": {
+    "greetings": "مرحباً، ",
+    "introduction": "أنا سوباش ماهارجان",
+    "role": "مطور واجهات أمامية أول",
+    "paragraph": "شغوف بالبرمجة وتحويل أفكار عملائي إلى واقع ملموس.",
     "button1": "تصفح أعمالي",
-    "button2": "تواصل معي"
+    "button2": "اتصل بي"
   },
-  "aboutData": {
-    "aboutTitle": "عني",
-    "aboutItems": [
-      "مهندس برمجيات أول مقيم في سبرينغ، تكساس.",
-      "شغوف بتصميم وبناء مواقع وتطبيقات تركز على المستخدم وجميلة المظهر، مع التركيز على الأكواد النظيفة وسهلة الصيانة.",
-      "لاعب فريق متحمس يقدّر التواصل الواضح، ويتقبل الملاحظات، ويتوق دائمًا للتعلم والنمو.",
-      "خارج العمل، أستمتع بالعزف على الجيتار والقراءة وألعاب الفيديو."
-    ],
-    "resumeTitle": "السيرة الذاتية",
-    "resumeParagraph": "يمكنك الاطلاع على سيرتي الذاتية في الرابط أدناه.",
-    "resumeButton": "السيرة الذاتية",
-    "resumeLink": "/resume/resume-en.pdf",
+  "about": {
+    "aboutTitle": "من أنا",
+    "aboutItems": {
+      "profileAltText": "صورة ملف تعريف سوباش ماهارجان",
+      "name": "Subash Maharjan",
+      "handle": "@hudeoworks-design",
+      "aboutTitle": "عني",
+      "bioParagraph1": "أنا مطور واجهات أمامية (فرونت إند) أول بخبرة تزيد عن 10 سنوات في بناء تطبيقات ويب سريعة وقابلة للتطوير ومصقولة بصريًا، تم تحسينها الآن بميزات مدعومة بالذكاء الاصطناعي توفر تجارب مستخدم أكثر ذكاءً.",
+      "bioParagraph2": "أنا متخصص في الأطر الحديثة مثل React و Angular و Vue، مع تركيز عميق على تصميم واجهة المستخدم وتجربة المستخدم (UI/UX)، وتحسين الأداء، وسهولة الاستخدام السلسة. يستفيد عملي الأخير من أدوات الذكاء الاصطناعي وواجهات برمجة التطبيقات لبناء واجهات أكثر ديناميكية وتخصيصًا وذكاءً، بدءًا من المكونات التنبؤية إلى واجهات المستخدم للمحادثات والرؤى الفورية.",
+      "bioParagraph3": "أزدهر في تحويل الأفكار المعقدة إلى منتجات رقمية بديهية وعالية التأثير. سواء كنت أتعاون مع شركات ناشئة أو فرق مؤسسية، فإنني أقدم مزيجًا من القيادة التقنية والتفكير التصميمي والعقلية المستقبلية التي تساعد الفرق على الابتكار بثقة."
+    },
+    "socialLinks": {
+      "title": "أنا في",
+      "twitter": {
+        "ariaLabel": "حساب تويتر",
+        "buttonText": "تويتر",
+        "url": "https://twitter.com/hudeoworks-design"
+      },
+      "github": {
+        "ariaLabel": "حساب GitHub",
+        "buttonText": "GitHub",
+        "url": "https://github.com/hudeoworks-design"
+      },
+      "linkedin": {
+        "ariaLabel": "حساب LinkedIn",
+        "buttonText": "LinkedIn",
+        "url": "https://linkedin.com/in/subashmaharjan"
+      }
+    },
+    "resume": {
+      "resumeTitle": "السيرة الذاتية",
+      "resumeParagraph": "يمكنك الاطلاع على سيرتي الذاتية عبر الرابط أدناه.",
+      "resumeButton": "السيرة الذاتية",
+      "resumeLink": "/resume/resume-ar.pdf"
+    },
     "skillsTitle": "المهارات"
   },
-  "portfolioData": {
-    "portfolioTitle": "الأعمال",
+  "portfolio": {
+    "portfolioTitle": "معرض الأعمال",
     "projects": [
       {
         "name": "alacartadigital",
         "projectUrl": "https://www.alacartadigital.es/",
         "repoUrl": "https://github.com/alacartadigital-team",
         "imgPath": "projectMedia/alacartadigital.png",
-        "imgAlt": "alacartadigital site mocked device preview",
-        "summary": "منصة قائمة مطعم عبر الإنترنت مع تكامل رمز الاستجابة السريعة (QR code).",
+        "imgAlt": "معاينة لموقع alacartadigital على أجهزة محاكية",
+        "summary": "منصة رقمية لقائمة طعام المطاعم مع تكامل رمز الاستجابة السريعة (QR).",
         "keyFeatures": [
           "لوحة تحكم سهلة الاستخدام",
           "معاينة مباشرة",
           "تخصيص العلامة التجارية",
           "اشتراكات مدفوعة"
         ],
-        "technologies": [
-          "React",
-          "NextJS",
-          "Firebase",
-          "Material-UI",
-          "Stripe"
-        ]
+        "technologies": ["React", "NextJS", "Firebase", "Material-UI", "Stripe"]
       },
       {
         "name": "Issueless",
         "projectUrl": "https://issueless.vercel.app",
         "repoUrl": "https://github.com/kelvinsanchez15/issueless",
         "imgPath": "projectMedia/issueless.png",
-        "imgAlt": "Issueless preview",
-        "summary": "مشروع تعقب مشاكل JAMStack مستوحى من مشاكل GitHub.",
+        "imgAlt": "معاينة تطبيق Issueless",
+        "summary": "مشروع لتتبع المشكلات بنظام JAMStack مستوحى من نظام GitHub issues.",
         "keyFeatures": [
-          "تقديم هجين ثابت وخادم",
+          "عرض ثابت وهجين عبر الخادم",
           "خدمات تسجيل الدخول عبر OAuth",
-          "دعم Markdown",
-          "ثيم MUI مخصص"
+          "دعم لغة Markdown",
+          "سمة MUI مخصصة"
         ],
         "technologies": [
           "React",
@@ -79,67 +96,57 @@
         ]
       },
       {
-        "name": "Easybank",
-        "projectUrl": "https://easybank-web.vercel.app/",
-        "repoUrl": "https://github.com/kelvinsanchez15/easybank-landing-page",
-        "imgPath": "projectMedia/easybank.png",
-        "imgAlt": "Easybank website preview",
-        "summary": "صفحة هبوط منتج SAAS متجاوبة بالكامل ومصممة باستخدام Tailwind CSS.",
+        "name": "Codebank",
+        "projectUrl": "https://codebank-web.vercel.app/",
+        "repoUrl": "https://github.com/submjn/codebank-landing-page",
+        "imgPath": "projectMedia/codebank.png",
+        "imgAlt": "معاينة موقع Codebank",
+        "summary": "صفحة هبوط لمنتج برمجيات كخدمة (SAAS) متجاوبة بالكامل مصممة بـ Tailwind CSS.",
         "keyFeatures": [
-          "تصميم دقيق للبكسل",
-          "تحديد المواقع المطلق",
-          "فئات مخصصة"
+          "تصميم دقيق حتى البكسل",
+          "توزيع العناصر المطلق",
+          "فئات برمجية مخصصة"
         ],
-        "technologies": [
-          "Tailwind",
-          "TypeScript",
-          "React",
-          "NextJS"
-        ]
+        "technologies": ["Tailwind", "TypeScript", "React", "NextJS"]
       },
       {
         "name": "BombaiMTY",
         "projectUrl": "https://bombai-mty-menu.vercel.app/",
         "repoUrl": "https://github.com/kelvinsanchez15/bombai-menu",
         "imgPath": "projectMedia/bombai-mty.png",
-        "imgAlt": "BombaiMTY website preview",
-        "summary": "بوابة مبيعات طعام سريع مع الدفع عبر واتساب.",
+        "imgAlt": "معاينة موقع BombaiMTY",
+        "summary": "بوابة مبيعات للوجبات السريعة مع نظام الدفع عبر WhatsApp.",
         "keyFeatures": [
-          "فلتر المنتجات",
+          "فلترة المنتجات",
           "عربة التسوق",
-          "صورة الغلاف",
-          "تكامل Google Sheets"
+          "صورة غلاف",
+          "تكامل مع Google Sheets"
         ],
-        "technologies": [
-          "Chakra UI",
-          "TypeScript",
-          "React",
-          "NextJS"
-        ]
+        "technologies": ["Chakra UI", "TypeScript", "React", "NextJS"]
       }
     ]
   },
-  "blogData": {
-    "featuredArticle": "مقالة مميزة",
+  "blog": {
+    "featuredArticle": "مقال مميز",
     "mostRecent": "الأحدث",
     "button": "المزيد من المقالات"
   },
-  "contactData": {
-    "title": "تواصل",
-    "p1": "إذا كنت مهتمًا بتوظيفي في مشروعك، فيرجى استخدام النموذج أدناه للتواصل. هل تريد معرفة كيف أعمل وماذا يمكنني أن أقدم؟ تفضل بزيارة ",
-    "p2": "أعمالي",
-    "p3": "و",
+  "contact": {
+    "title": "اتصل بي",
+    "p1": "إذا كنت مهتماً بتوظيفي لمشروعك، يرجى استخدام النموذج أدناه للتواصل معي. هل تريد معرفة كيف أعمل وماذا يمكنني أن أقدم؟ تفضل بزيارة ",
+    "p2": "معرض أعمالي",
+    "p3": " و ",
     "p4": "سيرتي الذاتية",
-    "resumeLink": "/resume/resume-en.pdf",
-    "subtitle": "يمكنك أيضًا العثور عليّ على القنوات التالية",
+    "resumeLink": "/resume/resume-ar.pdf",
+    "subtitle": "يمكنك العثور عليّ أيضاً عبر القنوات التالية",
     "formTitle": "تواصل معي",
     "firstNameLabel": "الاسم الأول",
-    "lastNameLabel": "الاسم الأخير",
+    "lastNameLabel": "اسم العائلة",
     "emailLabel": "البريد الإلكتروني",
     "messageLabel": "الرسالة",
-    "placeholder": "لا تتردد في تضمين أي تفاصيل.",
+    "placeholder": "لا تتردد في إضافة أي تفاصيل.",
     "submitButton": "إرسال",
     "requiredErrorMessage": "مطلوب",
-    "invalidEmailErrorMessage": "صيغة بريد إلكتروني غير صالحة"
+    "invalidEmailErrorMessage": "تنسيق البريد الإلكتروني غير صالح"
   }
 }

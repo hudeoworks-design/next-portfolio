@@ -1,5 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/pages/home/Hero";
+import About from "../../components/pages/About";
 
 // import content from '../../lib/i18n/locales/en.json';
 // import Navbar from "@/components/shared/Navbar";
@@ -18,6 +19,7 @@ export default async function Page() {
     <> 
       <Navbar />      
       <Hero />
+      <About />
     </>
   );
 }

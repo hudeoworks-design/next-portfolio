@@ -80,20 +80,20 @@ const localeNames: Record<string, Record<NavbarKeys, string>> = {
 
 export default function ElevateAppBar() {
   const params = useParams();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
   
   // App Router typically uses a dynamic [lang] or [locale] segment
   // Assumes your folder is app/[lang]/page.tsx
-  const currentLocale = params.locale as string || 'en';
-
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
+  const currentLocale = params.locale as string;
+  const notEnglishLocale = currentLocale !== 'en' ? `/${currentLocale}` : '';
 
   const menuItems = [
-    { link: '/', name: localeNames[currentLocale].home, icon: <HomeIcon /> },
-    { link: '/#about', name: localeNames[currentLocale].about, icon: <PermIdentityIcon /> },
-    { link: '/#portfolio', name: localeNames[currentLocale].portfolio, icon: <WorkIcon /> },
-    { link: '/#blog', name: localeNames[currentLocale].blog, icon: <AssignmentIcon /> },
-    { link: '/#contact', name: localeNames[currentLocale].contact, icon: <MailIcon /> },
+    { link: `/`, name: localeNames[currentLocale].home, icon: <HomeIcon /> },
+    { link: `/${notEnglishLocale}#about`, name: localeNames[currentLocale].about, icon: <PermIdentityIcon /> },
+    { link: `/${notEnglishLocale}#portfolio`, name: localeNames[currentLocale].portfolio, icon: <WorkIcon /> },
+    { link: `/${notEnglishLocale}#blog`, name: localeNames[currentLocale].blog, icon: <AssignmentIcon /> },
+    { link: `/${notEnglishLocale}#contact`, name: localeNames[currentLocale].contact, icon: <MailIcon /> },
   ];
 
   return (
