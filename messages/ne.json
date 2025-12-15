@@ -62,7 +62,7 @@
     "education": "शिक्षा",
     "items": {
       "mba": {
-        "title": "Masters in Business Administration (MBA)", 
+        "title": "Masters in Business Administration (MBA)",
         "org": "Everest University, Orlando, Florida",
         "date": "Aug 2021 - May 2024",
         "desc": "Focus on modern web technologies and agile software development practices."
@@ -90,7 +90,11 @@
     }
   },
   "portfolio": {
-    "portfolioTitle": "पोर्टफोलियो",
+    "title": "पोर्टफोलियो",
+    "repoAriaLabel": "प्रोजेक्ट गिटहब भण्डारमा लिङ्क",
+    "repoButtonText": "भण्डार",
+    "liveAriaLabel": "प्रोजेक्टको प्रत्यक्ष पूर्वावलोकनमा लिङ्क",
+    "liveButtonText": "प्रत्यक्ष हेर्नुहोस्",
     "projects": [
       {
         "name": "alacartadigital",

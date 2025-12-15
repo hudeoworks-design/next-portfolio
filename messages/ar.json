@@ -90,7 +90,11 @@
     }
   },
   "portfolio": {
-    "portfolioTitle": "معرض الأعمال",
+    "title": "معرض الأعمال",
+    "repoAriaLabel": "رابط إلى مستودع GitHub للمشروع",
+    "repoButtonText": "المستودع",
+    "liveAriaLabel": "رابط إلى المعاينة المباشرة للمشروع",
+    "liveButtonText": "عرض مباشر",
     "projects": [
       {
         "name": "alacartadigital",

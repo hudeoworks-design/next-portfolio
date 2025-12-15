@@ -90,7 +90,11 @@
     }
   },
   "portfolio": {
-    "portfolioTitle": "Portfolio",
+    "title": "Portfolio",
+    "repoAriaLabel": "Link to project GitHub repository",
+    "repoButtonText": "Repo",
+    "liveAriaLabel": "Link to project live preview",
+    "liveButtonText": "Live",
     "projects": [
       {
         "name": "alacartadigital",

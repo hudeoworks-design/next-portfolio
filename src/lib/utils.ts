@@ -7,5 +7,6 @@ export function getLayoutDirection(locale: string): 'ltr' | 'rtl' {
   if (locale === "ar") {
     return "rtl";
   }
+  // You might consider adding other RTL locales here (e.g., 'he' for Hebrew)
   return "ltr";
 }

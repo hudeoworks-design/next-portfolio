@@ -28,7 +28,7 @@
       "aboutTitle": "Acerca de mí",
       "bioParagraph1": "Soy un desarrollador frontend senior con más de 10 años de experiencia creando aplicaciones web rápidas, escalables y visualmente pulidas, ahora mejoradas con funciones impulsadas por IA que ofrecen experiencias de usuario más inteligentes.",
       "bioParagraph2": "Me especializo en frameworks modernos como React, Angular y Vue, con un enfoque profundo en diseño UI/UX, optimización del rendimiento y usabilidad fluida. Mi trabajo reciente aprovecha herramientas de IA y APIs para construir interfaces más dinámicas, personalizadas e inteligentes, desde componentes predictivos hasta UIs conversacionales y perspectivas en tiempo real.",
-      "bioParagraph3": "Me encanta convertir ideas complejas en productos digitales intuitivos y de alto impacto. Ya sea colaborando con startups o equipos empresariales, aporto una combinación de liderazgo técnico, pensamiento de diseño y una mentalidad orientada al futuro que ayuda a los equipos a innovar con confianza." 
+      "bioParagraph3": "Me encanta convertir ideas complejas en productos digitales intuitivos y de alto impacto. Ya sea colaborando con startups o equipos empresariales, aporto una combinación de liderazgo técnico, pensamiento de diseño y una mentalidad orientada al futuro que ayuda a los equipos a innovar con confianza."
     },
     "socialLinks": {
       "title": "Encuéntrame en",
@@ -90,7 +90,11 @@
     }
   },
   "portfolio": {
-    "portfolioTitle": "Portafolio",
+    "title": "Portafolio",
+    "repoAriaLabel": "Enlace al repositorio de GitHub del proyecto",
+    "repoButtonText": "Repositorio",
+    "liveAriaLabel": "Enlace a la vista previa en vivo del proyecto",
+    "liveButtonText": "Demo en vivo",
     "projects": [
       {
         "name": "alacartadigital",

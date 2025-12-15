@@ -4,8 +4,6 @@ import { useState } from 'react';
 import {
   AppBar,
   Toolbar,
-  useScrollTrigger,
-  Slide,
   Typography,
   IconButton,
   Container,
@@ -26,19 +24,6 @@ import AnimatedLink from '../shared/AnimatedLink';
 import LanguageSelector from '../shared/LanguageSelector';
 import NavigationDrawer from '../shared/NavigationDrawer';
 import ThemeSwitcher from '../shared/ThemeSwitcher';
-
-interface Props {
-  children: React.ReactElement;
-}
-
-function HideOnScroll({ children }: Props) {
-  const trigger = useScrollTrigger();
-  return (
-    <Slide appear={false} direction="down" in={!trigger}>
-      {children}
-    </Slide>
-  );
-}
 
 type NavbarKeys = 'logo' | 'home' | 'about' | 'portfolio' | 'contact' | 'blog';
 
@@ -98,7 +83,7 @@ export default function ElevateAppBar() {
 
   return (
     <nav id="navbar">
-      <HideOnScroll>
+      {/* <HideOnScroll> */}
         <AppBar elevation={0} color="inherit" sx={{ borderBottom: '1px solid', borderColor: 'divider' }}>
           <Container maxWidth="lg">
             <Toolbar disableGutters>
@@ -141,7 +126,7 @@ export default function ElevateAppBar() {
             </Toolbar>
           </Container>
         </AppBar>
-      </HideOnScroll>
+      {/* </HideOnScroll> */}
 
       <NavigationDrawer
         menuItems={menuItems}
