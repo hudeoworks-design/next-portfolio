@@ -24,6 +24,7 @@ import {
 
 import BusinessIcon from '@mui/icons-material/Business';
 import SchoolIcon from '@mui/icons-material/School';
+import ShortCenteredDivider from '@/components/shared/ShortCenteredDivider';
 
 interface TimelineData {
   key: string;
@@ -99,6 +100,9 @@ const ProfessionalTimeline: React.FC = () => {
       <Typography variant="h3" align="center" gutterBottom sx={{ mb: 6, fontWeight: 800 }}>
         {t('title')}
       </Typography>
+      
+      <ShortCenteredDivider sx={{ mb: 4 }} />
+      
       <Grid container spacing={4}>
         <Grid size={{ xs: 12 }}>
           {renderTimelineSection(t('experience'), experienceData)}
