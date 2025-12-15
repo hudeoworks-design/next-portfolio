@@ -1,20 +1,11 @@
-import path from "path";
-import { promises as fs } from "fs";
-
-export function getLayoutDirection(locale: string): string {
+/**
+ * Determines the layout direction (LTR or RTL) based on the provided locale code.
+ * @param locale The locale string (e.g., 'en', 'ar').
+ * @returns 'rtl' for Arabic, otherwise 'ltr'.
+ */
+export function getLayoutDirection(locale: string): 'ltr' | 'rtl' {
   if (locale === "ar") {
     return "rtl";
   }
   return "ltr";
-}
-
-export async function getData(locale: string) {
-  const filePath = path.join(
-    process.cwd(),
-    `src/lib/i18n/locales/${locale}.json`
-  );
-  const fileContent = await fs.readFile(filePath, "utf8");
-  const translations = JSON.parse(fileContent);
-
-  return translations;
 }
