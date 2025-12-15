@@ -12,17 +12,17 @@ import {
   Grid, // Ensure Grid2 is imported if using size prop
   Box,
   Button,
-  Card, Link, Avatar
+  Card, Avatar
 } from '@mui/material';
 import { Description } from '@mui/icons-material';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import skillIcons from './constants/skillIcons';
 import ProfessionalTimeline from "@/components/pages/home/Timeline";
 
 // Assuming heroImage is correctly typed in your project
 import heroImage from "../../../public/subash.jpeg";
+import { getLayoutDirection } from '@/lib/utils';
+import { useParams } from 'next/navigation';
+import SocialLinks from '../shared/SocialLinks';
 
 const CustomDivider = styled(Divider)(({ theme }) => ({
   height: '4px',
@@ -32,6 +32,9 @@ const CustomDivider = styled(Divider)(({ theme }) => ({
 }));
 
 export default function About() {
+  const params = useParams(); // Correct way to get dynamic params like [lang]
+  // Assumes your folder structure is app/[lang]/...
+  const currentLocale = params.locale as string;
   const t = useTranslations('about');
 
   // To map over items in next-intl, we use t.raw() to get the array
@@ -72,6 +75,10 @@ export default function About() {
 
             <Grid container spacing={4} justifyContent={'center'}>
               <Grid size={{ xs: 12, md: 9 }}>
+                <Typography gutterBottom component="h5" variant="h5">
+                  {t('skillsTitle')}
+                </Typography>
+                <CustomDivider />
                 <Box
                   sx={{
                     display: 'flex',
@@ -102,7 +109,13 @@ export default function About() {
                 </Box>
               </Grid>
               <Grid size={{ xs: 12, md: 3 }} justifyContent={'flex-end'}>
-                <Box p={1}>
+                <Typography gutterBottom component="h5" variant="h5">
+                  {t('socialLinks.title')}
+                </Typography>
+                <CustomDivider />
+                <SocialLinks direction={getLayoutDirection(currentLocale)} />
+                <Box p={1} 
+                  dir={getLayoutDirection(currentLocale)}>
                   <Button
                     color="primary"
                     endIcon={<Description />}
@@ -116,7 +129,6 @@ export default function About() {
                   </Button>
 
                 </Box>
-                <SocialLinks />
               </Grid>
             </Grid>
           </Card>
@@ -197,55 +209,5 @@ const AboutMeMui: React.FC = () => {
         </Box>
       </Box>
     </Container>
-  );
-}
-
-const SocialLinks: React.FC = () => {
-  const t = useTranslations('about.socialLinks');
-  return (
-    <>
-      <Box p={1}>
-        <Button
-          endIcon={<TwitterIcon />}
-          href={t('twitter.url')}
-          target="_blank"
-          rel="noopener noreferrer"
-          color="primary"
-          aria-label={t('twitter.ariaLabel')}
-          sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s' }}
-          variant="outlined"
-        >
-          {t('twitter.buttonText')}
-        </Button>
-      </Box>
-      <Box p={1}>
-        <Button
-          endIcon={<GitHubIcon />}
-          href={t('github.url')}
-          target="_blank"
-          rel="noopener noreferrer"
-          color="primary"
-          aria-label={t('github.ariaLabel')}
-          sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s' }}
-          variant="outlined"
-        >
-          {t('github.buttonText')}
-        </Button>
-      </Box>
-      <Box p={1}>
-        <Button
-          endIcon={<LinkedInIcon />}
-          href={t('linkedin.url')}
-          target="_blank"
-          rel="noopener noreferrer"
-          color="primary"
-          aria-label={t('linkedin.ariaLabel')}
-          sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s' }}
-          variant="outlined"
-        >
-          {t('linkedin.buttonText')}
-        </Button>
-      </Box>
-    </>
   );
 }

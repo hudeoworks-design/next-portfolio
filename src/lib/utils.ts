@@ -1,7 +1,7 @@
 import path from "path";
 import { promises as fs } from "fs";
 
-export function getLayoutDirection(locale: string): string | undefined {
+export function getLayoutDirection(locale: string): string {
   if (locale === "ar") {
     return "rtl";
   }
