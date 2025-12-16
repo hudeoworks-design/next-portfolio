@@ -5,7 +5,6 @@ import Image from 'next/image'; // Use the modern Next Image component
 import { useTranslations } from 'next-intl'; // Import useTranslations hook
 import {
   Box,
-  Container,
   Typography,
   Grid,
   Card,
@@ -18,14 +17,11 @@ import {
   ButtonGroup,
   Button,
   Pagination,
-  CardActions,
-  CardMedia,
 } from '@mui/material/';
 // Icons imported once at the top
 import { ChevronRight, GitHub, Visibility } from '@mui/icons-material';
 import { getDataUrlWithShimmerEffect } from '@/lib/image-utils';
 import Link from '../shared/Link';
-import ShortCenteredDivider from '../shared/ui/ShortCenteredDivider';
 
 
 
