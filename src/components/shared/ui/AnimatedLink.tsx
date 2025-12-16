@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import Link from './Link'; 
+import Link from '../Link'; 
 
 /**
  * An animated link component that displays an expanding underline on hover.

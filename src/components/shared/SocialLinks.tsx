@@ -6,20 +6,16 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { useTranslations } from 'next-intl';
 
-// Define the shape of the props the component expects
 interface SocialLinksProps {
     direction: string;
 }
 
-// Update the component signature to accept a single props object,
-// and destructure 'direction' from it.
 const SocialLinks: React.FC<SocialLinksProps> = ({ direction }) => {
-    // Assuming 'useTranslations' is available and correctly implemented
     const t = useTranslations('about.socialLinks');
 
     return (
         <>
-            <Box p={1} dir={direction}>
+            <Box pb={1} dir={direction}>
                 <Button
                     endIcon={<TwitterIcon />}
                     href={t('twitter.url')}
@@ -27,14 +23,14 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ direction }) => {
                     rel="noopener noreferrer"
                     color="primary"
                     aria-label={t('twitter.ariaLabel')}
-                    sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s' }}
+                    sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s', width: '100%' }}
                     variant="outlined"
                     dir={direction}
                 >
                     {t('twitter.buttonText')}
                 </Button>
             </Box>
-            <Box p={1} dir={direction}>
+            <Box pb={1} dir={direction}>
                 <Button
                     endIcon={<GitHubIcon />}
                     href={t('github.url')}
@@ -42,14 +38,14 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ direction }) => {
                     rel="noopener noreferrer"
                     color="primary"
                     aria-label={t('github.ariaLabel')}
-                    sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s' }}
+                    sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s', width: '100%' }}
                     variant="outlined"
                     dir={direction}
                 >
                     {t('github.buttonText')}
                 </Button>
             </Box>
-            <Box p={1} dir={direction}>
+            <Box pb={1} dir={direction}>
                 <Button
                     endIcon={<LinkedInIcon />}
                     href={t('linkedin.url')}
@@ -57,7 +53,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ direction }) => {
                     rel="noopener noreferrer"
                     color="primary"
                     aria-label={t('linkedin.ariaLabel')}
-                    sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s' }}
+                    sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s', width: '100%' }}
                     variant="outlined"
                     dir={direction}
                 >

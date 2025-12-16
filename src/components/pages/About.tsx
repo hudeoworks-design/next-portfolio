@@ -4,10 +4,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { styled } from '@mui/material/styles';
 import {
   Container,
-  Divider,
   Typography,
   Grid, // Ensure Grid2 is imported if using size prop
   Box,
@@ -15,31 +13,15 @@ import {
   Card, Avatar
 } from '@mui/material';
 import { Description } from '@mui/icons-material';
-import skillIcons from './constants/skillIcons';
-import ProfessionalTimeline from "@/components/pages/home/Timeline";
 
 // Assuming heroImage is correctly typed in your project
 import heroImage from "../../../public/subash.jpeg";
 import { getLayoutDirection } from '@/lib/utils';
 import { useParams } from 'next/navigation';
 import SocialLinks from '../shared/SocialLinks';
-
-const CustomDivider = styled(Divider)(({ theme }) => ({
-  height: '4px',
-  width: '60px',
-  backgroundColor: theme.palette.primary.main,
-  marginBottom: theme.spacing(2),
-}));
+import SkillSet from '../shared/SkillSet';
 
 export default function About() {
-  const params = useParams(); // Correct way to get dynamic params like [lang]
-  // Assumes your folder structure is app/[lang]/...
-  const currentLocale = params.locale as string;
-  const t = useTranslations('about');
-
-  // To map over items in next-intl, we use t.raw() to get the array
-  // const aboutItems = t.raw('aboutItems') as string[];
-
   return (
     <Box
       component="section"
@@ -51,16 +33,9 @@ export default function About() {
         color: 'text.primary'
       }}
     >
-      <Container>
+      {/* <Container> */}
         <Grid container spacing={4}>
           {/* About Section */}
-          <Grid size={{ xs: 12, md: 4 }}>
-            <Typography gutterBottom component="h2" variant="h3">
-              {t('aboutTitle')}
-            </Typography>
-            <CustomDivider />
-          </Grid>
-
           <Card
             sx={{
               bgcolor: 'background.paper',
@@ -70,80 +45,18 @@ export default function About() {
               transition: 'background-color 0.3s'
             }}
           >
-
             <AboutMeMui />
-
-            <Grid container spacing={4} justifyContent={'center'}>
-              <Grid size={{ xs: 12, md: 9 }}>
-                <Typography gutterBottom component="h5" variant="h5">
-                  {t('skillsTitle')}
-                </Typography>
-                <CustomDivider />
-                <Box
-                  sx={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    fontSize: '3.5rem',
-                    gap: 3,
-                    justifyContent: {
-                      xs: 'center',
-                      md: 'flex-start',
-                    },
-                  }}
-                >
-                  {skillIcons.map((skillIcon) => (
-                    <Box
-                      key={skillIcon.label}
-                      title={skillIcon.label}
-                      sx={{
-                        transition: 'transform 0.2s, color 0.2s',
-                        '&:hover': {
-                          color: 'primary.main',
-                          transform: 'translateY(-5px)',
-                        },
-                      }}
-                    >
-                      {skillIcon.icon}
-                    </Box>
-                  ))}
-                </Box>
-              </Grid>
-              <Grid size={{ xs: 12, md: 3 }} justifyContent={'flex-end'}>
-                <Typography gutterBottom component="h5" variant="h5">
-                  {t('socialLinks.title')}
-                </Typography>
-                <CustomDivider />
-                <SocialLinks direction={getLayoutDirection(currentLocale)} />
-                <Box p={1} 
-                  dir={getLayoutDirection(currentLocale)}>
-                  <Button
-                    color="primary"
-                    endIcon={<Description />}
-                    href={t('resume.resumeLink')} // Changed from property access to function call
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s' }}
-                    variant="outlined"
-                  >
-                    {t('resume.resumeButton')}
-                  </Button>
-
-                </Box>
-              </Grid>
-            </Grid>
           </Card>
         </Grid>
-      </Container>
-
-      <ProfessionalTimeline />
-
+      {/* </Container> */}
     </Box>
   );
 }
 
 const AboutMeMui: React.FC = () => {
-  // 'AboutMe' refers to a section in your translation file (e.g., en.json)
-  const t = useTranslations('about.aboutItems');
+  const t = useTranslations('about');
+  const params = useParams(); 
+  const currentLocale = params.locale as string;
 
   return (
     <Container disableGutters maxWidth={false}>
@@ -151,7 +64,7 @@ const AboutMeMui: React.FC = () => {
         display="flex"
         flexDirection={{ xs: 'column', md: 'row' }}
         gap={3}
-        mt={4} // Equivalent to mt-8 in spacing scale
+        mt={4} 
       >
         {/* Avatar and Image component handling */}
         <Box flexShrink={0}>
@@ -159,13 +72,32 @@ const AboutMeMui: React.FC = () => {
             {/* Next/Image inside Avatar or a custom wrapper for better control */}
             <Image
               src={heroImage}
-              alt={t('profileAltText')} // Localized alt text
+              alt={t('aboutItems.profileAltText')} // Localized alt text
               style={{ objectFit: 'cover' }}
               fill
               sizes='100%'
               priority
             />
           </Avatar>
+
+          <Box mt={5} display="flex" flexDirection="column" textAlign={'left'} gap={1}>
+            <SocialLinks direction={getLayoutDirection(currentLocale)} />
+            <Box pb={1}
+              dir={getLayoutDirection(currentLocale)}>
+              <Button
+                color="primary"
+                endIcon={<Description />}
+                href={t('resume.resumeLink')} 
+                rel="noopener noreferrer"
+                target="_blank"
+                sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s', width: "100%" }}
+                variant="outlined"
+              >
+                {t('resume.resumeButton')}
+              </Button>
+
+            </Box>
+          </Box>
         </Box>
 
         <Box flex={1} minWidth={0}>
@@ -173,36 +105,47 @@ const AboutMeMui: React.FC = () => {
             {/* Profile Header */}
             <Box>
               <Typography variant="h4" component="h1" color="text.primary" mb={0.5}>
-                {t('name')}
+                {t('aboutItems.name')}
               </Typography>
               <Typography variant="subtitle1" color="text.secondary" mb={3}>
-                {t('handle')}
+                {t('aboutItems.handle')}
               </Typography>
             </Box>
 
             {/* About Me Section */}
             <Box
               flex={1}
-              bgcolor="background.default" // Use default background for a slight contrast
+              bgcolor="background.default"
               borderRadius={2}
-              p={2} // Equivalent to p-4
+              p={2}
               mb={4}
-              mt={2} // Equivalent to mt-4
+              mt={2}
             >
               <Box display="flex" flexDirection="column" gap={1.5}>
-                {/* Localized paragraphs */}
+                
                 <Typography variant="body1" color="text.secondary" lineHeight="relaxed">
-                  {t('aboutTitle')}
+                  {t('aboutItems.bioParagraph1')}
                 </Typography>
                 <Typography variant="body1" color="text.secondary" lineHeight="relaxed">
-                  {t('bioParagraph1')}
+                  {t('aboutItems.bioParagraph2')}
                 </Typography>
                 <Typography variant="body1" color="text.secondary" lineHeight="relaxed">
-                  {t('bioParagraph2')}
+                  {t('aboutItems.bioParagraph3')}
                 </Typography>
-                <Typography variant="body1" color="text.secondary" lineHeight="relaxed">
-                  {t('bioParagraph3')}
-                </Typography>
+              </Box>
+            </Box>
+
+            {/* Skills Section */}
+            <Box
+              flex={1}
+              bgcolor="background.default"
+              borderRadius={2}
+              p={2}
+              mb={4}
+              mt={2}
+            >
+              <Box display="flex" flexDirection="column" gap={1.5}>
+                <SkillSet />
               </Box>
             </Box>
           </Box>

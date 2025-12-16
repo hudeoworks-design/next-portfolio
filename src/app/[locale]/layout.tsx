@@ -1,7 +1,7 @@
 // app/[locale]/layout.tsx
 import type { Metadata } from 'next';
 import { getLayoutDirection } from '@/lib/utils';
-import { CustomThemeProvider } from '@/components/shared/CustomThemeProvider';
+import { CustomThemeProvider } from '@/components/CustomThemeProvider';
 import { getMessages } from 'next-intl/server';
 
 export const metadata: Metadata = {

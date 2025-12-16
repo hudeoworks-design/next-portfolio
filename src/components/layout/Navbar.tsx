@@ -20,10 +20,10 @@ import {
 import { useParams } from 'next/navigation'; // Correct hook for App Router locale
 
 import Link from '../shared/Link';
-import AnimatedLink from '../shared/AnimatedLink';
-import LanguageSelector from '../shared/LanguageSelector';
-import NavigationDrawer from '../shared/NavigationDrawer';
-import ThemeSwitcher from '../shared/ThemeSwitcher';
+import AnimatedLink from '../shared/ui/AnimatedLink';
+import LanguageSelector from '../LanguageSelector';
+import ThemeSwitcher from '../ThemeSwitcher';
+import NavigationDrawer from './NavigationDrawer';
 
 type NavbarKeys = 'logo' | 'home' | 'about' | 'portfolio' | 'contact' | 'blog';
 
@@ -67,7 +67,7 @@ export default function ElevateAppBar() {
   const params = useParams();
   const [mobileOpen, setMobileOpen] = useState(false);
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
-  
+
   // App Router typically uses a dynamic [lang] or [locale] segment
   // Assumes your folder is app/[lang]/page.tsx
   const currentLocale = params.locale as string;
@@ -83,51 +83,50 @@ export default function ElevateAppBar() {
 
   return (
     <nav id="navbar">
-      {/* <HideOnScroll> */}
-        <AppBar elevation={0} color="inherit" sx={{ borderBottom: '1px solid', borderColor: 'divider' }}>
-          <Container maxWidth="lg">
-            <Toolbar disableGutters>
-              <Typography
-                variant="h3"
-                component={Link}
-                href="/"
-                color="primary"
-                sx={{ flexGrow: 1, textDecoration: 'none', fontWeight: 'bold' }}
-              >
-                {localeNames[currentLocale].logo}
-              </Typography>
+      <AppBar elevation={0} color="inherit" sx={{ borderBottom: '1px solid', borderColor: 'divider' }}>
+        <Container maxWidth="lg">
+          <Toolbar disableGutters>
+            <Typography
+              variant="h3"
+              component={Link}
+              href="/"
+              color="primary"
+              sx={{ flexGrow: 1, textDecoration: 'none', fontWeight: 'bold' }}
+            >
+              {localeNames[currentLocale].logo}
+            </Typography>
 
-              {/* Desktop Menu */}
-              <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 2 }}>
-                {menuItems.map((item) => (
-                  <AnimatedLink
-                    key={item.name}
-                    href={item.link}
-                    variant="button"
-                    color="text.primary"
-                  >
-                    {item.name}
-                  </AnimatedLink>
-                ))}
-              </Box>
+            {/* Desktop Menu */}
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 2 }}>
+              {menuItems.map((item) => (
+                <AnimatedLink
+                  key={item.name}
+                  href={item.link}
+                  variant="button"
+                  color="text.primary"
+                >
+                  {item.name}
+                </AnimatedLink>
+              ))}
+            </Box>
 
-              <LanguageSelector />
+            <LanguageSelector />
 
-              <ThemeSwitcher />
+            <ThemeSwitcher />
 
-              <IconButton
-                aria-label="Open Navigation"
-                edge="end"
-                onClick={handleDrawerToggle}
-                sx={{ display: { md: 'none' }, ml: 1 }}
-              >
-                <MenuIcon color="secondary" fontSize="large" />
-              </IconButton>
-            </Toolbar>
-          </Container>
-        </AppBar>
-      {/* </HideOnScroll> */}
+            <IconButton
+              aria-label="Open Navigation"
+              edge="end"
+              onClick={handleDrawerToggle}
+              sx={{ display: { md: 'none' }, ml: 1 }}
+            >
+              <MenuIcon color="secondary" fontSize="large" />
+            </IconButton>
+          </Toolbar>
+        </Container>
+      </AppBar>
 
+      {/* Mobile Navigation Drawer */}
       <NavigationDrawer
         menuItems={menuItems}
         open={mobileOpen}

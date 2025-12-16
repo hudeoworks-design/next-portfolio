@@ -10,6 +10,7 @@ import {
   Grid,
   useTheme,
   useMediaQuery,
+  Card,
 } from '@mui/material';
 import {
   Timeline,
@@ -24,7 +25,6 @@ import {
 
 import BusinessIcon from '@mui/icons-material/Business';
 import SchoolIcon from '@mui/icons-material/School';
-import ShortCenteredDivider from '@/components/shared/ShortCenteredDivider';
 
 interface TimelineData {
   key: string;
@@ -49,7 +49,7 @@ const ProfessionalTimeline: React.FC = () => {
 
   const renderTimelineSection = (title: string, data: TimelineData[]) => (
     <Box sx={{ mb: 4 }}>
-      <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', mb: 3 }}>
+      <Typography variant="h4" align="center" gutterBottom sx={{ mb: 3, fontWeight: 700 }}>
         {title}
       </Typography>
 
@@ -96,19 +96,36 @@ const ProfessionalTimeline: React.FC = () => {
   );
 
   return (
-    <Box sx={{ maxWidth: 1200, mx: 'auto', p: { xs: 2, md: 4 } }}>
-      <Typography variant="h3" align="center" gutterBottom sx={{ mb: 6, fontWeight: 800 }}>
-        {t('title')}
-      </Typography>
-      
-      <ShortCenteredDivider sx={{ mb: 4 }} />
-      
+    <Box sx={{ maxWidth: 1200, mx: 'auto', my: 8 }}>
       <Grid container spacing={4}>
         <Grid size={{ xs: 12 }}>
-          {renderTimelineSection(t('experience'), experienceData)}
+          <Card
+            sx={{
+              bgcolor: 'background.paper',
+              borderRadius: 2,
+              p: 4,
+              mx: 'auto',
+              height: '100%',
+              transition: 'background-color 0.3s'
+            }}
+          >
+            {renderTimelineSection(t('experience'), experienceData)}
+          </Card>
+
         </Grid>
         <Grid size={{ xs: 12 }}>
-          {renderTimelineSection(t('education'), educationData)}
+          <Card
+            sx={{
+              bgcolor: 'background.paper',
+              borderRadius: 2,
+              p: 4,
+              height: '100%',
+              transition: 'background-color 0.3s'
+            }}
+          >
+            {renderTimelineSection(t('education'), educationData)}
+          </Card>
+
         </Grid>
       </Grid>
 
