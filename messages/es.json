@@ -20,8 +20,8 @@
     "button2": "Contáctame"
   },
   "about": {
-    "aboutTitle": "Sobre mí",
-    "aboutItems": {
+    "title": "Sobre mí",
+    "aboutme": {
       "profileAltText": "Foto de perfil de Subash Maharjan",
       "name": "Subash Maharjan",
       "handle": "@hudeoworks-design",
@@ -168,7 +168,7 @@
     "button": "Más artículos"
   },
   "contact": {
-    "title": "Contacto",
+    "title": "Contáctame",
     "p1": "Si estás interesado en contratarme para tu proyecto, por favor utiliza el siguiente formulario para ponerte en contacto. ¿Quieres saber cómo trabajo y qué puedo ofrecer? Echa un vistazo a mi ",
     "p2": "portafolio",
     "p3": " y a mi ",
@@ -181,8 +181,14 @@
     "emailLabel": "Correo electrónico",
     "messageLabel": "Mensaje",
     "placeholder": "Siéntete libre de incluir cualquier detalle.",
-    "submitButton": "enviar",
     "requiredErrorMessage": "Requerido",
-    "invalidEmailErrorMessage": "Formato de correo inválido"
+    "invalidEmailErrorMessage": "Formato de correo inválido",
+    "successMessage": "¡Gracias por ponerte en contacto! Te responderé lo antes posible.",
+    "submitButton": "Enviar mensaje",
+    "fields": {
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "message": "Tu mensaje"
+    }
   }
 }

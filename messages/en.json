@@ -20,8 +20,8 @@
     "button2": "Contact me"
   },
   "about": {
-    "aboutTitle": "About me",
-    "aboutItems": {
+    "title": "About me",
+    "aboutme": {
       "profileAltText": "Subash Maharjan's profile picture",
       "name": "Subash Maharjan",
       "handle": "@hudeoworks-design",
@@ -135,7 +135,7 @@
         "name": "Codebank",
         "projectUrl": "https://codebank-web.vercel.app/",
         "repoUrl": "https://github.com/submjn/codebank-landing-page",
-        "imgPath": "projectMedia/codebank.png",
+        "imgPath": "projectMedia/easybank.png",
         "imgAlt": "Codebank website preview",
         "summary": "Fully responsive SAAS product landing page designed with Tailwind CSS.",
         "keyFeatures": [
@@ -168,7 +168,7 @@
     "button": "More Articles"
   },
   "contact": {
-    "title": "Contact",
+    "title": "Contact Me",
     "p1": "If you are interested in hiring me for your project please use the form below to get in touch. Want to know how I work and what I can offer? Check out my ",
     "p2": "portfolio",
     "p3": " and ",
@@ -181,8 +181,14 @@
     "emailLabel": "Email",
     "messageLabel": "Message",
     "placeholder": "Feel free to include any details.",
-    "submitButton": "send",
     "requiredErrorMessage": "Required",
-    "invalidEmailErrorMessage": "Invalid email format"
+    "invalidEmailErrorMessage": "Invalid email format",
+    "successMessage": "Thank you for reaching out! I'll get back to you soon.",
+    "submitButton": "Send Message",
+    "fields": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "message": "Your Message"
+    }
   }
 }

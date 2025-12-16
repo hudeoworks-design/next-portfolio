@@ -20,8 +20,8 @@
     "button2": "اتصل بي"
   },
   "about": {
-    "aboutTitle": "من أنا",
-    "aboutItems": {
+    "title": "من أنا",
+    "aboutme": {
       "profileAltText": "صورة ملف تعريف سوباش ماهارجان",
       "name": "Subash Maharjan",
       "handle": "@hudeoworks-design",
@@ -181,8 +181,14 @@
     "emailLabel": "البريد الإلكتروني",
     "messageLabel": "الرسالة",
     "placeholder": "لا تتردد في إضافة أي تفاصيل.",
-    "submitButton": "إرسال",
     "requiredErrorMessage": "مطلوب",
-    "invalidEmailErrorMessage": "تنسيق البريد الإلكتروني غير صالح"
+    "invalidEmailErrorMessage": "تنسيق البريد الإلكتروني غير صالح",
+    "successMessage": "شكراً لتواصلك معي! سأقوم بالرد عليك في أقرب وقت ممكن.",
+    "submitButton": "إرسال الرسالة",
+    "fields": {
+      "name": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "message": "رسالتك"
+    }
   }
 }
