@@ -1,15 +1,26 @@
+// proxy.ts
 import createMiddleware from 'next-intl/middleware';
 import {routing} from './i18n/routing';
- 
-export default createMiddleware(routing);
- 
+import { NextRequest } from 'next/server';
+
+// 1. Initialize next-intl routing
+const handleI18nRouting = createMiddleware(routing);
+
+export default async function proxy(request: NextRequest) {
+  // 2. Execute i18n routing
+  // This handles the [locale] prefix for all pages, including MDX
+  return handleI18nRouting(request);
+}
+
 export const config = {
-  // Match all pathnames except for
-  // - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
-  // - … the ones containing a dot (e.g. `favicon.ico`)
+  // 3. Matcher for all page routes (including MDX)
+  // Excludes internal Next.js paths and files with extensions (images, etc.)
   matcher: [
-    '/((?!api|trpc|_next|_vercel|.*\\..*).*)',
-    // Match all pathnames within `{/:locale}/users`
-    '/([\\w-]+)?/home/(.+)'
+    // Match the root
+    '/', 
+    // Match all localized paths (e.g., /en/about, /de/blog/post-1)
+    '/(ar|en|es|ne)/:path*', 
+    // Standard catch-all that excludes system assets
+    '/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)'
   ]
 };

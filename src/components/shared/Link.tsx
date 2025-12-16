@@ -93,3 +93,34 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(props,
 });
 
 export default Link;
+
+// import React, { forwardRef } from 'react';
+// import NextLink, { LinkProps as NextLinkProps } from 'next/link';
+// import { Link as MuiLink, LinkProps as MuiLinkProps } from '@mui/material';
+
+// // Combine MUI and Next.js prop types
+// export type CustomLinkProps = Omit<MuiLinkProps, 'href'> & 
+//   Pick<NextLinkProps, 'href' | 'as' | 'prefetch' | 'replace' | 'scroll' | 'shallow' | 'locale'>;
+
+// const Link = forwardRef<HTMLAnchorElement, CustomLinkProps>(
+//   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+//   ({ href, as, prefetch, replace, scroll, shallow, locale, ...props }, ref) => {
+//     return (
+//       <MuiLink
+//         ref={ref}
+//         component={NextLink} // Directly use NextLink as the base component
+//         
+//         href={href as any}
+//         as={as}
+//         prefetch={prefetch}
+//         replace={replace}
+//         scroll={scroll}
+//         {...props}
+//       />
+//     );
+//   }
+// );
+
+// Link.displayName = 'Link';
+
+// export default Link;

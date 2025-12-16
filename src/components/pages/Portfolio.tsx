@@ -52,7 +52,7 @@ export default function Portfolio() {
   const [rowsPerPage, setRowsPerPage] = useState(2);
   const paginatedItems = projectsData.slice((page - 1) * rowsPerPage, (page - 1) * rowsPerPage + rowsPerPage);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  
   const handleChangePage = (event: any, newPage: SetStateAction<number>) => {
     setPage(newPage);
   };

@@ -17,7 +17,7 @@ import {
   Mail as MailIcon,
   PermIdentity as PermIdentityIcon,
 } from '@mui/icons-material';
-import { useParams } from 'next/navigation'; // Correct hook for App Router locale
+import { useParams, usePathname } from 'next/navigation'; // Correct hook for App Router locale
 
 import Link from '../shared/Link';
 import AnimatedLink from '../shared/ui/AnimatedLink';
@@ -65,20 +65,24 @@ const localeNames: Record<string, Record<NavbarKeys, string>> = {
 
 export default function ElevateAppBar() {
   const params = useParams();
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+
   const [mobileOpen, setMobileOpen] = useState(false);
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
   // App Router typically uses a dynamic [lang] or [locale] segment
   // Assumes your folder is app/[lang]/page.tsx
   const currentLocale = params.locale as string;
-  const notEnglishLocale = currentLocale !== 'en' ? `/${currentLocale}` : '';
+  const notEnglishLocale = currentLocale !== 'en' ? `/${currentLocale}` : '/';
+  const pageJumpRef = isHome ? '#' : currentLocale !== 'en' ? '/' : '';
 
   const menuItems = [
-    { link: `/`, name: localeNames[currentLocale].home, icon: <HomeIcon /> },
-    { link: `/${notEnglishLocale}#about`, name: localeNames[currentLocale].about, icon: <PermIdentityIcon /> },
-    { link: `/${notEnglishLocale}#portfolio`, name: localeNames[currentLocale].portfolio, icon: <WorkIcon /> },
-    { link: `/${notEnglishLocale}#blog`, name: localeNames[currentLocale].blog, icon: <AssignmentIcon /> },
-    { link: `/${notEnglishLocale}#contact`, name: localeNames[currentLocale].contact, icon: <MailIcon /> },
+    { link: `${notEnglishLocale}`, name: localeNames[currentLocale].home, icon: <HomeIcon /> },
+    { link: `${notEnglishLocale}${pageJumpRef}about`, name: localeNames[currentLocale].about, icon: <PermIdentityIcon /> },
+    { link: `${notEnglishLocale}${pageJumpRef}portfolio`, name: localeNames[currentLocale].portfolio, icon: <WorkIcon /> },
+    { link: `${notEnglishLocale}${pageJumpRef}blogs`, name: localeNames[currentLocale].blog, icon: <AssignmentIcon /> },
+    { link: `${notEnglishLocale}${pageJumpRef}contact`, name: localeNames[currentLocale].contact, icon: <MailIcon /> }
   ];
 
   return (

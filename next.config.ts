@@ -1,22 +1,19 @@
-import type { NextConfig } from "next";
+// next.config.mjs
 import createNextIntlPlugin from 'next-intl/plugin';
+import withMDX from '@next/mdx';
 
-const nextConfig: NextConfig = {
-  reactStrictMode: true,
+const withNextIntl = createNextIntlPlugin();
+const nextConfig = {
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   webpack: (config, { isServer }) => {
-    // If the build is not for the server (i.e. client-side)
     if (!isServer) {
       config.resolve.fallback = {
-        fs: false, // Prevents fs from being bundled
+        fs: false,
       };
     }
+
     return config;
-  },
-  // Disable TypeScript type checking during build to work around Next.js 15.3.1 params type issue
-  typescript: {
-    ignoreBuildErrors: true,
   },
 };
 
-const withNextIntl = createNextIntlPlugin();
-export default withNextIntl(nextConfig);
+export default withNextIntl(withMDX((nextConfig)));

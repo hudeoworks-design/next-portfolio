@@ -85,7 +85,7 @@ export function CustomThemeProvider({
 }: {
     children: ReactNode;
     locale: string;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    
     messages: Record<string, any>;
 }) {
     // You must also set the 'dir' attribute on the document root manually for native elements

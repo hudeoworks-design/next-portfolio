@@ -1,0 +1,50 @@
+---
+title: Next Blog
+description: Welcome to my second blog post! This is a page created using MDX.
+date: "2022-01-02"
+author: Subash Maharjan
+tags: mdx, react
+---
+## Learning Next.js
+### Why Next.js?
+# Learning Material UI
+## Why Material UI?
+## Conclusion
+
+# Code Highlighting
+Here’s an example of a simple MUI-powered header component:
+```jsx
+import React from "react";
+import { AppBar, Toolbar, Typography, Button } from "@mui/material";
+export default function Header() {
+  return (
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6" mr={5}>
+          My Blog
+        </Typography>
+        <Button color="inherit">Home</Button>
+        <Button color="inherit">Blog</Button>
+        <Button color="inherit">About</Button>
+      </Toolbar>
+    </AppBar>
+  );
+}
+```
+
+# Interactive Counter Example
+Here’s a simple counter component you can interact with:
+```tsx
+import { useState } from "react";
+export default function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <button onClick={() => setCount(c => c - 1)}>-</button>
+      <span>{count}</span>
+      <button onClick={() => setCount(c => c + 1)}>+</button>
+    </div>
+  );
+}
+```
+<Counter />
