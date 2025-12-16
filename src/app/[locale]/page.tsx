@@ -6,7 +6,6 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/pages/home/Hero";
 import About from "../../components/pages/About";
 import Portfolio from "@/components/pages/Portfolio";
-import ProfessionalTimeline from "@/components/pages/home/Timeline";
 
 // Other imports that are currently commented out:
 // import content from '../../lib/i18n/locales/en.json';
@@ -72,7 +71,6 @@ export default function Page(props: Props) {
           <Hero />
           <About />
           <Portfolio />
-          <ProfessionalTimeline />
         </Box>
       </Container>
       <ScrollTop {...props}>

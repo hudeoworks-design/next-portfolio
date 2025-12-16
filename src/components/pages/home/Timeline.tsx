@@ -48,50 +48,60 @@ const ProfessionalTimeline: React.FC = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const renderTimelineSection = (title: string, data: TimelineData[]) => (
-    <Box sx={{ mb: 4 }}>
+    <Box>
       <Typography variant="h4" align="center" gutterBottom sx={{ mb: 3, fontWeight: 700 }}>
         {title}
       </Typography>
+      <Box
+        flex={1}
+        bgcolor="background.default"
+        borderRadius={2}
+        p={2}
+      >
+        <Box display="flex" flexDirection="column">
 
-      <Timeline position={isMobile ? 'right' : 'alternate'}>
-        {data.map((item) => (
-          <TimelineItem key={item.key}>
-            {!isMobile && (
-              <TimelineOppositeContent sx={{ m: 'auto 0' }} variant="body2" color="text.secondary">
-                {t(`items.${item.key}.date`)}
-              </TimelineOppositeContent>
-            )}
-            <TimelineSeparator>
-              <TimelineConnector />
-              <TimelineDot color="primary" variant="outlined">
-                {item.icon}
-              </TimelineDot>
-              <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent sx={{ py: '12px', px: 2 }}>
-              <Paper elevation={3} sx={{ p: 3, borderRadius: 2 }}>
-                <Typography variant="h6" component="span" fontWeight="bold">
-                  {t(`items.${item.key}.title`)}
-                </Typography>
-                <Typography color="text.secondary">{t(`items.${item.key}.org`)}</Typography>
-                {isMobile && (
-                  <Typography variant="caption" display="block" color="primary">
+          <Timeline position={isMobile ? 'right' : 'alternate'}>
+            {data.map((item) => (
+              <TimelineItem key={item.key}>
+                {!isMobile && (
+                  <TimelineOppositeContent sx={{ m: 'auto 0' }} variant="body2" color="text.secondary">
                     {t(`items.${item.key}.date`)}
-                  </Typography>
+                  </TimelineOppositeContent>
                 )}
-                <Typography sx={{ mt: 1, mb: 2 }}>
-                  {t(`items.${item.key}.desc`)}
-                </Typography>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                  {item.skills.map((skill) => (
-                    <Chip key={skill} label={skill} size="small" variant="outlined" />
-                  ))}
-                </Box>
-              </Paper>
-            </TimelineContent>
-          </TimelineItem>
-        ))}
-      </Timeline>
+                <TimelineSeparator>
+                  <TimelineConnector />
+                  <TimelineDot color="primary" variant="outlined">
+                    {item.icon}
+                  </TimelineDot>
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent sx={{ py: '12px', px: 2 }}>
+                  <Paper elevation={3} sx={{ p: 3, borderRadius: 2 }}>
+                    <Typography variant="h6" component="span" fontWeight="bold">
+                      {t(`items.${item.key}.title`)}
+                    </Typography>
+                    <Typography color="text.secondary">{t(`items.${item.key}.org`)}</Typography>
+                    {isMobile && (
+                      <Typography variant="caption" display="block" color="primary">
+                        {t(`items.${item.key}.date`)}
+                      </Typography>
+                    )}
+                    <Typography sx={{ mt: 1, mb: 2 }}>
+                      {t(`items.${item.key}.desc`)}
+                    </Typography>
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                      {item.skills.map((skill) => (
+                        <Chip key={skill} label={skill} size="small" variant="outlined" />
+                      ))}
+                    </Box>
+                  </Paper>
+                </TimelineContent>
+              </TimelineItem>
+            ))}
+          </Timeline>
+          
+        </Box>
+      </Box>
     </Box>
   );
 
@@ -99,36 +109,12 @@ const ProfessionalTimeline: React.FC = () => {
     <Box sx={{ maxWidth: 1200, mx: 'auto', my: 8 }}>
       <Grid container spacing={4}>
         <Grid size={{ xs: 12 }}>
-          <Card
-            sx={{
-              bgcolor: 'background.paper',
-              borderRadius: 2,
-              p: 4,
-              mx: 'auto',
-              height: '100%',
-              transition: 'background-color 0.3s'
-            }}
-          >
-            {renderTimelineSection(t('experience'), experienceData)}
-          </Card>
-
+          {renderTimelineSection(t('experience'), experienceData)}
         </Grid>
         <Grid size={{ xs: 12 }}>
-          <Card
-            sx={{
-              bgcolor: 'background.paper',
-              borderRadius: 2,
-              p: 4,
-              height: '100%',
-              transition: 'background-color 0.3s'
-            }}
-          >
-            {renderTimelineSection(t('education'), educationData)}
-          </Card>
-
+          {renderTimelineSection(t('education'), educationData)}
         </Grid>
       </Grid>
-
     </Box>
   );
 };

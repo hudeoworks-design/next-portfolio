@@ -66,6 +66,7 @@ export default function Portfolio() {
       component="section"
       id="portfolio"
       sx={{
+        pt: 10,
         bgcolor: 'background.paper',
         color: 'text.primary'
       }}

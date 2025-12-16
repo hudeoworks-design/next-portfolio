@@ -20,6 +20,7 @@ import { getLayoutDirection } from '@/lib/utils';
 import { useParams } from 'next/navigation';
 import SocialLinks from '../shared/SocialLinks';
 import SkillSet from '../shared/SkillSet';
+import ProfessionalTimeline from './home/Timeline';
 
 export default function About() {
   return (
@@ -27,35 +28,34 @@ export default function About() {
       component="section"
       id="about"
       sx={{
-        pb: 8,
         pt: 10,
         bgcolor: 'background.paper',
         color: 'text.primary'
       }}
     >
-      {/* <Container> */}
-        <Grid container spacing={4}>
-          {/* About Section */}
-          <Card
-            sx={{
-              bgcolor: 'background.paper',
-              borderRadius: 2,
-              p: 4,
-              height: '100%',
-              transition: 'background-color 0.3s'
-            }}
-          >
-            <AboutMeMui />
-          </Card>
-        </Grid>
-      {/* </Container> */}
+      <Grid container spacing={4}>
+        {/* About Section */}
+        <Card
+          sx={{
+            bgcolor: 'background.paper',
+            borderRadius: 2,
+            px: 4,
+            height: '100%',
+            transition: 'background-color 0.3s'
+          }}
+        >
+          <AboutMeMui />
+
+          <ProfessionalTimeline />
+        </Card>
+      </Grid>
     </Box>
   );
 }
 
 const AboutMeMui: React.FC = () => {
   const t = useTranslations('about');
-  const params = useParams(); 
+  const params = useParams();
   const currentLocale = params.locale as string;
 
   return (
@@ -64,7 +64,7 @@ const AboutMeMui: React.FC = () => {
         display="flex"
         flexDirection={{ xs: 'column', md: 'row' }}
         gap={3}
-        mt={4} 
+        mt={4}
       >
         {/* Avatar and Image component handling */}
         <Box flexShrink={0}>
@@ -87,7 +87,7 @@ const AboutMeMui: React.FC = () => {
               <Button
                 color="primary"
                 endIcon={<Description />}
-                href={t('resume.resumeLink')} 
+                href={t('resume.resumeLink')}
                 rel="noopener noreferrer"
                 target="_blank"
                 sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s', width: "100%" }}
@@ -122,7 +122,7 @@ const AboutMeMui: React.FC = () => {
               mt={2}
             >
               <Box display="flex" flexDirection="column" gap={1.5}>
-                
+
                 <Typography variant="body1" color="text.secondary" lineHeight="relaxed">
                   {t('aboutItems.bioParagraph1')}
                 </Typography>
@@ -135,20 +135,26 @@ const AboutMeMui: React.FC = () => {
               </Box>
             </Box>
 
-            {/* Skills Section */}
-            <Box
-              flex={1}
-              bgcolor="background.default"
-              borderRadius={2}
-              p={2}
-              mb={4}
-              mt={2}
-            >
-              <Box display="flex" flexDirection="column" gap={1.5}>
-                <SkillSet />
-              </Box>
-            </Box>
+
           </Box>
+        </Box>
+      </Box>
+      {/* Skills Section */}
+      <Box>
+        <Typography variant="h4" align="center" gutterBottom sx={{ mb: 3, mt: 4, fontWeight: 700 }}>
+          {t('skillsTitle')}
+        </Typography>
+      </Box>
+      <Box
+        flex={1}
+        bgcolor="background.default"
+        borderRadius={2}
+        p={2}
+        mb={4}
+        mt={2}
+      >
+        <Box display="flex" flexDirection="column" gap={1.5}>
+          <SkillSet />
         </Box>
       </Box>
     </Container>
