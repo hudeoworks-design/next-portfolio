@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import { getLayoutDirection } from '@/lib/utils';
 import { CustomThemeProvider } from '@/components/CustomThemeProvider';
 import { getMessages } from 'next-intl/server';
+import { Roboto } from 'next/font/google';
+import Navbar from '@/components/layout/Navbar';
 
 export const metadata: Metadata = {
   title: {
@@ -11,6 +13,13 @@ export const metadata: Metadata = {
   },
   description: "This is smart portfolio website with custom AI chatbot.",
 };
+
+const roboto = Roboto({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto',
+});
 
 export default async function RootLayout({
   children,
@@ -23,9 +32,10 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning dir={getLayoutDirection(locale)} data-scroll-behavior="smooth">
+    <html lang={locale} className={roboto.variable} suppressHydrationWarning dir={getLayoutDirection(locale)} data-scroll-behavior="smooth">
       <body className="antialiased" suppressHydrationWarning>
         <CustomThemeProvider locale={locale} messages={messages}>
+          <Navbar />
           {children}
         </CustomThemeProvider>
       </body>
