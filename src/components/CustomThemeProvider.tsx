@@ -13,6 +13,7 @@ import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 import { prefixer } from 'stylis';
 import rtlPlugin from '@mui/stylis-plugin-rtl';
+import globalStyles from '@/styles/global';
 
 
 // Define a helper function to create the correct emotion cache
@@ -55,7 +56,6 @@ function MUIThemeProvider({ children }: { children: React.ReactNode }) {
             // Set the MUI theme direction property
             direction: direction, 
             palette: {
-                // Ensure a valid mode is set (light/dark)
                 mode: resolvedTheme === "dark" ? "dark" : "light",
             },
         }), [resolvedTheme, direction]);
@@ -71,6 +71,7 @@ function MUIThemeProvider({ children }: { children: React.ReactNode }) {
         <CacheProvider value={emotionCache}>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
+                {globalStyles}
                 {children}
             </ThemeProvider>
         </CacheProvider>
