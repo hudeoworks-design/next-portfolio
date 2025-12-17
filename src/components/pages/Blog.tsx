@@ -87,6 +87,7 @@ export default function Blog() {
                     count={Math.ceil(blogsData.length / rowsPerPage)}
                     page={page}
                     onChange={handleChangePage}
+                    variant="outlined" shape="rounded"
                   />
                 </Box>
               </Grid>

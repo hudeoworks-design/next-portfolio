@@ -56,6 +56,5 @@ export default function AboutPage() {
         </Grid>
       </Grid>
     </Container>
-
   );
 }

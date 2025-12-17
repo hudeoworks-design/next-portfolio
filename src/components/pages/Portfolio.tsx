@@ -83,6 +83,7 @@ export default function Portfolio() {
                     count={Math.ceil(projectsData.length / rowsPerPage)}
                     page={page}
                     onChange={handleChangePage}
+                    variant="outlined" shape="rounded"
                   />
                 </Box>
               </Grid>

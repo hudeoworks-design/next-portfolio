@@ -89,38 +89,58 @@
     }
   },
   "portfolio": {
-    "title": "معرض الأعمال",
-    "repoAriaLabel": "رابط إلى مستودع GitHub للمشروع",
+    "title": "الأعمال",
+    "repoAriaLabel": "رابط إلى مستودع المشروع على GitHub",
     "repoButtonText": "المستودع",
-    "liveAriaLabel": "رابط إلى المعاينة المباشرة للمشروع",
+    "liveAriaLabel": "رابط لمعاينة المشروع مباشرة",
     "liveButtonText": "عرض مباشر",
     "projects": [
       {
         "name": "alacartadigital",
-        "projectUrl": "https://www.alacartadigital.es/",
-        "repoUrl": "https://github.com/alacartadigital-team",
+        "links": [
+          {
+            "text": "عرض مباشر",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "github.com",
+            "icon": "GitHub"
+          }
+        ],
         "imgPath": "projectMedia/alacartadigital.png",
-        "imgAlt": "معاينة لموقع alacartadigital على أجهزة محاكية",
-        "summary": "منصة رقمية لقائمة طعام المطاعم مع تكامل رمز الاستجابة السريعة (QR).",
+        "imgAlt": "معاينة لموقع alacartadigital على الأجهزة",
+        "summary": "منصة قائمة طعام رقمية للمطاعم مع تكامل رموز QR.",
         "keyFeatures": [
           "لوحة تحكم سهلة الاستخدام",
           "معاينة مباشرة",
-          "تخصيص العلامة التجارية",
+          "تخصيص الهوية التجارية",
           "اشتراكات مدفوعة"
         ],
         "technologies": ["React", "NextJS", "Firebase", "Material-UI", "Stripe"]
       },
       {
         "name": "Issueless",
-        "projectUrl": "https://issueless.vercel.app",
-        "repoUrl": "https://github.com/kelvinsanchez15/issueless",
+        "links": [
+          {
+            "text": "عرض مباشر",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "github.com",
+            "icon": "GitHub"
+          }
+        ],
         "imgPath": "projectMedia/issueless.png",
-        "imgAlt": "معاينة تطبيق Issueless",
-        "summary": "مشروع لتتبع المشكلات بنظام JAMStack مستوحى من نظام GitHub issues.",
+        "imgAlt": "معاينة مشروع Issueless",
+        "summary": "مشروع تتبع مشكلات بنظام JAMStack مستوحى من GitHub Issues.",
         "keyFeatures": [
-          "عرض ثابت وهجين عبر الخادم",
-          "خدمات تسجيل الدخول عبر OAuth",
-          "دعم لغة Markdown",
+          "عرض هجين (ثابت وعبر السيرفر)",
+          "خدمات تسجيل الدخول OAuth",
+          "دعم Markdown",
           "سمة MUI مخصصة"
         ],
         "technologies": [
@@ -133,39 +153,94 @@
       },
       {
         "name": "Codebank",
-        "projectUrl": "https://codebank-web.vercel.app/",
-        "repoUrl": "https://github.com/submjn/codebank-landing-page",
-        "imgPath": "projectMedia/codebank.png",
-        "imgAlt": "معاينة موقع Codebank",
-        "summary": "صفحة هبوط لمنتج برمجيات كخدمة (SAAS) متجاوبة بالكامل مصممة بـ Tailwind CSS.",
+        "links": [
+          {
+            "text": "عرض مباشر",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "github.com",
+            "icon": "GitHub"
+          }
+        ],
+        "imgPath": "projectMedia/easybank.png",
+        "imgAlt": "معاينة لموقع Codebank",
+        "summary": "صفحة هبوط لمنتج SAAS متجاوبة تماماً ومصممة باستخدام Tailwind CSS.",
         "keyFeatures": [
-          "تصميم دقيق حتى البكسل",
-          "توزيع العناصر المطلق",
-          "فئات برمجية مخصصة"
+          "تصميم بدقة البكسل",
+          "تحديد المواقع المطلق",
+          "تنسيقات مخصصة"
         ],
         "technologies": ["Tailwind", "TypeScript", "React", "NextJS"]
       },
       {
         "name": "BombaiMTY",
-        "projectUrl": "https://bombai-mty-menu.vercel.app/",
-        "repoUrl": "https://github.com/kelvinsanchez15/bombai-menu",
+        "links": [
+          {
+            "text": "عرض مباشر",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "github.com",
+            "icon": "GitHub"
+          }
+        ],
         "imgPath": "projectMedia/bombai-mty.png",
-        "imgAlt": "معاينة موقع BombaiMTY",
-        "summary": "بوابة مبيعات للوجبات السريعة مع نظام الدفع عبر WhatsApp.",
+        "imgAlt": "معاينة لموقع BombaiMTY",
+        "summary": "بوابة مبيعات وجبات سريعة مع نظام دفع عبر WhatsApp.",
         "keyFeatures": [
           "فلترة المنتجات",
-          "عربة التسوق",
+          "سلة تسوق",
           "صورة غلاف",
-          "تكامل مع Google Sheets"
+          "تكامل مع جداول بيانات Google"
         ],
         "technologies": ["Chakra UI", "TypeScript", "React", "NextJS"]
       }
     ]
   },
   "blog": {
-    "featuredArticle": "مقال مميز",
+    "title": "المدونة",
+    "featuredArticle": "مقالة مميزة",
     "mostRecent": "الأحدث",
-    "button": "المزيد من المقالات"
+    "button": "المزيد من المقالات",
+    "blogs": [
+      {
+        "name": "تدوينتي الأولى",
+        "blogLink": "/my-first-blog-post",
+        "imgPath": "blogs/cover-1.webp",
+        "imgAlt": "المدونة الأولى",
+        "summary": "نموذج لمقالة مدونة لاستعراض قسم المدونة.",
+        "tags": ["نموذج", "مدونة", "مقالة"]
+      },
+      {
+        "name": "مدونة NextJS",
+        "blogLink": "/next-blog",
+        "imgPath": "blogs/cover-2.webp",
+        "imgAlt": "مدونة حول NextJS",
+        "summary": "مدونة مبنية باستخدام إطار عمل NextJS و MUI.",
+        "tags": ["React", "NextJS", "MUI"]
+      },
+      {
+        "name": "تدوينتي الثانية",
+        "blogLink": "/my-second-blog-post",
+        "imgPath": "blogs/css-border.jpg",
+        "imgAlt": "المدونة الثانية",
+        "summary": "نموذج لمقالة مدونة لاستعراض قسم المدونة.",
+        "tags": ["نموذج", "مدونة", "مقالة"]
+      },
+      {
+        "name": "مدونة NextJS الجديدة",
+        "blogLink": "/new-next-blog",
+        "imgPath": "blogs/css-display.jpg",
+        "imgAlt": "مدونة حول NextJS",
+        "summary": "مدونة مبنية باستخدام إطار عمل NextJS و MUI.",
+        "tags": ["React", "NextJS", "MUI"]
+      }
+    ]
   },
   "contact": {
     "title": "اتصل بي",

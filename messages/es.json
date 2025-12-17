@@ -88,23 +88,33 @@
       }
     }
   },
-  "portfolio": {
+"portfolio": {
     "title": "Portafolio",
     "repoAriaLabel": "Enlace al repositorio de GitHub del proyecto",
-    "repoButtonText": "Repositorio",
+    "repoButtonText": "Repo",
     "liveAriaLabel": "Enlace a la vista previa en vivo del proyecto",
-    "liveButtonText": "Demo en vivo",
+    "liveButtonText": "En vivo",
     "projects": [
       {
         "name": "alacartadigital",
-        "projectUrl": "www.alacartadigital.es",
-        "repoUrl": "github.com",
+        "links": [
+          {
+            "text": "en vivo",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "https://github.com/kelvinsanchez15/issueless",
+            "icon": "GitHub"
+          }
+        ],
         "imgPath": "projectMedia/alacartadigital.png",
-        "imgAlt": "vista previa de alacartadigital en dispositivos",
+        "imgAlt": "Vista previa del sitio alacartadigital en dispositivo",
         "summary": "Plataforma de menú digital para restaurantes con integración de códigos QR.",
         "keyFeatures": [
           "Panel de control intuitivo",
-          "Vista previa en vivo",
+          "Vista previa en tiempo real",
           "Personalización de marca",
           "Suscripciones de pago"
         ],
@@ -112,16 +122,26 @@
       },
       {
         "name": "Issueless",
-        "projectUrl": "https://issueless.vercel.app",
-        "repoUrl": "github.com",
+        "links": [
+          {
+            "text": "en vivo",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "https://github.com/kelvinsanchez15/issueless",
+            "icon": "GitHub"
+          }
+        ],
         "imgPath": "projectMedia/issueless.png",
         "imgAlt": "Vista previa de Issueless",
-        "summary": "Proyecto de rastreo de incidencias JAMStack inspirado en los issues de GitHub.",
+        "summary": "Rastreador de problemas (Issue Tracker) JAMStack inspirado en GitHub Issues.",
         "keyFeatures": [
           "Renderizado híbrido estático y de servidor",
           "Servicios de inicio de sesión OAuth",
           "Soporte para Markdown",
-          "Tema MUI personalizado"
+          "Tema personalizado de MUI"
         ],
         "technologies": [
           "React",
@@ -133,13 +153,23 @@
       },
       {
         "name": "Codebank",
-        "projectUrl": "codebank-web.vercel.app",
-        "repoUrl": "github.com",
-        "imgPath": "projectMedia/codebank.png",
-        "imgAlt": "Vista previa del sitio Codebank",
-        "summary": "Página de aterrizaje para producto SAAS totalmente responsiva diseñada con Tailwind CSS.",
+        "links": [
+          {
+            "text": "en vivo",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "https://github.com/kelvinsanchez15/issueless",
+            "icon": "GitHub"
+          }
+        ],
+        "imgPath": "projectMedia/easybank.png",
+        "imgAlt": "Vista previa del sitio web Codebank",
+        "summary": "Página de aterrizaje (landing page) para producto SAAS totalmente responsiva diseñada con Tailwind CSS.",
         "keyFeatures": [
-          "Diseño Pixel Perfect",
+          "Diseño píxel perfect",
           "Posicionamiento absoluto",
           "Clases personalizadas"
         ],
@@ -147,11 +177,21 @@
       },
       {
         "name": "BombaiMTY",
-        "projectUrl": "bombai-mty-menu.vercel.app",
-        "repoUrl": "github.com",
+        "links": [
+          {
+            "text": "en vivo",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "https://github.com/kelvinsanchez15/issueless",
+            "icon": "GitHub"
+          }
+        ],
         "imgPath": "projectMedia/bombai-mty.png",
-        "imgAlt": "Vista previa del sitio BombaiMTY",
-        "summary": "Portal de ventas de comida rápida con finalización de compra vía WhatsApp.",
+        "imgAlt": "Vista previa del sitio web BombaiMTY",
+        "summary": "Portal de ventas de comida rápida con checkout vía WhatsApp.",
         "keyFeatures": [
           "Filtro de productos",
           "Carrito de compras",
@@ -163,9 +203,44 @@
     ]
   },
   "blog": {
-    "featuredArticle": "Artículo destacado",
-    "mostRecent": "Más reciente",
-    "button": "Más artículos"
+    "title": "Blog",
+    "featuredArticle": "Artículo Destacado",
+    "mostRecent": "Más Reciente",
+    "button": "Más Artículos",
+    "blogs": [
+      {
+        "name": "Mi Primera Entrada de Blog",
+        "blogLink": "/my-first-blog-post",
+        "imgPath": "blogs/cover-1.webp",
+        "imgAlt": "primer blog",
+        "summary": "Entrada de blog de muestra para demostrar la sección de blog.",
+        "tags": ["Muestra", "Blog", "Post"]
+      },
+      {
+        "name": "Blog de NextJS",
+        "blogLink": "/next-blog",
+        "imgPath": "blogs/cover-2.webp",
+        "imgAlt": "Blog sobre NextJS",
+        "summary": "Blog construido con NextJS y el framework MUI.",
+        "tags": ["React", "NextJS", "MUI"]
+      },
+      {
+        "name": "Mi Segunda Entrada de Blog",
+        "blogLink": "/my-second-blog-post",
+        "imgPath": "blogs/css-border.jpg",
+        "imgAlt": "segundo blog",
+        "summary": "Entrada de blog de muestra para demostrar la sección de blog.",
+        "tags": ["Muestra", "Blog", "Post"]
+      },
+      {
+        "name": "Nuevo Blog de NextJS",
+        "blogLink": "/new-next-blog",
+        "imgPath": "blogs/css-display.jpg",
+        "imgAlt": "Blog sobre NextJS",
+        "summary": "Blog construido con NextJS y el framework MUI.",
+        "tags": ["React", "NextJS", "MUI"]
+      }
+    ]
   },
   "contact": {
     "title": "Contáctame",

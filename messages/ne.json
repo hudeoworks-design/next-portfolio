@@ -90,36 +90,56 @@
   },
   "portfolio": {
     "title": "पोर्टफोलियो",
-    "repoAriaLabel": "प्रोजेक्ट गिटहब भण्डारमा लिङ्क",
-    "repoButtonText": "भण्डार",
-    "liveAriaLabel": "प्रोजेक्टको प्रत्यक्ष पूर्वावलोकनमा लिङ्क",
-    "liveButtonText": "प्रत्यक्ष हेर्नुहोस्",
+    "repoAriaLabel": "प्रोजेक्टको GitHub रिपोजिटरी लिंक",
+    "repoButtonText": "रिपो",
+    "liveAriaLabel": "प्रोजेक्टको प्रत्यक्ष पूर्वावलोकन लिंक",
+    "liveButtonText": "लाइभ",
     "projects": [
       {
         "name": "alacartadigital",
-        "projectUrl": "www.alacartadigital.es",
-        "repoUrl": "github.com",
+        "links": [
+          {
+            "text": "लाइभ",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "github.com",
+            "icon": "GitHub"
+          }
+        ],
         "imgPath": "projectMedia/alacartadigital.png",
-        "imgAlt": "alacartadigital साइटको प्रिभ्यु",
+        "imgAlt": "alacartadigital साइटको पूर्वावलोकन",
         "summary": "QR कोड एकीकरण भएको अनलाइन रेस्टुरेन्ट मेनु प्लेटफर्म।",
         "keyFeatures": [
           "प्रयोगकर्ता-मैत्री ड्यासबोर्ड",
-          "लाइभ प्रिभ्यु",
-          "ब्रान्ड कस्टमाइजेशन",
-          "भुक्तान गरिएका सब्स्क्रिप्शनहरू"
+          "प्रत्यक्ष पूर्वावलोकन",
+          "ब्रान्ड अनुकूलन",
+          "सशुल्क सदस्यता"
         ],
         "technologies": ["React", "NextJS", "Firebase", "Material-UI", "Stripe"]
       },
       {
         "name": "Issueless",
-        "projectUrl": "https://issueless.vercel.app",
-        "repoUrl": "github.com",
+        "links": [
+          {
+            "text": "लाइभ",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "github.com",
+            "icon": "GitHub"
+          }
+        ],
         "imgPath": "projectMedia/issueless.png",
-        "imgAlt": "Issueless प्रिभ्यु",
-        "summary": "GitHub issues बाट प्रेरित JAMStack इस्यु ट्रयाकर परियोजना।",
+        "imgAlt": "Issueless पूर्वावलोकन",
+        "summary": "GitHub issues बाट प्रेरित JAMStack इस्यु ट्र्याकर प्रोजेक्ट।",
         "keyFeatures": [
           "हाइब्रिड स्ट्याटिक र सर्भर रेन्डरिङ",
-          "OAuth साइन-इन सुविधाहरू",
+          "OAuth साइन-इन सेवाहरू",
           "Markdown समर्थन",
           "कस्टम MUI थिम"
         ],
@@ -133,25 +153,45 @@
       },
       {
         "name": "Codebank",
-        "projectUrl": "codebank-web.vercel.app",
-        "repoUrl": "github.com",
-        "imgPath": "projectMedia/codebank.png",
-        "imgAlt": "Codebank वेबसाइट प्रिभ्यु",
-        "summary": "Tailwind CSS मार्फत डिजाइन गरिएको पूर्ण रूपमा रेस्पोन्सिभ SAAS उत्पादन ल्यान्डिङ पेज।",
+        "links": [
+          {
+            "text": "लाइभ",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "github.com",
+            "icon": "GitHub"
+          }
+        ],
+        "imgPath": "projectMedia/easybank.png",
+        "imgAlt": "Codebank वेबसाइट पूर्वावलोकन",
+        "summary": "Tailwind CSS को प्रयोग गरी बनाइएको पूर्ण रूपमा रेस्पोन्सिभ SAAS उत्पादन ल्यान्डिङ पेज।",
         "keyFeatures": [
-          "पिक्सेल पर्फेक्ट डिजाइन",
-          "एब्सोलुट पोजिसनिङ",
+          "पिक्सेल परफेक्ट डिजाइन",
+          "एब्सोल्युट पोजिसनिङ",
           "कस्टम क्लासहरू"
         ],
         "technologies": ["Tailwind", "TypeScript", "React", "NextJS"]
       },
       {
         "name": "BombaiMTY",
-        "projectUrl": "bombai-mty-menu.vercel.app",
-        "repoUrl": "github.com",
+        "links": [
+          {
+            "text": "लाइभ",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "github.com",
+            "icon": "GitHub"
+          }
+        ],
         "imgPath": "projectMedia/bombai-mty.png",
-        "imgAlt": "BombaiMTY वेबसाइट प्रिभ्यु",
-        "summary": "WhatsApp बाट चेकआउट गर्न मिल्ने फास्ट फुड बिक्री पोर्टल।",
+        "imgAlt": "BombaiMTY वेबसाइट पूर्वावलोकन",
+        "summary": "व्हाट्सएप (WhatsApp) चेकआउट सुविधा भएको फास्ट फूड बिक्री पोर्टल।",
         "keyFeatures": [
           "उत्पादन फिल्टर",
           "सपिङ कार्ट",
@@ -163,9 +203,44 @@
     ]
   },
   "blog": {
+    "title": "ब्लग",
     "featuredArticle": "विशेष लेख",
-    "mostRecent": "हालैका लेखहरू",
-    "button": "थप लेखहरू"
+    "mostRecent": "भर्खरैको",
+    "button": "थप लेखहरू",
+    "blogs": [
+      {
+        "name": "मेरो पहिलो ब्लग पोष्ट",
+        "blogLink": "/my-first-blog-post",
+        "imgPath": "blogs/cover-1.webp",
+        "imgAlt": "पहिलो ब्लग",
+        "summary": "ब्लग खण्ड प्रदर्शन गर्न नमूना ब्लग पोष्ट।",
+        "tags": ["नमूना", "ब्लग", "पोष्ट"]
+      },
+      {
+        "name": "NextJS ब्लग",
+        "blogLink": "/next-blog",
+        "imgPath": "blogs/cover-2.webp",
+        "imgAlt": "NextJS को बारेमा ब्लग",
+        "summary": "NextJS र MUI फ्रेमवर्क प्रयोग गरेर बनाइएको ब्लग।",
+        "tags": ["React", "NextJS", "MUI"]
+      },
+      {
+        "name": "मेरो दोस्रो ब्लग पोष्ट",
+        "blogLink": "/my-second-blog-post",
+        "imgPath": "blogs/css-border.jpg",
+        "imgAlt": "दोस्रो ब्लग",
+        "summary": "ब्लग खण्ड प्रदर्शन गर्न नमूना ब्लग पोष्ट।",
+        "tags": ["नमूना", "ब्लग", "पोष्ट"]
+      },
+      {
+        "name": "नयाँ NextJS ब्लग",
+        "blogLink": "/new-next-blog",
+        "imgPath": "blogs/css-display.jpg",
+        "imgAlt": "NextJS को बारेमा ब्लग",
+        "summary": "NextJS र MUI फ्रेमवर्क प्रयोग गरेर बनाइएको ब्लग।",
+        "tags": ["React", "NextJS", "MUI"]
+      }
+    ]
   },
   "contact": {
     "title": "मलाई सम्पर्क गर्नुहोस्",
