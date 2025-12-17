@@ -97,8 +97,18 @@
     "projects": [
       {
         "name": "alacartadigital",
-        "projectUrl": "https://www.alacartadigital.es/",
-        "repoUrl": "https://github.com/alacartadigital-team",
+        "links": [
+          {
+            "text": "live",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "https://github.com/kelvinsanchez15/issueless",
+            "icon": "GitHub"
+          }
+        ],
         "imgPath": "projectMedia/alacartadigital.png",
         "imgAlt": "alacartadigital site mocked device preview",
         "summary": "Online restaurant menu platform with QR code integration.",
@@ -112,8 +122,18 @@
       },
       {
         "name": "Issueless",
-        "projectUrl": "https://issueless.vercel.app",
-        "repoUrl": "https://github.com/kelvinsanchez15/issueless",
+        "links": [
+          {
+            "text": "live",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "https://github.com/kelvinsanchez15/issueless",
+            "icon": "GitHub"
+          }
+        ],
         "imgPath": "projectMedia/issueless.png",
         "imgAlt": "Issueless preview",
         "summary": "JAMStack Issue Tracker project inspired on GitHub issues.",
@@ -133,8 +153,18 @@
       },
       {
         "name": "Codebank",
-        "projectUrl": "https://codebank-web.vercel.app/",
-        "repoUrl": "https://github.com/submjn/codebank-landing-page",
+        "links": [
+          {
+            "text": "live",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "https://github.com/kelvinsanchez15/issueless",
+            "icon": "GitHub"
+          }
+        ],
         "imgPath": "projectMedia/easybank.png",
         "imgAlt": "Codebank website preview",
         "summary": "Fully responsive SAAS product landing page designed with Tailwind CSS.",
@@ -147,8 +177,18 @@
       },
       {
         "name": "BombaiMTY",
-        "projectUrl": "https://bombai-mty-menu.vercel.app/",
-        "repoUrl": "https://github.com/kelvinsanchez15/bombai-menu",
+        "links": [
+          {
+            "text": "live",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "https://github.com/kelvinsanchez15/issueless",
+            "icon": "GitHub"
+          }
+        ],
         "imgPath": "projectMedia/bombai-mty.png",
         "imgAlt": "BombaiMTY website preview",
         "summary": "Fast food sales portal with WhatsApp checkout.",
@@ -163,9 +203,44 @@
     ]
   },
   "blog": {
+    "title": "Blog",
     "featuredArticle": "Featured Article",
     "mostRecent": "Most Recent",
-    "button": "More Articles"
+    "button": "More Articles",
+    "blogs": [
+      {
+        "name": "My First Blog Post",
+        "blogLink": "/my-first-blog-post",
+        "imgPath": "blogs/cover-1.webp",
+        "imgAlt": "first blog",
+        "summary": "Sample blog post to demonstrate the blog section.",
+        "tags": ["Sample", "Blog", "Post"]
+      },
+      {
+        "name": "NextJS Blog",
+        "blogLink": "/next-blog",
+        "imgPath": "blogs/cover-2.webp",
+        "imgAlt": "Blog about NextJS",
+        "summary": "Blog built with NextJS and MUI framework.",
+        "tags": ["React", "NextJS", "MUI"]
+      },
+      {
+        "name": "My second Blog Post",
+        "blogLink": "/my-second-blog-post",
+        "imgPath": "blogs/css-border.jpg",
+        "imgAlt": "first blog",
+        "summary": "Sample blog post to demonstrate the blog section.",
+        "tags": ["Sample", "Blog", "Post"]
+      },
+      {
+        "name": "New NextJS Blog",
+        "blogLink": "/new-next-blog",
+        "imgPath": "blogs/css-display.jpg",
+        "imgAlt": "Blog about NextJS",
+        "summary": "Blog built with NextJS and MUI framework.",
+        "tags": ["React", "NextJS", "MUI"]
+      }
+    ]
   },
   "contact": {
     "title": "Contact Me",

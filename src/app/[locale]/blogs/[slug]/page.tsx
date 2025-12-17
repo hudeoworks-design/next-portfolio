@@ -25,9 +25,9 @@ export async function extractHeadings(content: string): Promise<Heading[]> {
   const headings: Heading[] = [];
   const processor = unified().use(remarkParse).use(remarkMdx);
   const ast = processor.parse(content);
-  
+
   visit(ast, "heading", (node: any) => {
-    
+
     const text = node.children.map((child: any) => child.value).join("");
     headings.push({
       depth: node.depth,
@@ -57,39 +57,40 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <Container>
-        <Box sx={{ my: 2 }}>
-          <h1>{frontmatter.title}</h1>
-      <p>{frontmatter.date}</p>
-      <p>{frontmatter.author}</p>
-      <p>{frontmatter.description}</p>
-      <p>{frontmatter.tags}</p>
-      {/* Render TOC */}
-      <ul>
-        {headings?.map(({ text, slug, depth }) => (
-          <li key={slug} style={{ marginLeft: `${depth - 1}rem` }}>
-            <a href={`#${slug}`}>{text}</a>
-          </li>
-        ))}
-      </ul>
-      <MDXRemote 
-        source={content} 
-        components={{ Counter }} // or add more components here. E.g. { Counter, Alert, Tabs }
-        options={{
-          mdxOptions: { 
-            rehypePlugins: [
-              rehypeSlug,
-              [
-          rehypePrettyCode,
-          {
-            theme: "github-dark", // or 'nord', 'dracula', etc.
-            keepBackground: true,
-          },
-        ],
-            ] 
-          },
-          parseFrontmatter: true,
-        }}
-      />
+      <Box sx={{ my: 2 }}>
+        <h1>{frontmatter.title}</h1>
+        <p>{frontmatter.date}</p>
+        <p>{frontmatter.author}</p>
+        <p>{frontmatter.description}</p>
+        <p>{frontmatter.tags}</p>
+        
+        <ul>
+          {headings?.map(({ text, slug, depth }) => (
+            <li key={slug} style={{ marginLeft: `${depth - 1}rem` }}>
+              <a href={`#${slug}`}>{text}</a>
+            </li>
+          ))}
+        </ul>
+
+        <MDXRemote
+          source={content}
+          components={{ Counter }} // or add more components here. E.g. { Counter, Alert, Tabs }
+          options={{
+            mdxOptions: {
+              rehypePlugins: [
+                rehypeSlug,
+                [
+                  rehypePrettyCode,
+                  {
+                    theme: "github-dark", // or 'nord', 'dracula', etc.
+                    keepBackground: true,
+                  },
+                ],
+              ]
+            },
+            parseFrontmatter: true,
+          }}
+        />
       </Box>
     </Container>
   );

@@ -27,10 +27,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projectItems }) => {
                   style={{ objectFit: 'cover' }}
                 />
 
-                <ImageOverlay
-                  projectUrl={project.projectUrl}
-                  repoUrl={project.repoUrl}
-                />
+                <ImageOverlay links={project.links} />
               </Box>
               <Box
                 bgcolor="background.default"
@@ -41,7 +38,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projectItems }) => {
                   <div>
                     <Link
                       gutterBottom
-                      href={project.projectUrl}
+                      href={project.links.filter(link => link.type === 'live')[0]?.url || '#'}
                       rel="noopener"
                       sx={{ display: 'inline-block' }}
                       target="_blank"

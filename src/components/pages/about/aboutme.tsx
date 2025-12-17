@@ -6,6 +6,7 @@ import { Box, Avatar, Button, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
 import heroImage from "../../../../public/subash.jpeg";
+import Link from '@/components/shared/Link';
 
 export const AboutMe: React.FC = () => {
   const t = useTranslations('about');
@@ -21,17 +22,20 @@ export const AboutMe: React.FC = () => {
     >
       {/* Avatar and Image component handling */}
       <Box flexShrink={0}>
-        <Avatar sx={{ width: 96, height: 96, ring: 2, borderColor: 'primary.main', ringOpacity: 0.2 }}>
-          {/* Next/Image inside Avatar or a custom wrapper for better control */}
-          <Image
-            src={heroImage}
-            alt={t('aboutme.profileAltText')} // Localized alt text
-            style={{ objectFit: 'cover' }}
-            fill
-            sizes='100%'
-            priority
-          />
-        </Avatar>
+        <Link href="/about">
+          <Avatar sx={{ width: 96, height: 96, ring: 2, borderColor: 'primary.main', ringOpacity: 0.2 }}>
+            {/* Next/Image inside Avatar or a custom wrapper for better control */}
+            <Image
+              src={heroImage}
+              alt={t('aboutme.profileAltText')} // Localized alt text
+              style={{ objectFit: 'cover' }}
+              fill
+              sizes='100%'
+              priority
+            />
+          </Avatar>
+        </Link>
+
 
         <Box mt={5} display="flex" flexDirection="column" textAlign={'left'} gap={1}>
           <SocialLinks direction={getLayoutDirection(currentLocale)} />
@@ -87,8 +91,7 @@ export const AboutMe: React.FC = () => {
               </Typography>
             </Box>
           </Box>
-
-
+          
         </Box>
       </Box>
     </Box>

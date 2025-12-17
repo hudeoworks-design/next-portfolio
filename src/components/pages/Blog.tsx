@@ -9,39 +9,35 @@ import {
   Pagination,
   Button,
 } from '@mui/material/';
-import { Projects } from './portfolio/projects';
 import { More } from '@mui/icons-material';
-import { ImageOverlayProps } from '../shared/ui/ImageOverlay';
+import { Blogs } from './blog/blogs';
 
 // --- Define Interfaces for Type Safety (Corresponds to your data source from en.json) ---
-export interface ProjectData {
+export interface BlogData {
   id: string;
   name: string;
-  projectUrl: string;
-  repoUrl: string;
+  blogLink: string;
   imgPath: string;
   imgAlt: string;
   summary: string; // The literal summary text is loaded here
-  technologies: string[];
-  keyFeatures: string[];
-  links: ImageOverlayProps[];
+  tags: string[];
 }
 
 // --- Component Definition ---
-export default function Portfolio() {
+export default function Blog() {
 
   // Use the correct scope name, assuming "Portfolio" matches your JSON structure's root key
-  const t = useTranslations('portfolio');
+  const t = useTranslations('blog');
 
   // Use .raw() to pull the entire 'projects' array data structure from the JSON
-  const projectsData = t.raw('projects') as Array<ProjectData>;
+  const blogsData = t.raw('blogs') as Array<BlogData>;
 
   // ... inside your component
   const [page, setPage] = useState(1);
-  const [rowsPerPage, setRowsPerPage] = useState(2);
-  const paginatedItems = projectsData.slice((page - 1) * rowsPerPage, (page - 1) * rowsPerPage + rowsPerPage);
+  const [rowsPerPage, setRowsPerPage] = useState(3);
+  const paginatedItems = blogsData.slice((page - 1) * rowsPerPage, (page - 1) * rowsPerPage + rowsPerPage);
 
-  
+
   const handleChangePage = (event: any, newPage: SetStateAction<number>) => {
     setPage(newPage);
   };
@@ -49,14 +45,17 @@ export default function Portfolio() {
   return (
     <Box
       component="section"
-      id="portfolio"
+      id="blogs"
       sx={{
         pt: 10,
         bgcolor: 'background.paper',
         color: 'text.primary'
       }}
     >
-        <Grid container spacing={4}>
+
+      <Grid container spacing={4}>
+        <Grid size={{ xs: 12 }}>
+
           <Card
             sx={{
               bgcolor: 'background.paper',
@@ -66,21 +65,26 @@ export default function Portfolio() {
               transition: 'background-color 0.3s'
             }}
           >
-            <Grid container spacing={4}>
+            <Grid size={{ xs: 12 }} mb={4}>
               <Button
                 color="primary"
                 endIcon={<More />}
-                href="/portfolio"
+                href="/blogs"
                 sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s' }}
                 variant="outlined"
               >
                 {t('title')}
               </Button>
-              <Projects projectItems={paginatedItems} />
+            </Grid>
+            
+            <Grid container spacing={4}>
+
+              <Blogs blogItems={paginatedItems} />
+
               <Grid size={{ xs: 12 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                   <Pagination
-                    count={Math.ceil(projectsData.length / rowsPerPage)}
+                    count={Math.ceil(blogsData.length / rowsPerPage)}
                     page={page}
                     onChange={handleChangePage}
                   />
@@ -91,6 +95,7 @@ export default function Portfolio() {
 
           </Card>
         </Grid>
+      </Grid>
     </Box>
   );
 }

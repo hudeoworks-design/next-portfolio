@@ -5,6 +5,8 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Hero from "@/components/pages/home/Hero";
 import About from "../../components/pages/About";
 import Portfolio from "@/components/pages/Portfolio";
+import Blog from "@/components/pages/Blog";
+import Contact from "@/components/pages/Contact";
 
 interface Props {
   /**
@@ -60,6 +62,8 @@ export default function Page(props: Props) {
           <Hero />
           <About />
           <Portfolio />
+          <Blog />
+          <Contact />
         </Box>
       </Container>
       <ScrollTop {...props}>
