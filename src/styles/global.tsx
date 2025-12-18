@@ -6,17 +6,17 @@ const globalStyles = (
     styles={(theme) => ({
       html: {
         height: "100%",
-        fontSize: "62.5%",
+        fontSize: "100%",// "62.5%",
         fontFamily: theme.typography.fontFamily,
         "&::-webkit-scrollbar": {
           width: 10,
         },
         "&::-webkit-scrollbar-track": {
-          borderRadius: theme.shape.radius.small,
+          borderRadius: theme.shape.borderRadius,
         },
         "&::-webkit-scrollbar-thumb": {
           background: theme.palette.grey[500],
-          borderRadius: theme.shape.radius.medium,
+          borderRadius: theme.shape.borderRadius,
         },
       },
     })}

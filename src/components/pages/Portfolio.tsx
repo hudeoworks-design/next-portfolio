@@ -50,11 +50,6 @@ export default function Portfolio() {
     <Box
       component="section"
       id="portfolio"
-      sx={{
-        pt: 10,
-        bgcolor: 'background.paper',
-        color: 'text.primary'
-      }}
     >
         <Grid container spacing={4}>
           <Card

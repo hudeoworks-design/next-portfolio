@@ -1,16 +1,63 @@
 "use client";
 
-import { createTheme, darken, lighten, Shadows } from "@mui/material";
+import { createTheme, darken, lighten} from "@mui/material";
 import {
-  borderRadius,
   colors,
   font,
-  letterSpacing,
-  lineHeight,
-  shadows,
-  spacing,
 } from "./tokens";
-import { Poppins, Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
+
+// 1. Module Augmentation (Required for custom palette keys)
+declare module "@mui/material/styles" {
+  interface Palette {
+    banner: { background: string };
+    blog: {
+      headerBgColor: string;
+      h1Color: string;
+      preBorderColor: string;
+      preBgColor: string;
+      codeBgColor: string;
+      codeColor: string;
+      linkColor: string;
+    };
+    subscribe: { headerColor: string };
+    about: {
+      headerTitle: string;
+      headerText: string;
+      sectionBorder: string;
+      sectionTitle: string;
+      sectionText: string;
+      sectionIcon: string;
+    };
+    postCard: { tagBgColor: string };
+    blogs: { tagBgColor: string; tagSelectedColor: string };
+    button: { disabledBgColor: string; disabledColor: string };
+  }
+  interface PaletteOptions {
+    banner?: { background: string };
+    blog?: {
+      headerBgColor: string;
+      h1Color: string;
+      preBorderColor: string;
+      preBgColor: string;
+      codeBgColor: string;
+      codeColor: string;
+      linkColor: string;
+    };
+    subscribe?: { headerColor: string };
+    about?: {
+      headerTitle: string;
+      headerText: string;
+      sectionBorder: string;
+      sectionTitle: string;
+      sectionText: string;
+      sectionIcon: string;
+    };
+    postCard?: { tagBgColor: string };
+    blogs?: { tagBgColor: string; tagSelectedColor: string };
+    button?: { disabledBgColor: string; disabledColor: string };
+  }
+}
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -19,6 +66,7 @@ const poppins = Poppins({
 });
 
 const theme = createTheme({
+  // Use MUI v6 CSS variables
   cssVariables: {
     colorSchemeSelector: "class",
   },
@@ -27,33 +75,24 @@ const theme = createTheme({
       palette: {
         primary: {
           main: colors.primary[500],
-          contrastText: colors.grey[50],
+          contrastText: "#ffffff",
           ...colors.primary,
         },
         secondary: {
           main: colors.secondary[500],
-          contrastText: colors.grey[50],
+          contrastText: "#ffffff",
           ...colors.secondary,
-        },
-        common: {
-          onBackground: colors.grey[900],
-          background: colors.grey[100],
         },
         text: {
           primary: colors.grey[800],
           secondary: colors.grey[600],
         },
         background: {
-          default: "white",
-        },
-        AppBar: {
-          defaultBg: "white",
+          default: "#ffffff",
+          paper: "#ffffff",
         },
         banner: {
-          background: `linear-gradient(180deg, #fff 10%, ${lighten(
-            colors.grey[200],
-            0.5
-          )})`,
+          background: `linear-gradient(180deg, #ffffff 10%, ${lighten(colors.grey[200], 0.5)})`,
         },
         blog: {
           headerBgColor: lighten(colors.secondary[100], 0.4),
@@ -64,9 +103,7 @@ const theme = createTheme({
           codeColor: colors.secondary[400],
           linkColor: colors.grey[700],
         },
-        subscribe: {
-          headerColor: colors.primary[800],
-        },
+        subscribe: { headerColor: colors.primary[800] },
         about: {
           headerTitle: colors.grey[800],
           headerText: colors.grey[700],
@@ -75,9 +112,7 @@ const theme = createTheme({
           sectionText: colors.grey[700],
           sectionIcon: colors.secondary[500],
         },
-        postCard: {
-          tagBgColor: colors.primary[200],
-        },
+        postCard: { tagBgColor: colors.primary[200] },
         blogs: {
           tagBgColor: colors.grey[200],
           tagSelectedColor: colors.primary[400],
@@ -93,17 +128,13 @@ const theme = createTheme({
       palette: {
         primary: {
           main: colors.primary[600],
-          contrastText: colors.grey[50],
+          contrastText: "#ffffff",
           ...colors.primary,
         },
         secondary: {
           main: colors.secondary[900],
-          contrastText: colors.grey[50],
+          contrastText: "#ffffff",
           ...colors.secondary,
-        },
-        common: {
-          onBackground: colors.grey[50],
-          background: darken(colors.grey[800], 0.4),
         },
         text: {
           primary: colors.grey[200],
@@ -111,14 +142,13 @@ const theme = createTheme({
         },
         background: {
           default: colors.grey[900],
-          paper: colors.grey[900],
+          paper: "#1e1e1e", // Standard dark mode paper color
         },
         banner: {
-          background:
-            "linear-gradient(180deg, var(--mui-palette-grey-900) 61%, #14171e)",
+          background: "linear-gradient(180deg, var(--mui-palette-grey-900) 61%, #14171e)",
         },
         blog: {
-          headerBgColor: "black",
+          headerBgColor: "#000000",
           h1Color: colors.secondary[300],
           preBorderColor: colors.secondary[700],
           preBgColor: darken(colors.grey[800], 0.4),
@@ -126,9 +156,7 @@ const theme = createTheme({
           codeColor: colors.secondary[400],
           linkColor: colors.grey[400],
         },
-        subscribe: {
-          headerColor: colors.grey[50],
-        },
+        subscribe: { headerColor: colors.grey[50] },
         about: {
           headerTitle: colors.grey[200],
           headerText: colors.grey[400],
@@ -137,9 +165,7 @@ const theme = createTheme({
           sectionText: colors.grey[400],
           sectionIcon: colors.secondary[300],
         },
-        postCard: {
-          tagBgColor: colors.primary[400],
-        },
+        postCard: { tagBgColor: colors.primary[400] },
         blogs: {
           tagBgColor: colors.grey[400],
           tagSelectedColor: colors.primary[400],
@@ -156,8 +182,9 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          textTransform: "capitalize",
-          "&.MuiButton-contained.Mui-disabled": {
+          textTransform: "none", // Capitalize is usually discouraged for UX
+          borderRadius: "8px",
+          "&.Mui-disabled": {
             backgroundColor: "var(--mui-palette-button-disabledBgColor)",
             color: "var(--mui-palette-button-disabledColor)",
           },
@@ -168,35 +195,24 @@ const theme = createTheme({
       defaultProps: {
         elevation: 0,
       },
-    },
-    MuiOutlinedInput: {
       styleOverrides: {
         root: {
-          "&:hover:not(.Mui-focused)": {
-            "& .MuiOutlinedInput-notchedOutline": {
-              borderColor: colors.grey[400],
-            },
-          },
+          borderRadius: "12px",
+          border: "1px solid var(--mui-palette-divider)",
         },
       },
     },
   },
   typography: {
-    htmlFontSize: 10,
     fontFamily: poppins.style.fontFamily,
-    letterSpacing: letterSpacing,
-    lineHeight: lineHeight,
-    ...font.size,
+    // Note: ensure font.size tokens match MUI expected format (h1, body1, etc)
+    ...font.size, 
   },
   shape: {
-    borderRadius: 4,
-    radius: borderRadius,
+    borderRadius: 8,
   },
-  spacing: Object.values(spacing),
-  shadows: Object.values(shadows) as Shadows,
+  // Spacing and Shadows must be properly mapped
+  spacing: 8, 
 });
 
 export default theme;
-
-// #98f3bf
-// #6767c6
