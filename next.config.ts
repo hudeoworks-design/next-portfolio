@@ -1,7 +1,20 @@
-import type { NextConfig } from "next";
+import { NextConfig } from 'next/types';
+// next.config.mjs
+import createNextIntlPlugin from 'next-intl/plugin';
+import withMDX from '@next/mdx';
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const withNextIntl = createNextIntlPlugin();
+const nextConfig:NextConfig = {
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        fs: false,
+      };
+    }
+
+    return config;
+  },
 };
 
-export default nextConfig;
+export default withNextIntl(withMDX()(nextConfig));

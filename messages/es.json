@@ -1,0 +1,269 @@
+{
+  "ThemeSwitcher": {
+    "toggleTheme": "Cambiar tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema"
+  },
+  "metadata": {
+    "title": "Subash Maharjan | Desarrollador Frontend Senior",
+    "description": "Subash Maharjan es un Desarrollador Frontend Senior, con experiencia en la creación de sitios web y aplicaciones web hermosas y funcionales.",
+    "url": "www.subashmaharjan.com",
+    "previewImage": "avatars.githubusercontent.com"
+  },
+  "hero": {
+    "greetings": "HOLA, ",
+    "introduction": "Soy Subash Maharjan",
+    "role": "Desarrollador Frontend Senior",
+    "paragraph": "Apasionado por la programación y por hacer realidad las ideas de mis clientes.",
+    "button1": "Ver mi trabajo",
+    "button2": "Contáctame"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "aboutme": {
+      "profileAltText": "Foto de perfil de Subash Maharjan",
+      "name": "Subash Maharjan",
+      "handle": "@hudeoworks-design",
+      "bioParagraph1": "Soy un desarrollador frontend senior con más de 10 años de experiencia creando aplicaciones web rápidas, escalables y visualmente pulidas, ahora mejoradas con funciones impulsadas por IA que ofrecen experiencias de usuario más inteligentes.",
+      "bioParagraph2": "Me especializo en frameworks modernos como React, Angular y Vue, con un enfoque profundo en diseño UI/UX, optimización del rendimiento y usabilidad fluida. Mi trabajo reciente aprovecha herramientas de IA y APIs para construir interfaces más dinámicas, personalizadas e inteligentes, desde componentes predictivos hasta UIs conversacionales y perspectivas en tiempo real.",
+      "bioParagraph3": "Me encanta convertir ideas complejas en productos digitales intuitivos y de alto impacto. Ya sea colaborando con startups o equipos empresariales, aporto una combinación de liderazgo técnico, pensamiento de diseño y una mentalidad orientada al futuro que ayuda a los equipos a innovar con confianza."
+    },
+    "socialLinks": {
+      "title": "Encuéntrame en",
+      "twitter": {
+        "ariaLabel": "Perfil de Twitter",
+        "buttonText": "Twitter",
+        "url": "https://twitter.com/submjn"
+      },
+      "github": {
+        "ariaLabel": "Perfil de GitHub",
+        "buttonText": "GitHub",
+        "url": "https://github.com/hudeoworks-design"
+      },
+      "linkedin": {
+        "ariaLabel": "Perfil de LinkedIn",
+        "buttonText": "LinkedIn",
+        "url": "https://linkedin.com/in/subashmaharjan"
+      }
+    },
+    "resume": {
+      "resumeTitle": "Currículum",
+      "resumeParagraph": "Puedes consultar mi currículum en el siguiente enlace.",
+      "resumeButton": "Currículum",
+      "resumeLink": "/resume/resume-es.pdf"
+    },
+    "skillsTitle": "Habilidades"
+  },
+  "Timeline": {
+    "title": "Trayectoria Profesional",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "items": {
+      "mba": {
+        "title": "Masters in Business Administration (MBA)",
+        "org": "Everest University, Orlando, Florida",
+        "date": "Aug 2021 - May 2024",
+        "desc": "Focus on modern web technologies and agile software development practices."
+      },
+      "bca": {
+        "title": "Bachelor in Computer Applications",
+        "org": "Kantipur City College, Kathmandu, Nepal",
+        "date": "Oct 2018 - Nov 2019",
+        "desc": "Focusing on network administration, IT security, and web development."
+      },
+      "caci": {
+        "title": "Senior Software Engineer",
+        "org": "CACI",
+        "date": "Dec 2023 - Present",
+        "location": "Remote",
+        "desc": "Designed a standardized library of accessible UI components using Angular Material UI."
+      },
+      "travelers": {
+        "title": "Software Engineer II",
+        "org": "Travelers Insurance",
+        "date": "Sep 2020 - Nov 2023",
+        "location": "Remote",
+        "desc": "Created an accessible component library adopted company-wide using StencilJS."
+      }
+    }
+  },
+"portfolio": {
+    "title": "Portafolio",
+    "repoAriaLabel": "Enlace al repositorio de GitHub del proyecto",
+    "repoButtonText": "Repo",
+    "liveAriaLabel": "Enlace a la vista previa en vivo del proyecto",
+    "liveButtonText": "En vivo",
+    "projects": [
+      {
+        "name": "alacartadigital",
+        "links": [
+          {
+            "text": "en vivo",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "https://github.com/kelvinsanchez15/issueless",
+            "icon": "GitHub"
+          }
+        ],
+        "imgPath": "projectMedia/alacartadigital.png",
+        "imgAlt": "Vista previa del sitio alacartadigital en dispositivo",
+        "summary": "Plataforma de menú digital para restaurantes con integración de códigos QR.",
+        "keyFeatures": [
+          "Panel de control intuitivo",
+          "Vista previa en tiempo real",
+          "Personalización de marca",
+          "Suscripciones de pago"
+        ],
+        "technologies": ["React", "NextJS", "Firebase", "Material-UI", "Stripe"]
+      },
+      {
+        "name": "Issueless",
+        "links": [
+          {
+            "text": "en vivo",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "https://github.com/kelvinsanchez15/issueless",
+            "icon": "GitHub"
+          }
+        ],
+        "imgPath": "projectMedia/issueless.png",
+        "imgAlt": "Vista previa de Issueless",
+        "summary": "Rastreador de problemas (Issue Tracker) JAMStack inspirado en GitHub Issues.",
+        "keyFeatures": [
+          "Renderizado híbrido estático y de servidor",
+          "Servicios de inicio de sesión OAuth",
+          "Soporte para Markdown",
+          "Tema personalizado de MUI"
+        ],
+        "technologies": [
+          "React",
+          "NextJS",
+          "PostgreSQL",
+          "Prisma",
+          "Material-UI"
+        ]
+      },
+      {
+        "name": "Codebank",
+        "links": [
+          {
+            "text": "en vivo",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "https://github.com/kelvinsanchez15/issueless",
+            "icon": "GitHub"
+          }
+        ],
+        "imgPath": "projectMedia/easybank.png",
+        "imgAlt": "Vista previa del sitio web Codebank",
+        "summary": "Página de aterrizaje (landing page) para producto SAAS totalmente responsiva diseñada con Tailwind CSS.",
+        "keyFeatures": [
+          "Diseño píxel perfect",
+          "Posicionamiento absoluto",
+          "Clases personalizadas"
+        ],
+        "technologies": ["Tailwind", "TypeScript", "React", "NextJS"]
+      },
+      {
+        "name": "BombaiMTY",
+        "links": [
+          {
+            "text": "en vivo",
+            "url": "https://issueless.vercel.app",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "https://github.com/kelvinsanchez15/issueless",
+            "icon": "GitHub"
+          }
+        ],
+        "imgPath": "projectMedia/bombai-mty.png",
+        "imgAlt": "Vista previa del sitio web BombaiMTY",
+        "summary": "Portal de ventas de comida rápida con checkout vía WhatsApp.",
+        "keyFeatures": [
+          "Filtro de productos",
+          "Carrito de compras",
+          "Foto de portada",
+          "Integración con Google Sheets"
+        ],
+        "technologies": ["Chakra UI", "TypeScript", "React", "NextJS"]
+      }
+    ]
+  },
+  "blog": {
+    "title": "Blog",
+    "featuredArticle": "Artículo Destacado",
+    "mostRecent": "Más Reciente",
+    "button": "Más Artículos",
+    "blogs": [
+      {
+        "name": "Mi Primera Entrada de Blog",
+        "blogLink": "/my-first-blog-post",
+        "imgPath": "blogs/cover-1.webp",
+        "imgAlt": "primer blog",
+        "summary": "Entrada de blog de muestra para demostrar la sección de blog.",
+        "tags": ["Muestra", "Blog", "Post"]
+      },
+      {
+        "name": "Blog de NextJS",
+        "blogLink": "/next-blog",
+        "imgPath": "blogs/cover-2.webp",
+        "imgAlt": "Blog sobre NextJS",
+        "summary": "Blog construido con NextJS y el framework MUI.",
+        "tags": ["React", "NextJS", "MUI"]
+      },
+      {
+        "name": "Mi Segunda Entrada de Blog",
+        "blogLink": "/my-second-blog-post",
+        "imgPath": "blogs/css-border.jpg",
+        "imgAlt": "segundo blog",
+        "summary": "Entrada de blog de muestra para demostrar la sección de blog.",
+        "tags": ["Muestra", "Blog", "Post"]
+      },
+      {
+        "name": "Nuevo Blog de NextJS",
+        "blogLink": "/new-next-blog",
+        "imgPath": "blogs/css-display.jpg",
+        "imgAlt": "Blog sobre NextJS",
+        "summary": "Blog construido con NextJS y el framework MUI.",
+        "tags": ["React", "NextJS", "MUI"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contáctame",
+    "p1": "Si estás interesado en contratarme para tu proyecto, por favor utiliza el siguiente formulario para ponerte en contacto. ¿Quieres saber cómo trabajo y qué puedo ofrecer? Echa un vistazo a mi ",
+    "p2": "portafolio",
+    "p3": " y a mi ",
+    "p4": "currículum",
+    "resumeLink": "/resume/resume-es.pdf",
+    "subtitle": "También puedes encontrarme en los siguientes canales",
+    "formTitle": "Ponte en contacto",
+    "firstNameLabel": "Nombre",
+    "lastNameLabel": "Apellido",
+    "emailLabel": "Correo electrónico",
+    "messageLabel": "Mensaje",
+    "placeholder": "Siéntete libre de incluir cualquier detalle.",
+    "requiredErrorMessage": "Requerido",
+    "invalidEmailErrorMessage": "Formato de correo inválido",
+    "successMessage": "¡Gracias por ponerte en contacto! Te responderé lo antes posible.",
+    "submitButton": "Enviar mensaje",
+    "fields": {
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "message": "Tu mensaje"
+    }
+  }
+}
