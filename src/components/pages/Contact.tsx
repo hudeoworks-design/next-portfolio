@@ -7,13 +7,12 @@ import {
     TextField,
     Button,
     Typography,
-    Container,
     Paper,
     Alert,
     Card,
     Grid
 } from '@mui/material';
-import { ConnectWithoutContactTwoTone, More } from '@mui/icons-material';
+import { ConnectWithoutContactTwoTone } from '@mui/icons-material';
 import VisitingCard from './contact/visitingCard';
 
 const Contact: React.FC = () => {

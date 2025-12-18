@@ -1,4 +1,3 @@
-import { WidthFull } from '@mui/icons-material';
 import { Box, Grid, Button, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
 

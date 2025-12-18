@@ -3,11 +3,9 @@
 import {
   Grid, // Ensure Grid2 is imported if using size prop
   Box,
-  Card,
-  Container
+  Card
 } from '@mui/material';
 import { AboutMe } from './about/aboutme';
-import SkillSet from '../shared/SkillSet';
 
 export default function About() {
   return (
@@ -32,8 +30,6 @@ export default function About() {
         >
 
           <AboutMe />
-
-          <SkillSet />
 
         </Card>
       </Grid>
