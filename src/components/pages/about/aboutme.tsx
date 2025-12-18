@@ -1,7 +1,8 @@
 import Image from 'next/image';
+import parse from 'html-react-parser';
 import SocialLinks from "@/components/shared/SocialLinks";
 import { getLayoutDirection } from "@/lib/utils";
-import { Description } from "@mui/icons-material";
+import { Description, Face } from "@mui/icons-material";
 import { Box, Avatar, Button, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
@@ -12,6 +13,8 @@ export const AboutMe: React.FC = () => {
   const t = useTranslations('about');
   const params = useParams();
   const currentLocale = params.locale as string;
+
+  const paragraphs = t.raw('aboutme.bioParagraphs') as Array<string>;
 
   return (
     <Box
@@ -35,26 +38,6 @@ export const AboutMe: React.FC = () => {
             />
           </Avatar>
         </Link>
-
-
-        <Box mt={5} display="flex" flexDirection="column" textAlign={'left'} gap={1}>
-          <SocialLinks direction={getLayoutDirection(currentLocale)} />
-          <Box pb={1}
-            dir={getLayoutDirection(currentLocale)}>
-            <Button
-              color="primary"
-              endIcon={<Description />}
-              href={t('resume.resumeLink')}
-              rel="noopener noreferrer"
-              target="_blank"
-              sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s', width: "100%" }}
-              variant="outlined"
-            >
-              {t('resume.resumeButton')}
-            </Button>
-
-          </Box>
-        </Box>
       </Box>
 
       <Box flex={1} minWidth={0}>
@@ -64,9 +47,33 @@ export const AboutMe: React.FC = () => {
             <Typography variant="h4" component="h1" color="text.primary" mb={0.5}>
               {t('aboutme.name')}
             </Typography>
-            <Typography variant="subtitle1" color="text.secondary" mb={3}>
+            <Typography variant="subtitle1" color="text.secondary" mb={2}>
               {t('aboutme.handle')}
             </Typography>
+            <Box display="flex" flexDirection="row" textAlign={'left'} gap={1} dir={getLayoutDirection(currentLocale)}>
+              <Button
+                color="primary"
+                endIcon={<Face />}
+                href="/about"
+                sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s' }}
+                variant="outlined"
+              >
+                {t('title')}
+              </Button>
+              <Button
+                color="primary"
+                endIcon={<Description />}
+                href={t('resume.resumeLink')}
+                rel="noopener noreferrer"
+                target="_blank"
+                sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s' }}
+                variant="outlined"
+              >
+                {t('resume.resumeButton')}
+              </Button>
+              {/* <SocialLinks direction={getLayoutDirection(currentLocale)} /> */}
+            </Box>
+
           </Box>
 
           {/* About Me Section */}
@@ -79,19 +86,16 @@ export const AboutMe: React.FC = () => {
             mt={2}
           >
             <Box display="flex" flexDirection="column" gap={1.5}>
-
-              <Typography variant="body1" color="text.secondary" lineHeight="relaxed">
-                {t('aboutme.bioParagraph1')}
-              </Typography>
-              <Typography variant="body1" color="text.secondary" lineHeight="relaxed">
-                {t('aboutme.bioParagraph2')}
-              </Typography>
-              <Typography variant="body1" color="text.secondary" lineHeight="relaxed">
-                {t('aboutme.bioParagraph3')}
-              </Typography>
+              {
+                paragraphs.map((para, index) => (
+                  <Typography key={index} variant="body1" color="text.secondary" lineHeight="relaxed">
+                    {parse(para)}
+                  </Typography>
+                ))
+              }
             </Box>
           </Box>
-          
+
         </Box>
       </Box>
     </Box>

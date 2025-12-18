@@ -15,7 +15,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ direction }) => {
 
     return (
         <>
-            <Box pb={1} dir={direction}>
+            <Box dir={direction}>
                 <Button
                     endIcon={<TwitterIcon />}
                     href={t('twitter.url')}
@@ -30,7 +30,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ direction }) => {
                     {t('twitter.buttonText')}
                 </Button>
             </Box>
-            <Box pb={1} dir={direction}>
+            <Box dir={direction}>
                 <Button
                     endIcon={<GitHubIcon />}
                     href={t('github.url')}
@@ -45,7 +45,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ direction }) => {
                     {t('github.buttonText')}
                 </Button>
             </Box>
-            <Box pb={1} dir={direction}>
+            <Box dir={direction}>
                 <Button
                     endIcon={<LinkedInIcon />}
                     href={t('linkedin.url')}

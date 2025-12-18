@@ -15,7 +15,7 @@ export default function About() {
       component="section"
       id="about"
       sx={{
-        pt: 10,
+        py: 10,
         bgcolor: 'background.paper',
         color: 'text.primary'
       }}
@@ -30,11 +30,10 @@ export default function About() {
             transition: 'background-color 0.3s'
           }}
         >
-          <Container disableGutters maxWidth={false}>
-            <AboutMe />
 
-            <SkillSet />
-          </Container>
+          <AboutMe />
+
+          <SkillSet />
 
         </Card>
       </Grid>

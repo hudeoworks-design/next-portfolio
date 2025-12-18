@@ -13,9 +13,9 @@
   },
   "hero": {
     "greetings": "HELLO, ",
-    "introduction": "I'm Subash Maharjan",
-    "role": "Senior Frontend Developer",
-    "paragraph": "Passionate about coding, and making my client ideas come true.",
+    "introduction": "I am Subash Maharjan",
+    "role": "Software Engineer",
+    "paragraph": "My passion is rooted in the constant pursuit of technical excellence and UI/UX harmony.  I find deep satisfaction in turning complex architectural challenges into seamless, future-proof digital solutions.",
     "button1": "Check my work",
     "button2": "Contact me"
   },
@@ -25,9 +25,10 @@
       "profileAltText": "Subash Maharjan's profile picture",
       "name": "Subash Maharjan",
       "handle": "@hudeoworks-design",
-      "bioParagraph1": "I'm a Senior Frontend Developer with 10+ years of experience building fast, scalable, and visually polished web applications — now enhanced with AI-powered features that drive smarter user experiences.",
-      "bioParagraph2": "I specialize in modern frameworks like React, Angular, and Vue, with a deep focus on UI/UX design, performance optimization, and seamless usability. My recent work leverages AI tools and APIs to build more dynamic, personalized, and intelligent interfaces — from predictive components to conversational UIs and real-time insights.",
-      "bioParagraph3": "I thrive on turning complex ideas into intuitive, high-impact digital products. Whether collaborating with startups or enterprise teams, I bring a mix of technical leadership, design thinking, and a future-forward mindset that helps teams innovate with confidence."
+      "bioParagraphs": [
+        "<strong style='color: #90caf9'>Senior Frontend Engineer & UI Architect</strong> with 10+ years of experience delivering high-performance, enterprise-grade web applications. I bridge the gap between sophisticated engineering and human-centric design, specializing in <strong style='color: #90caf9'>React, Angular, and Vue ecosystems</strong>",
+        "Currently, I focus on the intersection of <strong style='color: #90caf9'>Frontend Engineering and Applied AI</strong>, integrating LLMs and predictive analytics to build 'intelligent' interfaces. From deploying RAG-based conversational UIs to optimizing client-side performance for real-time AI insights, I build products that don't just function—they anticipate user needs. I bring a blend of technical leadership and design thinking to help teams transform complex requirements into scalable, future-proof digital experiences."
+      ]
     },
     "socialLinks": {
       "title": "Find me on",

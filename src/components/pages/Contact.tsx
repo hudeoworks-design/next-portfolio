@@ -13,7 +13,7 @@ import {
     Card,
     Grid
 } from '@mui/material';
-import { More } from '@mui/icons-material';
+import { ConnectWithoutContactTwoTone, More } from '@mui/icons-material';
 import VisitingCard from './contact/visitingCard';
 
 const Contact: React.FC = () => {
@@ -53,8 +53,17 @@ const Contact: React.FC = () => {
             >
                 <Grid container spacing={4}>
                     <Grid size={6} sx={{ xs: 12, md: 4 }}>
-                        <Box sx={{ py: 4, px: 2 }}>
+                        <Box sx={{ py: 4, px: 2, justifyContent: 'center', display: 'flex', flexDirection: 'column' }}>
                             <VisitingCard />
+                            <Button
+                                color="primary"
+                                endIcon={<ConnectWithoutContactTwoTone />}
+                                href="/contact"
+                                sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s', mt: 2 }}
+                                variant="outlined"
+                            >
+                                {t('title')}
+                            </Button>
                         </Box>
                     </Grid>
                     <Grid size={6} sx={{ xs: 12, md: 8, py: 4 }}>

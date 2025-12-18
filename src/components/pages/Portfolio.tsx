@@ -10,7 +10,7 @@ import {
   Button,
 } from '@mui/material/';
 import { Projects } from './portfolio/projects';
-import { More } from '@mui/icons-material';
+import { DashboardTwoTone } from '@mui/icons-material';
 import { ImageOverlayProps } from '../shared/ui/ImageOverlay';
 
 // --- Define Interfaces for Type Safety (Corresponds to your data source from en.json) ---
@@ -64,7 +64,7 @@ export default function Portfolio() {
             <Grid container spacing={4}>
               <Button
                 color="primary"
-                endIcon={<More />}
+                endIcon={<DashboardTwoTone />}
                 href="/portfolio"
                 sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s' }}
                 variant="outlined"

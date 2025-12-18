@@ -82,7 +82,7 @@ export default function ElevateAppBar() {
     { link: `${notEnglishLocale}${pageJumpRef}about`, name: localeNames[currentLocale].about, icon: <PermIdentityIcon /> },
     { link: `${notEnglishLocale}${pageJumpRef}portfolio`, name: localeNames[currentLocale].portfolio, icon: <WorkIcon /> },
     { link: `${notEnglishLocale}${pageJumpRef}blogs`, name: localeNames[currentLocale].blog, icon: <AssignmentIcon /> },
-    { link: `${notEnglishLocale}${pageJumpRef}contact`, name: localeNames[currentLocale].contact, icon: <MailIcon /> }
+    { link: `${notEnglishLocale}#contact`, name: localeNames[currentLocale].contact, icon: <MailIcon /> }
   ];
 
   return (

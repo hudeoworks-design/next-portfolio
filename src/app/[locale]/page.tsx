@@ -55,22 +55,20 @@ function ScrollTop(props: Props) {
 
 export default function Page(props: Props) {
   return (
-    <>
+    <Container>
       <Toolbar id="back-to-top-anchor" />
-      <Container>
-        <Box sx={{ my: 2 }}>
-          <Hero />
-          <About />
-          <Portfolio />
-          <Blog />
-          <Contact />
-        </Box>
-      </Container>
+      <Box component="section" id="home">
+        <Hero />
+        <About />
+        <Portfolio />
+        <Blog />
+        <Contact />
+      </Box>
       <ScrollTop {...props}>
         <Fab size="small" aria-label="scroll back to top">
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
-    </>
+    </Container>
   );
 }

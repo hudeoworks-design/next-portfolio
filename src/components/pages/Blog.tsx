@@ -9,7 +9,7 @@ import {
   Pagination,
   Button,
 } from '@mui/material/';
-import { More } from '@mui/icons-material';
+import { BookTwoTone } from '@mui/icons-material';
 import { Blogs } from './blog/blogs';
 
 // --- Define Interfaces for Type Safety (Corresponds to your data source from en.json) ---
@@ -68,7 +68,7 @@ export default function Blog() {
             <Grid size={{ xs: 12 }} mb={4}>
               <Button
                 color="primary"
-                endIcon={<More />}
+                endIcon={<BookTwoTone />}
                 href="/blogs"
                 sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s' }}
                 variant="outlined"
