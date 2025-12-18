@@ -58,6 +58,7 @@ declare module "@mui/material/styles" {
     blogs?: {
       tagBgColor: string;
       tagSelectedColor: string;
+      tagColor: string;
     };
     button?: {
       disabledBgColor: string;

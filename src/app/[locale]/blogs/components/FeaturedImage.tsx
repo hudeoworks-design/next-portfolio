@@ -25,12 +25,12 @@ export default function FeaturedImage({ frontmatter }: FeaturedImageProps) {
     <Box
       sx={{
         width: "100%",
-        maxWidth: "500px",
+        // maxWidth: "500px",
         height: "300px", // Set a fixed height for the featured area
         position: "relative",
         mx: "auto",
         zIndex: 2,
-        borderRadius: "16px", // Fallback if theme vars aren't loaded
+        // borderRadius: "16px", // Fallback if theme vars aren't loaded
         overflow: "hidden",
         // Using MUI's system for theme variables
         border: (theme) => `1px solid ${theme.palette.divider}`,
@@ -42,7 +42,7 @@ export default function FeaturedImage({ frontmatter }: FeaturedImageProps) {
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         fill
         style={{
-          borderRadius: borderRadius?.medium || "8px",
+          // borderRadius: borderRadius?.medium || "8px",
           objectFit: "cover"
         }}
         priority

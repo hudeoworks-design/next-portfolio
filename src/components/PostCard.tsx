@@ -41,7 +41,6 @@ export default function PostCard({
       elevation={0} // Usually looks better for blog grids
       sx={{
         maxWidth,
-        bgcolor: "transparent",
         backgroundImage: "none",
         height: '100%',
         display: 'flex',
@@ -106,7 +105,8 @@ export default function PostCard({
             label={cat}
             link={`/blogs?tag=${encodeURIComponent(cat.trim())}`}
             key={cat}
-            bgColor="postCard.tagBgColor"
+            bgColor="blogs.tagBgColor"
+            selectedColor="blogs.tagSelectedColor"
           />
         ))}
       </CardActions>

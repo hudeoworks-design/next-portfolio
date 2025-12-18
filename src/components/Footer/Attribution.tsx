@@ -11,9 +11,8 @@ const Attribution = (): JSX.Element => (
       variant="body2"
       px={1}
     >
-      Muhi Masri
+      Bodhi Systems
     </Link>
-    with ❤️
   </Typography>
 );
 

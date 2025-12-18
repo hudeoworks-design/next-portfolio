@@ -46,7 +46,7 @@ const SocialLinks = (): JSX.Element => (
     <IconButton
       component="a"
       size="small"
-      href="mailto:someone@example.com"
+      href="mailto:hudeoworks@gmail.com"
       sx={{
         color: "text.secondary",
         "&:hover": { color: "primary.main" },

@@ -16,11 +16,12 @@ type TagProps = {
 const chipStyle = (
   selected: boolean,
   bgColor?: string,
-  selectedColor?: string
+  selectedColor?: string,
+  color?: string
 ) => ({
   backgroundColor: selected ? selectedColor : bgColor,
   borderRadius: borderRadius.pill,
-  color: "grey.800",
+  color: color,
 });
 
 const largeStyle = {

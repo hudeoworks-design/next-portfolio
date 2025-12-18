@@ -54,7 +54,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <Box
         sx={{
           backgroundColor: "common.background",
-          py: 8,
+          py: 12,
           position: "relative",
           ":after": {
             content: `""`,
@@ -66,14 +66,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           },
         }}
       >
-        <Container sx={{ textAlign: "center", position: 'relative', zIndex: 2 }}>
-          <Typography variant="h4" component="h1" color="text.primary" fontWeight="600" mb={3}>
+        <Container sx={{ position: 'relative', zIndex: 2 }}>
+          <Typography variant="h4" component="h1" color="text.primary" fontWeight="600" mb={1}>
             {typedFrontmatter.title}
           </Typography>
-          <Typography variant="body1" color="text.secondary" mb={6} maxWidth={600} mx="auto">
+          <Typography variant="body1" color="text.secondary" maxWidth={600} mb={1}>
             {frontmatter.description}
           </Typography>
-          <Stack direction="row" alignItems="center" justifyContent="center" mb={5} gap={2}>
+          <Stack mb={5} gap={2}>
             <Typography variant="body2" color="text.secondary">
               Last Updated: {frontmatter.date}
             </Typography>
@@ -84,7 +84,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   size="small"
                   label={tag}
                   link={`/blogs?tag=${tag}`}
-                  bgColor="primary.300"
+                  bgColor="blogs.tagBgColor"
+                  selectedColor="blogs.tagSelectedColor"
                 />
               ))}
             </Stack>
@@ -95,7 +96,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </Container>
       </Box>
 
-      <Container sx={{ py: 8 }}>
+      <Container sx={{ py: 2 }}>
         <Stack gap={7} direction={{ xs: "column", lg: "row" }}>
           <Box sx={{ 
             display: { xs: "none", lg: "block" }, 

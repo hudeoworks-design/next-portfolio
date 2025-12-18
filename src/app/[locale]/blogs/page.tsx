@@ -62,8 +62,6 @@ export default async function BlogsPage({
       <Grid container>
         <Grid size={12}>
           <Box
-            component="section"
-            id="about"
             sx={{ pt: 10, bgcolor: 'background.paper', color: 'text.primary' }}
           >
             <SearchContainer>

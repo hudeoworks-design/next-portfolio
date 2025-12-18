@@ -30,7 +30,7 @@ declare module "@mui/material/styles" {
       sectionIcon: string;
     };
     postCard: { tagBgColor: string };
-    blogs: { tagBgColor: string; tagSelectedColor: string };
+    blogs: { tagBgColor: string; tagSelectedColor: string; tagColor: string };
     button: { disabledBgColor: string; disabledColor: string };
   }
   interface PaletteOptions {
@@ -54,7 +54,7 @@ declare module "@mui/material/styles" {
       sectionIcon: string;
     };
     postCard?: { tagBgColor: string };
-    blogs?: { tagBgColor: string; tagSelectedColor: string };
+    blogs?: { tagBgColor: string; tagSelectedColor: string; tagColor: string };
     button?: { disabledBgColor: string; disabledColor: string };
   }
 }
@@ -116,6 +116,7 @@ const theme = createTheme({
         blogs: {
           tagBgColor: colors.grey[200],
           tagSelectedColor: colors.primary[400],
+          tagColor: colors.primary[600]
         },
         button: {
           disabledBgColor: colors.grey[200],
@@ -165,10 +166,11 @@ const theme = createTheme({
           sectionText: colors.grey[400],
           sectionIcon: colors.secondary[300],
         },
-        postCard: { tagBgColor: colors.primary[400] },
+        postCard: { tagBgColor: colors.primary[200] },
         blogs: {
-          tagBgColor: colors.grey[400],
+          tagBgColor: colors.grey[200],
           tagSelectedColor: colors.primary[400],
+          tagColor: colors.primary[600]
         },
         button: {
           disabledBgColor: colors.grey[800],
