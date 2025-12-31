@@ -101,6 +101,7 @@ export default function PostCard({
             key={cat}
             bgColor="blogs.tagBgColor"
             selectedColor="blogs.tagSelectedColor"
+            textColor="blogs.tagColor"
           />
         ))}
       </CardActions>
