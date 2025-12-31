@@ -48,7 +48,6 @@ export default function Blog() {
       id="blogs"
       sx={{
         pt: 10,
-        bgcolor: 'background.paper',
         color: 'text.primary'
       }}
     >

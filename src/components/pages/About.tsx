@@ -14,14 +14,12 @@ export default function About() {
       id="about"
       sx={{
         py: 10,
-        bgcolor: 'background.paper',
         color: 'text.primary'
       }}
     >
       <Grid container spacing={4}>
         <Card
           sx={{
-            bgcolor: 'background.paper',
             borderRadius: 2,
             px: 4,
             height: '100%',

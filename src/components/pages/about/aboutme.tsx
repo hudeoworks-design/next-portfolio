@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import parse from 'html-react-parser';
-import SocialLinks from "@/components/shared/SocialLinks";
 import { getLayoutDirection } from "@/lib/utils";
 import { Description, Face } from "@mui/icons-material";
 import { Box, Avatar, Button, Typography } from "@mui/material";

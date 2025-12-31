@@ -24,12 +24,11 @@ export default async function BlogsPage({
           <Box sx={{ pt: 10 }}>
             <Container>
               <Typography variant="h5" component="h1" sx={{ mb: 3, px: 3 }}>
-                Filter by tag:
+                Filter by tags:
               </Typography>
-              
-              
-                <SearchContainer activeTag={selectedTag} tags={allTags} />
-              {/* </Box> */}
+
+              <SearchContainer activeTag={selectedTag} tags={allTags} />
+
             </Container>
 
             <Container sx={{ my: 6 }}>
