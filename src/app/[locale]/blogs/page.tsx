@@ -1,15 +1,10 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
 import { Box, Container, Stack, Typography } from "@mui/material";
-// FIX 1: Import Grid2 (aliased as Grid) to support the 'size' prop
 import Grid from "@mui/material/Grid"; 
-import Tag from "@/components/Tag";
 import { SearchContainer } from "./components";
-import PostCard from "@/components/PostCard";
-import { Blog } from "@/app/types/blog";
-
-const blogsDirectory = path.join(process.cwd(), "content", "blogs");
+import { Blog } from "@/types/blog";
+import { getAllPostsBySelectedTag, getAllPostsData, getAllTagsFromAllPosts } from "@/lib/posts";
+import Tag from "@/components/pages/blog/Tag";
+import PostCard from "@/components/pages/blog/PostCard";
 
 export default async function BlogsPage({ 
   searchParams,
@@ -19,42 +14,17 @@ export default async function BlogsPage({
   const params = await searchParams;
   const selectedTag = params.tag || "";
 
-  const blogFolders = fs.existsSync(blogsDirectory) ? fs.readdirSync(blogsDirectory) : [];
+  // list all blogs from all folders
+  const allBlogs = getAllPostsData();
+  // filtered blogs by tags
+  const filteredBlogs = getAllPostsBySelectedTag(allBlogs, selectedTag);
+  // list all tags from entire blog
+  const allTags = getAllTagsFromAllPosts(allBlogs);
 
-  const allBlogs = blogFolders
-    .filter((folder) => !folder.includes(".")) // Filter out hidden files or page.tsx
-    .map((folder) => {
-      const filePath = path.join(blogsDirectory, folder, "page.mdx");
-      if (!fs.existsSync(filePath)) return null;
-
-      const fileContent = fs.readFileSync(filePath, "utf-8");
-      const { data: frontmatter } = matter(fileContent);
-
-      return {
-        slug: folder,
-        ...frontmatter,
-      };
-    })
-    .filter(Boolean) as Blog[];
-
-  const allTags = ["javascript", "css", "react", "scope", "variable", "loop", "context", "hook", "border", "display", "spacing"];
-
+  // tag click event
   const handleTagClick = (tag: string) => {
     return tag === selectedTag ? "/blogs" : `/blogs?tag=${tag}`;
   };
-
-  const filteredBlogs = selectedTag
-    ? allBlogs.filter((blog) => {
-        const blogTags = typeof blog.tags === "string" 
-          ? blog.tags.split(",").map(t => t.trim()) 
-          : blog.tags || [];
-        return blogTags.includes(selectedTag);
-      })
-    : allBlogs;
-
-  filteredBlogs.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
 
   return (
     <Container>

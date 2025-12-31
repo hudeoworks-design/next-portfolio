@@ -8,16 +8,16 @@ import remarkMdx from "remark-mdx";
 import { visit } from "unist-util-visit";
 import rehypeSlug from "rehype-slug";
 import rehypePrettyCode from "rehype-pretty-code";
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import { BlogContent, FeaturedImage } from "../components";
 import { Metadata } from "next";
 import EmailSubscription from "@/components/EmailSubscription";
-import Footer from "@/components/Footer";
-import SuggestedArticles from "@/components/SuggestedArticles";
-import TableOfContents from "@/components/TableOfContents";
-import Tag from "@/components/Tag";
+import Footer from "@/components/layout/Footer";
+import SuggestedArticles from "@/components/pages/blog/SuggestedArticles";
+import TableOfContents from "@/components/pages/blog/TableOfContents";
 import Counter from "../components/tutorials/Counter";
 import { notFound } from "next/navigation";
+import Tag from "@/components/pages/blog/Tag";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -28,7 +28,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
 
   const filePath = path.join(process.cwd(), "content", "blogs", slug, "page.mdx");
-  
+
   if (!existsSync(filePath)) {
     notFound();
   }
@@ -38,8 +38,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const headings = await extractHeadings(content);
 
   // Normalize tags: handle string "js, react" or array ["js", "react"]
-  const tagsArray = typeof frontmatter.tags === 'string' 
-    ? frontmatter.tags.split(",").map((t: string) => t.trim()) 
+  const tagsArray = typeof frontmatter.tags === 'string'
+    ? frontmatter.tags.split(",").map((t: string) => t.trim())
     : (frontmatter.tags || []);
 
   // Ensure frontmatter is typed correctly for components
@@ -53,7 +53,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <>
       <Box
         sx={{
-          backgroundColor: "common.background",
+          backgroundColor: 'background.paper',
           py: 12,
           position: "relative",
           ":after": {
@@ -61,49 +61,57 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             position: "absolute",
             left: 0, right: 0, bottom: 0,
             height: { xs: "15%", md: "33%" },
-            backgroundColor: "background.default",
+            backgroundColor: 'background.paper',
             zIndex: 1,
           },
         }}
       >
         <Container sx={{ position: 'relative', zIndex: 2 }}>
-          <Typography variant="h4" component="h1" color="text.primary" fontWeight="600" mb={1}>
-            {typedFrontmatter.title}
-          </Typography>
-          <Typography variant="body1" color="text.secondary" maxWidth={600} mb={1}>
-            {frontmatter.description}
-          </Typography>
-          <Stack mb={5} gap={2}>
-            <Typography variant="body2" color="text.secondary">
-              Last Updated: {frontmatter.date}
-            </Typography>
-            <Stack direction="row" gap={1} flexWrap="wrap">
-              {tagsArray.map((tag: string) => (
-                <Tag
-                  key={tag}
-                  size="small"
-                  label={tag}
-                  link={`/blogs?tag=${tag}`}
-                  bgColor="blogs.tagBgColor"
-                  selectedColor="blogs.tagSelectedColor"
-                />
-              ))}
-            </Stack>
-          </Stack>
-          <Box sx={{ display: { xs: "none", md: "block" } }}>
-            <FeaturedImage frontmatter={typedFrontmatter} />
-          </Box>
+          <Grid container spacing={2}>
+            <Grid size={6}>
+              <Typography variant="h4" component="h1" color="text.primary" fontWeight="600" mb={1}>
+                {typedFrontmatter.title}
+              </Typography>
+              <Typography variant="body1" color="text.secondary" maxWidth={600} mb={1}>
+                {frontmatter.description}
+              </Typography>
+              <Stack mb={5} gap={2}>
+                <Typography variant="body2" color="text.secondary">
+                  Last Updated: {frontmatter.date}
+                </Typography>
+                <Stack direction="row" gap={1} flexWrap="wrap">
+                  {tagsArray.map((tag: string) => (
+                    <Tag
+                      key={tag}
+                      size="small"
+                      label={tag}
+                      link={`/blogs?tag=${tag}`}
+                      bgColor="blogs.tagBgColor"
+                      selectedColor="blogs.tagSelectedColor"
+                    />
+                  ))}
+                </Stack>
+              </Stack>
+            </Grid>
+            <Grid size={6}>
+              <Box sx={{ display: { xs: "none", md: "block" } }}>
+                <FeaturedImage frontmatter={typedFrontmatter} />
+              </Box>
+            </Grid>
+          </Grid>
+
+
         </Container>
       </Box>
 
       <Container sx={{ py: 2 }}>
         <Stack gap={7} direction={{ xs: "column", lg: "row" }}>
-          <Box sx={{ 
-            display: { xs: "none", lg: "block" }, 
-            width: { lg: "250px" }, 
-            position: 'sticky', 
-            top: 100, 
-            height: 'fit-content' 
+          <Box sx={{
+            display: { xs: "none", lg: "block" },
+            width: { lg: "250px" },
+            position: 'sticky',
+            top: 100,
+            height: 'fit-content'
           }}>
             <TableOfContents headings={headings} />
           </Box>
@@ -127,10 +135,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             />
           </Box>
         </Stack>
-        <Box sx={{ mt: 10 }}>
-            <SuggestedArticles currentTags={tagsArray} />
-        </Box>
       </Container>
+      
+      <SuggestedArticles currentTags={tagsArray} />
       <EmailSubscription />
       <Footer />
     </>
@@ -147,15 +154,15 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
   const filePath = path.join(process.cwd(), "content", "blogs", slug, "page.mdx");
-  
+
   if (!existsSync(filePath)) return { title: "Article Not Found" };
 
   const fileContents = readFileSync(filePath, "utf8");
   const { data: frontmatter } = matter(fileContents);
 
   // Safeguard: Extract image URL correctly whether it's a string or object
-  const imageUrl = typeof frontmatter.featuredImage === 'object' 
-    ? frontmatter.featuredImage.src 
+  const imageUrl = typeof frontmatter.featuredImage === 'object'
+    ? frontmatter.featuredImage.src
     : frontmatter.featuredImage;
 
   return {
@@ -183,7 +190,7 @@ async function extractHeadings(content: string) {
       .filter((c: any) => c.type === 'text' || c.type === 'inlineCode')
       .map((child: any) => child.value)
       .join("");
-    
+
     headings.push({
       depth: node.depth,
       text,

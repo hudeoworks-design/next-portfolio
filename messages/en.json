@@ -90,7 +90,7 @@
     }
   },
   "portfolio": {
-    "title": "Portfolio",
+    "title": "More on Portfolio",
     "repoAriaLabel": "Link to project GitHub repository",
     "repoButtonText": "Repo",
     "liveAriaLabel": "Link to project live preview",
@@ -204,7 +204,7 @@
     ]
   },
   "blog": {
-    "title": "Blog",
+    "title": "More Blogs",
     "featuredArticle": "Featured Article",
     "mostRecent": "Most Recent",
     "button": "More Articles",

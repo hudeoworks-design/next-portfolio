@@ -3,47 +3,48 @@
     "toggleTheme": "تغيير المظهر",
     "light": "فاتح",
     "dark": "داكن",
-    "system": "تلقائي"
+    "system": "النظام"
   },
   "metadata": {
     "title": "سوباش ماهارجان | مطور واجهات أمامية أول",
-    "description": "سوباش ماهارجان هو مطور واجهات أمامية أول، ذو خبرة في إنشاء مواقع وتطبيقات ويب جميلة وعملية.",
+    "description": "سوباش ماهارجان هو مطور واجهات أمامية أول، خبير في إنشاء مواقع وتطبيقات ويب جميلة وعملية.",
     "url": "https://www.subashmaharjan.com/",
     "previewImage": "https://avatars.githubusercontent.com/u/6002073?v=4"
   },
   "hero": {
     "greetings": "مرحباً، ",
     "introduction": "أنا سوباش ماهارجان",
-    "role": "مطور واجهات أمامية أول",
-    "paragraph": "شغوف بالبرمجة وتحويل أفكار عملائي إلى واقع ملموس.",
-    "button1": "تصفح أعمالي",
-    "button2": "اتصل بي"
+    "role": "مهندس برمجيات",
+    "paragraph": "شغفي متجذر في السعي المستمر للتميز التقني والتناغم بين واجهة المستخدم وتجربة المستخدم. أجد رضا عميقاً في تحويل التحديات المعمارية المعقدة إلى حلول رقمية سلسة ومواكبة للمستقبل.",
+    "button1": "شاهد أعمالي",
+    "button2": "تواصل معي"
   },
   "about": {
     "title": "من أنا",
     "aboutme": {
-      "profileAltText": "صورة ملف تعريف سوباش ماهارجان",
-      "name": "Subash Maharjan",
+      "profileAltText": "الصورة الشخصية لسوباش ماهارجان",
+      "name": "سوباش ماهارجان",
       "handle": "@hudeoworks-design",
-      "bioParagraph1": "أنا مطور واجهات أمامية (فرونت إند) أول بخبرة تزيد عن 10 سنوات في بناء تطبيقات ويب سريعة وقابلة للتطوير ومصقولة بصريًا، تم تحسينها الآن بميزات مدعومة بالذكاء الاصطناعي توفر تجارب مستخدم أكثر ذكاءً.",
-      "bioParagraph2": "أنا متخصص في الأطر الحديثة مثل React و Angular و Vue، مع تركيز عميق على تصميم واجهة المستخدم وتجربة المستخدم (UI/UX)، وتحسين الأداء، وسهولة الاستخدام السلسة. يستفيد عملي الأخير من أدوات الذكاء الاصطناعي وواجهات برمجة التطبيقات لبناء واجهات أكثر ديناميكية وتخصيصًا وذكاءً، بدءًا من المكونات التنبؤية إلى واجهات المستخدم للمحادثات والرؤى الفورية.",
-      "bioParagraph3": "أزدهر في تحويل الأفكار المعقدة إلى منتجات رقمية بديهية وعالية التأثير. سواء كنت أتعاون مع شركات ناشئة أو فرق مؤسسية، فإنني أقدم مزيجًا من القيادة التقنية والتفكير التصميمي والعقلية المستقبلية التي تساعد الفرق على الابتكار بثقة."
+      "bioParagraphs": [
+        "<strong style='color: #90caf9'>مهندس واجهات أمامية أول ومعماري واجهات مستخدم</strong> بخبرة تزيد عن 10 سنوات في تقديم تطبيقات ويب عالية الأداء للمؤسسات. أقوم بسد الفجوة بين الهندسة المتطورة والتصميم الذي يركز على الإنسان، متخصص في <strong style='color: #90caf9'>أنظمة React و Angular و Vue</strong>.",
+        "أركز حالياً على التقاطع بين <strong style='color: #90caf9'>هندسة الواجهات الأمامية والذكاء الاصطناعي التطبيقي</strong>، ودمج نماذج اللغات الكبيرة (LLMs) والتحليلات التنبؤية لبناء واجهات 'ذكية'. من نشر واجهات المحادثة القائمة على RAG إلى تحسين أداء جانب العميل للحصول على رؤى الذكاء الاصطناعي في الوقت الفعلي، أبني منتجات لا تعمل فحسب، بل تتوقع احتياجات المستخدمين. أقدم مزيجاً من القيادة التقنية والتفكير التصميمي لمساعدة الفرق على تحويل المتطلبات المعقدة إلى تجارب رقمية قابلة للتوسع ومواكبة للمستقبل."
+      ]
     },
     "socialLinks": {
-      "title": "أنا في",
+      "title": "تجدني على",
       "twitter": {
-        "ariaLabel": "حساب تويتر",
+        "ariaLabel": "الملف الشخصي على تويتر",
         "buttonText": "تويتر",
         "url": "https://twitter.com/submjn"
       },
       "github": {
-        "ariaLabel": "حساب GitHub",
-        "buttonText": "GitHub",
+        "ariaLabel": "الملف الشخصي على غيت هاب",
+        "buttonText": "غيت هاب",
         "url": "https://github.com/hudeoworks-design"
       },
       "linkedin": {
-        "ariaLabel": "حساب LinkedIn",
-        "buttonText": "LinkedIn",
+        "ariaLabel": "الملف الشخصي على لينكد إن",
+        "buttonText": "لينكد إن",
         "url": "https://linkedin.com/in/subashmaharjan"
       }
     },
@@ -51,170 +52,113 @@
       "resumeTitle": "السيرة الذاتية",
       "resumeParagraph": "يمكنك الاطلاع على سيرتي الذاتية عبر الرابط أدناه.",
       "resumeButton": "السيرة الذاتية",
-      "resumeLink": "/resume/resume-ar.pdf"
+      "resumeLink": "/resume/resume-en.pdf"
     },
     "skillsTitle": "المهارات"
   },
   "Timeline": {
-    "title": "الجدول الزمني",
+    "title": "المسار المهني",
     "experience": "الخبرة",
     "education": "التعليم",
     "items": {
       "mba": {
-        "title": "ماجستير في إدارة الأعمال (MBA)",
+        "title": "ماجستير إدارة الأعمال (MBA)",
         "org": "جامعة إيفرست، أورلاندو، فلوريدا",
         "date": "أغسطس 2021 - مايو 2024",
-        "desc": "التركيز على تقنيات الويب الحديثة وممارسات تطوير البرمجيات السريعة (Agile)."
+        "desc": "التركيز على تقنيات الويب الحديثة وممارسات تطوير البرمجيات الرشيقة (Agile)."
       },
       "bca": {
-        "title": "بكالوريوس في تطبيقات الحاسب الآلي",
-        "org": "كلية كانتيبور سيتي، كاتماندو، نيبال",
+        "title": "بكالوريوس تطبيقات الحاسوب",
+        "org": "كلية كانتبور سيتي، كاتماندو، نيبال",
         "date": "أكتوبر 2018 - نوفمبر 2019",
-        "desc": "التركيز على إدارة الشبكات، أمن تكنولوجيا المعلومات، وتطوير الويب."
+        "desc": "التركيز على إدارة الشبكات، أمن المعلومات، وتطوير الويب."
       },
       "caci": {
         "title": "مهندس برمجيات أول",
         "org": "CACI",
         "date": "ديسمبر 2023 - الحاضر",
-        "location": "عن بعد",
-        "desc": "صمم مكتبة موحدة لمكونات واجهة المستخدم المتاحة باستخدام Angular Material UI."
+        "location": "عن بُعد",
+        "desc": "تصميم مكتبة معيارية لمكونات واجهة المستخدم القابلة للوصول باستخدام Angular Material UI."
       },
       "travelers": {
         "title": "مهندس برمجيات II",
-        "org": "ترافلرز للتأمين",
+        "org": "Travelers Insurance",
         "date": "سبتمبر 2020 - نوفمبر 2023",
-        "location": "عن بعد",
-        "desc": "أنشأ مكتبة مكونات متاحة تم اعتمادها على مستوى الشركة باستخدام StencilJS."
+        "location": "عن بُعد",
+        "desc": "إنشاء مكتبة مكونات قابلة للوصول تم اعتمادها على مستوى الشركة باستخدام StencilJS."
       }
     }
   },
   "portfolio": {
-    "title": "الأعمال",
-    "repoAriaLabel": "رابط إلى مستودع المشروع على GitHub",
+    "title": "معرض الأعمال",
+    "repoAriaLabel": "رابط لمستودع المشروع على GitHub",
     "repoButtonText": "المستودع",
-    "liveAriaLabel": "رابط لمعاينة المشروع مباشرة",
-    "liveButtonText": "عرض مباشر",
+    "liveAriaLabel": "رابط للمعاينة الحية للمشروع",
+    "liveButtonText": "رابط مباشر",
     "projects": [
       {
         "name": "alacartadigital",
         "links": [
-          {
-            "text": "عرض مباشر",
-            "url": "https://issueless.vercel.app",
-            "icon": "Visibility"
-          },
-          {
-            "type": "repo",
-            "url": "github.com",
-            "icon": "GitHub"
-          }
+          { "text": "مباشر", "url": "https://issueless.vercel.app", "icon": "Visibility" },
+          { "type": "repo", "url": "https://github.com/kelvinsanchez15/issueless", "icon": "GitHub" }
         ],
         "imgPath": "projectMedia/alacartadigital.png",
         "imgAlt": "معاينة لموقع alacartadigital على الأجهزة",
-        "summary": "منصة قائمة طعام رقمية للمطاعم مع تكامل رموز QR.",
-        "keyFeatures": [
-          "لوحة تحكم سهلة الاستخدام",
-          "معاينة مباشرة",
-          "تخصيص الهوية التجارية",
-          "اشتراكات مدفوعة"
-        ],
+        "summary": "منصة قائمة طعام رقمية للمطاعم مع دمج رمز QR.",
+        "keyFeatures": ["لوحة تحكم سهلة الاستخدام", "معاينة حية", "تخصيص الهوية التجارية", "اشتراكات مدفوعة"],
         "technologies": ["React", "NextJS", "Firebase", "Material-UI", "Stripe"]
       },
       {
         "name": "Issueless",
         "links": [
-          {
-            "text": "عرض مباشر",
-            "url": "https://issueless.vercel.app",
-            "icon": "Visibility"
-          },
-          {
-            "type": "repo",
-            "url": "github.com",
-            "icon": "GitHub"
-          }
+          { "text": "مباشر", "url": "https://issueless.vercel.app", "icon": "Visibility" },
+          { "type": "repo", "url": "https://github.com/kelvinsanchez15/issueless", "icon": "GitHub" }
         ],
         "imgPath": "projectMedia/issueless.png",
-        "imgAlt": "معاينة مشروع Issueless",
-        "summary": "مشروع تتبع مشكلات بنظام JAMStack مستوحى من GitHub Issues.",
-        "keyFeatures": [
-          "عرض هجين (ثابت وعبر السيرفر)",
-          "خدمات تسجيل الدخول OAuth",
-          "دعم Markdown",
-          "سمة MUI مخصصة"
-        ],
-        "technologies": [
-          "React",
-          "NextJS",
-          "PostgreSQL",
-          "Prisma",
-          "Material-UI"
-        ]
+        "imgAlt": "معاينة Issueless",
+        "summary": "مشروع JAMStack لتتبع المشكلات مستوحى من GitHub issues.",
+        "keyFeatures": ["عرض هجين (ستاتيكي وعبر السيرفر)", "خدمات تسجيل الدخول عبر OAuth", "دعم Markdown", "سمة MUI مخصصة"],
+        "technologies": ["React", "NextJS", "PostgreSQL", "Prisma", "Material-UI"]
       },
       {
         "name": "Codebank",
         "links": [
-          {
-            "text": "عرض مباشر",
-            "url": "https://issueless.vercel.app",
-            "icon": "Visibility"
-          },
-          {
-            "type": "repo",
-            "url": "github.com",
-            "icon": "GitHub"
-          }
+          { "text": "مباشر", "url": "https://issueless.vercel.app", "icon": "Visibility" },
+          { "type": "repo", "url": "https://github.com/kelvinsanchez15/issueless", "icon": "GitHub" }
         ],
         "imgPath": "projectMedia/easybank.png",
-        "imgAlt": "معاينة لموقع Codebank",
-        "summary": "صفحة هبوط لمنتج SAAS متجاوبة تماماً ومصممة باستخدام Tailwind CSS.",
-        "keyFeatures": [
-          "تصميم بدقة البكسل",
-          "تحديد المواقع المطلق",
-          "تنسيقات مخصصة"
-        ],
+        "imgAlt": "معاينة موقع Codebank",
+        "summary": "صفحة هبوط لمنتج SAAS متجاوبة بالكامل مصممة باستخدام Tailwind CSS.",
+        "keyFeatures": ["تصميم دقيق (Pixel perfect)", "تحديد المواقع المطلق", "أصناف مخصصة (Custom classes)"],
         "technologies": ["Tailwind", "TypeScript", "React", "NextJS"]
       },
       {
         "name": "BombaiMTY",
         "links": [
-          {
-            "text": "عرض مباشر",
-            "url": "https://issueless.vercel.app",
-            "icon": "Visibility"
-          },
-          {
-            "type": "repo",
-            "url": "github.com",
-            "icon": "GitHub"
-          }
+          { "text": "مباشر", "url": "https://issueless.vercel.app", "icon": "Visibility" },
+          { "type": "repo", "url": "https://github.com/kelvinsanchez15/issueless", "icon": "GitHub" }
         ],
         "imgPath": "projectMedia/bombai-mty.png",
-        "imgAlt": "معاينة لموقع BombaiMTY",
-        "summary": "بوابة مبيعات وجبات سريعة مع نظام دفع عبر WhatsApp.",
-        "keyFeatures": [
-          "فلترة المنتجات",
-          "سلة تسوق",
-          "صورة غلاف",
-          "تكامل مع جداول بيانات Google"
-        ],
+        "imgAlt": "معاينة موقع BombaiMTY",
+        "summary": "بوابة مبيعات للوجبات السريعة مع إتمام الطلب عبر WhatsApp.",
+        "keyFeatures": ["تصفية المنتجات", "سلة التسوق", "صورة غلاف", "تكامل مع Google Sheets"],
         "technologies": ["Chakra UI", "TypeScript", "React", "NextJS"]
       }
     ]
   },
   "blog": {
     "title": "المدونة",
-    "featuredArticle": "مقالة مميزة",
+    "featuredArticle": "مقالة مختارة",
     "mostRecent": "الأحدث",
     "button": "المزيد من المقالات",
     "blogs": [
       {
-        "name": "تدوينتي الأولى",
+        "name": "أول تدوينة لي",
         "blogLink": "/my-first-blog-post",
         "imgPath": "blogs/cover-1.webp",
-        "imgAlt": "المدونة الأولى",
-        "summary": "نموذج لمقالة مدونة لاستعراض قسم المدونة.",
-        "tags": ["نموذج", "مدونة", "مقالة"]
+        "imgAlt": "أول مدونة",
+        "summary": "نموذج لتدوينة لاستعراض قسم المدونة.",
+        "tags": ["نموذج", "مدونة", "تدوينة"]
       },
       {
         "name": "مدونة NextJS",
@@ -223,46 +167,30 @@
         "imgAlt": "مدونة حول NextJS",
         "summary": "مدونة مبنية باستخدام إطار عمل NextJS و MUI.",
         "tags": ["React", "NextJS", "MUI"]
-      },
-      {
-        "name": "تدوينتي الثانية",
-        "blogLink": "/my-second-blog-post",
-        "imgPath": "blogs/css-border.jpg",
-        "imgAlt": "المدونة الثانية",
-        "summary": "نموذج لمقالة مدونة لاستعراض قسم المدونة.",
-        "tags": ["نموذج", "مدونة", "مقالة"]
-      },
-      {
-        "name": "مدونة NextJS الجديدة",
-        "blogLink": "/new-next-blog",
-        "imgPath": "blogs/css-display.jpg",
-        "imgAlt": "مدونة حول NextJS",
-        "summary": "مدونة مبنية باستخدام إطار عمل NextJS و MUI.",
-        "tags": ["React", "NextJS", "MUI"]
       }
     ]
   },
   "contact": {
-    "title": "اتصل بي",
-    "p1": "إذا كنت مهتماً بتوظيفي لمشروعك، يرجى استخدام النموذج أدناه للتواصل معي. هل تريد معرفة كيف أعمل وماذا يمكنني أن أقدم؟ تفضل بزيارة ",
+    "title": "تواصل معي",
+    "p1": "إذا كنت مهتماً بتوظيفي لمشروعك، يرجى استخدام النموذج أدناه للتواصل. هل تود معرفة كيف أعمل وماذا يمكنني أن أقدم؟ اطلع على ",
     "p2": "معرض أعمالي",
     "p3": " و ",
     "p4": "سيرتي الذاتية",
-    "resumeLink": "/resume/resume-ar.pdf",
-    "subtitle": "يمكنك العثور عليّ أيضاً عبر القنوات التالية",
-    "formTitle": "تواصل معي",
+    "resumeLink": "/resume/resume-en.pdf",
+    "subtitle": "يمكنك أيضاً العثور عليّ عبر القنوات التالية",
+    "formTitle": "ابقى على تواصل",
     "firstNameLabel": "الاسم الأول",
     "lastNameLabel": "اسم العائلة",
     "emailLabel": "البريد الإلكتروني",
     "messageLabel": "الرسالة",
-    "placeholder": "لا تتردد في إضافة أي تفاصيل.",
+    "placeholder": "لا تتردد في تضمين أي تفاصيل.",
     "requiredErrorMessage": "مطلوب",
-    "invalidEmailErrorMessage": "تنسيق البريد الإلكتروني غير صالح",
-    "successMessage": "شكراً لتواصلك معي! سأقوم بالرد عليك في أقرب وقت ممكن.",
+    "invalidEmailErrorMessage": "صيغة البريد الإلكتروني غير صالحة",
+    "successMessage": "شكراً لتواصلك! سأقوم بالرد عليك قريباً.",
     "submitButton": "إرسال الرسالة",
     "fields": {
       "name": "الاسم الكامل",
-      "email": "البريد الإلكتروني",
+      "email": "عنوان البريد الإلكتروني",
       "message": "رسالتك"
     }
   }
