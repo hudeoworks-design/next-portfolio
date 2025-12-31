@@ -8,7 +8,7 @@ import Link from "next/link";
 import { styled } from "@mui/material/styles";
 import { PostCardProps } from "@/types/blog";
 import { getDataUrlWithShimmerEffect } from "@/lib/image-utils";
-import { borderRadius } from "@/styles/tokens";
+import { borderRadius } from "@/styles/themes/tokens";
 import Tag from "./Tag";
 
 const ImagePostLink = styled(Link)({

@@ -87,7 +87,7 @@ export default function ElevateAppBar() {
 
   return (
     <nav id="navbar">
-      <AppBar elevation={0} color="inherit" sx={{ borderBottom: '1px solid', borderColor: 'divider' }}>
+      <AppBar elevation={0} color="inherit" sx={{ borderBottom: '1px solid', borderColor: 'divider', bgcolor: 'background.default' }}>
         <Container maxWidth="lg">
           <Toolbar disableGutters>
             <Typography
