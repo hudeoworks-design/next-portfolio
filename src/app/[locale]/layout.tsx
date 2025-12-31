@@ -7,6 +7,9 @@ import { Roboto } from 'next/font/google';
 import Navbar from '@/components/layout/Navbar';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NODE_ENV === 'production' 
+    ? 'https://subashmaharjan.com' 
+    : 'http://localhost:3000'),
   title: {
     template: "%s | Subash Maharjan",
     default: "Subash Maharjan",

@@ -23,6 +23,13 @@ interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
 
+// Set the revalidation interval (e.g., 60 seconds)
+export const revalidate = 60; 
+// Control behavior for paths NOT returned by generateStaticParams
+// true (default): generate on-demand (ISR)
+// false: return 404 for unknown paths
+export const dynamicParams = true; 
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Await params for Next.js 15
   const { slug } = await params;
@@ -147,8 +154,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 export async function generateStaticParams() {
   const blogDir = path.join(process.cwd(), "content", "blogs");
   if (!existsSync(blogDir)) return [];
+  
   const slugs = readdirSync(blogDir);
-  return slugs.map((slug) => ({ slug }));
+  return slugs.map((slug) => ({ 
+    slug: slug.replace(/\.mdx?$/, "") // Ensure you strip extensions if necessary
+  }));
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
