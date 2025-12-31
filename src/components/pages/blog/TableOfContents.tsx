@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
-import { spacing } from "../../../styles/tokens";
+import { spacing } from "../../../styles/themes/tokens";
 
 interface TOCProps {
   headings: { text: string; slug: string; depth: number }[];

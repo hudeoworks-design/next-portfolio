@@ -1,4 +1,4 @@
-import { borderRadius } from "@/styles/tokens";
+import { borderRadius } from "@/styles/themes/tokens";
 import { Chip } from "@mui/material";
 import Link from "next/link";
 import { JSX } from "react";
