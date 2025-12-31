@@ -23,7 +23,6 @@ export default function AboutPage() {
             id="about"
             sx={{
               pt: 10,
-              bgcolor: 'background.paper',
               color: 'text.primary'
             }}
           >

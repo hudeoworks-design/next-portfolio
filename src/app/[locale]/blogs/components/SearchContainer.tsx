@@ -23,21 +23,22 @@ export default function SearchContainer({ activeTag, tags }: SearchContainerProp
         justifyContent: "center",
         // Use the CSS variable string format for custom theme paths
         // This is serializable and works in Server Components
-        bgcolor: "var(--mui-blogs-filterBgColor)",
+        bgcolor: "background.paper",
         p: 3, // Added padding since it's a filter container
         borderRadius: 2
       }}
     >
-      <Stack gap={3} direction="row" px={3} flexWrap="wrap">
+      <Stack gap={1} direction="row" flexWrap="wrap">
         {tags.map((tag) => (
           <Tag
             label={tag}
             link={handleTagClick(tag)}
             key={tag}
-            size="large"
+            size="medium"
             selected={tag === activeTag}
             bgColor="blogs.tagBgColor"
             selectedColor="blogs.tagSelectedColor"
+            textColor="blogs.tagColor"
           />
         ))}
       </Stack>

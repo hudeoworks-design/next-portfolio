@@ -37,7 +37,6 @@ const Contact: React.FC = () => {
             id="contact"
             sx={{
                 pt: 10,
-                bgcolor: 'background.paper',
                 color: 'text.primary'
             }}
         >
