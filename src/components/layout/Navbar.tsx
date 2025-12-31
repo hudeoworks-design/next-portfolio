@@ -66,15 +66,17 @@ const localeNames: Record<string, Record<NavbarKeys, string>> = {
 export default function ElevateAppBar() {
   const params = useParams();
   const pathname = usePathname();
-  const isHome = pathname === '/';
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
   // App Router typically uses a dynamic [lang] or [locale] segment
   // Assumes your folder is app/[lang]/page.tsx
+  
+  
   const currentLocale = params.locale as string;
   const notEnglishLocale = currentLocale !== 'en' ? `/${currentLocale}` : '/';
+  const isHome = pathname === (currentLocale !== 'en' ? `/${currentLocale}` : '/');
   const pageJumpRef = isHome ? '#' : currentLocale !== 'en' ? '/' : '';
 
   const menuItems = [
