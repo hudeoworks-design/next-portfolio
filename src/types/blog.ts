@@ -53,6 +53,10 @@ export interface BlogPageProps {
   };
 }
 
+export interface BlogPostPageProps {
+  params: Promise<{ slug: string }>;
+}
+
 export interface BlogListProps {
   allBlogs: Blog[];
 }
