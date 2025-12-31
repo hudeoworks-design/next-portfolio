@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import PostCard from "./PostCard";
 import { Container, Box, Typography, Stack } from "@mui/material";
 import Link from "next/link";
-import { Blog } from "@/app/types/blog";
+import { Blog } from "@/types/blog";
 
 const blogsDirectory = path.join(process.cwd(), "content");
 

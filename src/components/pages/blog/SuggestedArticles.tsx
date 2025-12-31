@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import Grid from "@mui/material/Grid"; 
 import PostCard from "./PostCard";
 import { Container, Box, Typography } from "@mui/material";
-import { Blog } from "@/app/types/blog";
+import { Blog } from "@/types/blog";
 
 // Update path to include 'blogs' folder
 const blogsDirectory = path.join(process.cwd(), "content", "blogs");
@@ -64,6 +64,9 @@ export default function SuggestedArticles({
         px: { xs: 3, lg: 5 },
         py: { xs: 8, lg: 9 },
         maxWidth: { xs: "100%", sm: 554, lg: 1200 },
+        borderTop: 1,
+        borderColor: "divider",
+        bgcolor: "common.background",
       }}
     >
       <Box textAlign={{ xs: "left", lg: "center" }} mb={{ xs: 5, lg: 7 }}>

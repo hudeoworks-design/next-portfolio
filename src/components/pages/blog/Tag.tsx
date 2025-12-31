@@ -1,6 +1,6 @@
+import { borderRadius } from "@/styles/tokens";
 import { Chip } from "@mui/material";
 import Link from "next/link";
-import { borderRadius } from "../styles/tokens";
 import { JSX } from "react";
 
 type TagProps = {

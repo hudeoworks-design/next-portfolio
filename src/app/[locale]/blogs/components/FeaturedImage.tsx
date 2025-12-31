@@ -30,7 +30,7 @@ export default function FeaturedImage({ frontmatter }: FeaturedImageProps) {
         position: "relative",
         mx: "auto",
         zIndex: 2,
-        // borderRadius: "16px", // Fallback if theme vars aren't loaded
+        borderRadius: borderRadius.small, // Fallback if theme vars aren't loaded
         overflow: "hidden",
         // Using MUI's system for theme variables
         border: (theme) => `1px solid ${theme.palette.divider}`,
