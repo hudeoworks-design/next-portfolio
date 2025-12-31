@@ -1,62 +1,103 @@
+"use client";
+
+import { JSX, forwardRef } from "react";
+import { Chip, ChipProps, SxProps, Theme } from "@mui/material";
 import { borderRadius } from "@/styles/themes/tokens";
-import { Chip } from "@mui/material";
-import Link from "next/link";
-import { JSX } from "react";
+import Link from "@/components/shared/Link";
+
+/**
+ * 1. Create a Type-Safe Bridge
+ * MUI's 'component' prop requires a component that handles refs correctly.
+ * We cast the props to 'any' inside the bridge to bypass the conflict 
+ * between MUI's 'href' expectations and next-intl's 'href' generics.
+ */
+const TagLink = forwardRef<HTMLAnchorElement, any>((props, ref) => (
+  <Link href={""} ref={ref} {...props} />
+));
+TagLink.displayName = "TagLink";
 
 type TagProps = {
-  size?: "small" | "large";
+  size?: "small" | "medium" | "large";
   label: string;
   link: string;
   selected?: boolean;
   bgColor?: string;
+  textColor?: string;
   selectedColor?: string;
-  key?: number | string;
-};
+} & Omit<ChipProps, "size" | "component">;
 
-const chipStyle = (
-  selected: boolean,
-  bgColor?: string,
-  selectedColor?: string,
-  color?: string
-) => ({
-  backgroundColor: selected ? selectedColor : bgColor,
-  borderRadius: borderRadius.pill,
-  color: color,
-});
-
-const largeStyle = {
-  px: 2,
-  fontSize: "2",
-  cursor: "pointer",
-};
-
-const smallStyle = {
-  height: "19px",
-  cursor: "pointer",
-  fontSize: "1",
+const sizeConfigs = {
+  small: {
+    height: "20px",
+    fontSize: "0.75rem",
+    fontWeight: 600,
+    px: 1,
+  },
+  medium: {
+    height: "28px",
+    fontSize: "0.875rem",
+    fontWeight: 500,
+    px: 2,
+  },
+  large: {
+    height: "36px",
+    fontSize: "1rem",
+    fontWeight: 500,
+    px: 2,
+  },
 };
 
 const Tag = ({
-  size,
+  size = "medium",
   label,
   link,
   selected = false,
   bgColor,
+  textColor,
   selectedColor,
+  sx,
   ...other
 }: TagProps): JSX.Element => {
+  
+  const activeSize = sizeConfigs[size];
+
+  const combinedSx: SxProps<Theme> = {
+    borderRadius: borderRadius.pill,
+    cursor: "pointer",
+    transition: "all 0.2s ease-in-out",
+    
+    // Use theme palette tokens for better Dark Mode support
+    backgroundColor: selected 
+        ? (selectedColor || "primary.main") 
+        : (bgColor || "action.hover"),
+    color: textColor || "text.primary",
+    
+    ...activeSize,
+
+    "& .MuiChip-label": {
+      textTransform: "capitalize",
+      px: 0, 
+    },
+
+    "&:hover": {
+      backgroundColor: selected ? selectedColor : "action.selected",
+      opacity: 0.9,
+    },
+    
+    ...sx,
+  };
+
   return (
-    <Link href={`${link}`}>
-      <Chip
-        {...other}
-        label={label?.replace("-", " ")}
-        sx={
-          size === "small"
-            ? { ...chipStyle(selected, bgColor, selectedColor), ...smallStyle }
-            : { ...chipStyle(selected, bgColor, selectedColor), ...largeStyle }
-        }
-      />
-    </Link>
+    <Chip
+      {...other}
+      // Pass our bridge component
+      component={TagLink}
+      // Link props are passed through the bridge
+      href={link} 
+      label={label.replace(/-/g, " ")}
+      clickable
+      sx={combinedSx}
+    />
   );
 };
 
