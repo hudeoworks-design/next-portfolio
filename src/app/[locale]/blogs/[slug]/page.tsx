@@ -1,5 +1,3 @@
-"use cache";
-
 import { readFileSync, readdirSync, existsSync } from "fs";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import path from "path";
