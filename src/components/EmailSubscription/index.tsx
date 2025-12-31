@@ -1,14 +1,17 @@
-import React, { JSX } from "react";
+import { JSX } from "react";
 import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
 import { Typography } from "@mui/material";
 import EmailSubscriptionForm from "./EmailSubscriptionForm";
 
 const EmailSubscription = (): JSX.Element => {
   return (
     <Box
-      bgcolor="common.background"
-      sx={{ px: { xs: 2, lg: 4 }, py: { xs: 7, lg: 8 } }}
+      sx={{
+        px: { xs: 2, lg: 4 }, py: { xs: 7, lg: 8 },
+        borderTop: 1,
+        borderColor: "divider",
+        bgcolor: "common.background",
+      }}
     >
       <Box sx={{ textAlign: "center", m: "auto", maxWidth: "700px" }}>
         <Typography
