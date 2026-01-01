@@ -97,52 +97,34 @@
     "liveButtonText": "رابط مباشر",
     "projects": [
       {
-        "name": "alacartadigital",
+        "name": "حقيبة أعمال نكست (Next Portfolio)",
         "links": [
-          { "text": "مباشر", "url": "https://issueless.vercel.app", "icon": "Visibility" },
-          { "type": "repo", "url": "https://github.com/kelvinsanchez15/issueless", "icon": "GitHub" }
+          {
+            "text": "عرض مباشر",
+            "url": "https://vercel.com/hudeoworks-design/next-portfolio/2vKFCaaRQxdpMJhhkekuisTxDEBs",
+            "icon": "Visibility"
+          },
+          {
+            "type": "repo",
+            "url": "https://github.com/hudeoworks-design/next-portfolio",
+            "icon": "GitHub"
+          }
         ],
-        "imgPath": "projectMedia/alacartadigital.png",
-        "imgAlt": "معاينة لموقع alacartadigital على الأجهزة",
-        "summary": "منصة قائمة طعام رقمية للمطاعم مع دمج رمز QR.",
-        "keyFeatures": ["لوحة تحكم سهلة الاستخدام", "معاينة حية", "تخصيص الهوية التجارية", "اشتراكات مدفوعة"],
-        "technologies": ["React", "NextJS", "Firebase", "Material-UI", "Stripe"]
-      },
-      {
-        "name": "Issueless",
-        "links": [
-          { "text": "مباشر", "url": "https://issueless.vercel.app", "icon": "Visibility" },
-          { "type": "repo", "url": "https://github.com/kelvinsanchez15/issueless", "icon": "GitHub" }
+        "imgPath": "projectMedia/next-portfolio.webp",
+        "imgAlt": "معاينة حقيبة أعمال نكست",
+        "summary": "موقع حقيبة أعمال (Portfolio) تم بناؤه باستخدام تقنيات الواجهة الأمامية الحديثة",
+        "keyFeatures": [
+          "NextJs",
+          "حقيبة أعمال",
+          "مدونة",
+          "دعم لغات متعددة (i18n)"
         ],
-        "imgPath": "projectMedia/issueless.png",
-        "imgAlt": "معاينة Issueless",
-        "summary": "مشروع JAMStack لتتبع المشكلات مستوحى من GitHub issues.",
-        "keyFeatures": ["عرض هجين (ستاتيكي وعبر السيرفر)", "خدمات تسجيل الدخول عبر OAuth", "دعم Markdown", "سمة MUI مخصصة"],
-        "technologies": ["React", "NextJS", "PostgreSQL", "Prisma", "Material-UI"]
-      },
-      {
-        "name": "Codebank",
-        "links": [
-          { "text": "مباشر", "url": "https://issueless.vercel.app", "icon": "Visibility" },
-          { "type": "repo", "url": "https://github.com/kelvinsanchez15/issueless", "icon": "GitHub" }
-        ],
-        "imgPath": "projectMedia/easybank.png",
-        "imgAlt": "معاينة موقع Codebank",
-        "summary": "صفحة هبوط لمنتج SAAS متجاوبة بالكامل مصممة باستخدام Tailwind CSS.",
-        "keyFeatures": ["تصميم دقيق (Pixel perfect)", "تحديد المواقع المطلق", "أصناف مخصصة (Custom classes)"],
-        "technologies": ["Tailwind", "TypeScript", "React", "NextJS"]
-      },
-      {
-        "name": "BombaiMTY",
-        "links": [
-          { "text": "مباشر", "url": "https://issueless.vercel.app", "icon": "Visibility" },
-          { "type": "repo", "url": "https://github.com/kelvinsanchez15/issueless", "icon": "GitHub" }
-        ],
-        "imgPath": "projectMedia/bombai-mty.png",
-        "imgAlt": "معاينة موقع BombaiMTY",
-        "summary": "بوابة مبيعات للوجبات السريعة مع إتمام الطلب عبر WhatsApp.",
-        "keyFeatures": ["تصفية المنتجات", "سلة التسوق", "صورة غلاف", "تكامل مع Google Sheets"],
-        "technologies": ["Chakra UI", "TypeScript", "React", "NextJS"]
+        "technologies": [
+          "NextJs",
+          "HTML5",
+          "MaterialUI",
+          "React"
+        ]
       }
     ]
   },

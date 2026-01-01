@@ -97,11 +97,11 @@
     "liveButtonText": "En vivo",
     "projects": [
       {
-        "name": "alacartadigital",
+        "name": "Next Portfolio",
         "links": [
           {
             "text": "en vivo",
-            "url": "https://issueless.vercel.app",
+            "url": "vercel.com",
             "icon": "Visibility"
           },
           {
@@ -110,96 +110,21 @@
             "icon": "GitHub"
           }
         ],
-        "imgPath": "projectMedia/alacartadigital.png",
-        "imgAlt": "Vista previa de alacartadigital en dispositivo",
-        "summary": "Plataforma de menú digital para restaurantes con integración de código QR.",
+        "imgPath": "projectMedia/next-portfolio.webp",
+        "imgAlt": "Next Portfolio",
+        "summary": "Sitio web de portafolio utilizando tecnologías modernas de frontend",
         "keyFeatures": [
-          "Panel de control intuitivo",
-          "Vista previa en tiempo real",
-          "Personalización de marca",
-          "Suscripciones pagas"
-        ],
-        "technologies": ["React", "NextJS", "Firebase", "Material-UI", "Stripe"]
-      },
-      {
-        "name": "Issueless",
-        "links": [
-          {
-            "text": "en vivo",
-            "url": "https://issueless.vercel.app",
-            "icon": "Visibility"
-          },
-          {
-            "type": "repo",
-            "url": "github.com",
-            "icon": "GitHub"
-          }
-        ],
-        "imgPath": "projectMedia/issueless.png",
-        "imgAlt": "Vista previa de Issueless",
-        "summary": "Proyecto de seguimiento de incidencias JAMStack inspirado en GitHub issues.",
-        "keyFeatures": [
-          "Renderizado híbrido estático y de servidor",
-          "Servicios de inicio de sesión OAuth",
-          "Soporte para Markdown",
-          "Tema personalizado de MUI"
+          "NextJs",
+          "Portafolio",
+          "Blog",
+          "i18n (Multilingüe)"
         ],
         "technologies": [
-          "React",
-          "NextJS",
-          "PostgreSQL",
-          "Prisma",
-          "Material-UI"
+          "NextJs",
+          "HTML5",
+          "MaterialUI",
+          "React"
         ]
-      },
-      {
-        "name": "Codebank",
-        "links": [
-          {
-            "text": "en vivo",
-            "url": "https://issueless.vercel.app",
-            "icon": "Visibility"
-          },
-          {
-            "type": "repo",
-            "url": "github.com",
-            "icon": "GitHub"
-          }
-        ],
-        "imgPath": "projectMedia/easybank.png",
-        "imgAlt": "Vista previa del sitio Codebank",
-        "summary": "Landing page de producto SAAS totalmente responsiva diseñada con Tailwind CSS.",
-        "keyFeatures": [
-          "Diseño pixel perfect",
-          "Posicionamiento absoluto",
-          "Clases personalizadas"
-        ],
-        "technologies": ["Tailwind", "TypeScript", "React", "NextJS"]
-      },
-      {
-        "name": "BombaiMTY",
-        "links": [
-          {
-            "text": "en vivo",
-            "url": "https://issueless.vercel.app",
-            "icon": "Visibility"
-          },
-          {
-            "type": "repo",
-            "url": "github.com",
-            "icon": "GitHub"
-          }
-        ],
-        "imgPath": "projectMedia/bombai-mty.png",
-        "imgAlt": "Vista previa del sitio BombaiMTY",
-        "summary": "Portal de ventas de comida rápida con finalización de compra vía WhatsApp.",
-        "keyFeatures": [
-          "Filtro de productos",
-          "Carrito de compras",
-          "Foto de portada",
-          "Integración con Google Sheets"
-        ],
-        "technologies": ["Chakra UI", "TypeScript", "React", "NextJS"]
       }
     ]
   },

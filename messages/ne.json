@@ -97,11 +97,11 @@
     "liveButtonText": "लाइभ",
     "projects": [
       {
-        "name": "alacartadigital",
+        "name": "नेक्स्ट पोर्टफोलियो (Next Portfolio)",
         "links": [
           {
-            "text": "लाइभ",
-            "url": "https://issueless.vercel.app",
+            "text": "प्रत्यक्ष अवलोकन",
+            "url": "vercel.com",
             "icon": "Visibility"
           },
           {
@@ -110,46 +110,20 @@
             "icon": "GitHub"
           }
         ],
-        "imgPath": "projectMedia/alacartadigital.png",
-        "imgAlt": "alacartadigital साइटको मक्ड डिभाइस प्रिभ्यु",
-        "summary": "QR कोड एकीकरण सहितको अनलाइन रेस्टुरेन्ट मेनु प्लेटफर्म।",
+        "imgPath": "projectMedia/next-portfolio.webp",
+        "imgAlt": "नेक्स्ट पोर्टफोलियो",
+        "summary": "आधुनिक फ्रन्टएन्ड प्रविधिहरू प्रयोग गरेर बनाइएको पोर्टफोलियो वेबसाइट",
         "keyFeatures": [
-          "प्रयोगकर्ता-मैत्री ड्यासबोर्ड",
-          "लाइभ प्रिभ्यु",
-          "ब्रान्ड अनुकूलन",
-          "सशुल्क सदस्यता (Paid subscriptions)"
-        ],
-        "technologies": ["React", "NextJS", "Firebase", "Material-UI", "Stripe"]
-      },
-      {
-        "name": "Issueless",
-        "links": [
-          {
-            "text": "लाइभ",
-            "url": "https://issueless.vercel.app",
-            "icon": "Visibility"
-          },
-          {
-            "type": "repo",
-            "url": "github.com",
-            "icon": "GitHub"
-          }
-        ],
-        "imgPath": "projectMedia/issueless.png",
-        "imgAlt": "Issueless प्रिभ्यु",
-        "summary": "GitHub issues बाट प्रेरित JAMStack इस्यु ट्रयाकर परियोजना।",
-        "keyFeatures": [
-          "हाइब्रिड स्ट्याटिक र सर्भर रेन्डरिङ",
-          "OAuth साइन-इन सेवाहरू",
-          "Markdown समर्थन",
-          "कस्टम MUI थिम"
+          "NextJs",
+          "पोर्टफोलियो",
+          "ब्लग",
+          "बहुभाषिक (i18n)"
         ],
         "technologies": [
-          "React",
-          "NextJS",
-          "PostgreSQL",
-          "Prisma",
-          "Material-UI"
+          "NextJs",
+          "HTML5",
+          "MaterialUI",
+          "React"
         ]
       }
     ]
