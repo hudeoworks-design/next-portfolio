@@ -97,109 +97,34 @@
     "liveButtonText": "Live",
     "projects": [
       {
-        "name": "alacartadigital",
+        "name": "Next Portfolio",
         "links": [
           {
             "text": "live",
-            "url": "https://issueless.vercel.app",
+            "url": "https://vercel.com/hudeoworks-design/next-portfolio/2vKFCaaRQxdpMJhhkekuisTxDEBs",
             "icon": "Visibility"
           },
           {
             "type": "repo",
-            "url": "https://github.com/kelvinsanchez15/issueless",
+            "url": "https://github.com/hudeoworks-design/next-portfolio",
             "icon": "GitHub"
           }
         ],
-        "imgPath": "projectMedia/alacartadigital.png",
-        "imgAlt": "alacartadigital site mocked device preview",
-        "summary": "Online restaurant menu platform with QR code integration.",
+        "imgPath": "projectMedia/next-portfolio.webp",
+        "imgAlt": "Next Portfolio",
+        "summary": "Portfolio website using modern frontend technologies",
         "keyFeatures": [
-          "User-friendly dashboard",
-          "Live preview",
-          "Brand customization",
-          "Paid subscriptions"
-        ],
-        "technologies": ["React", "NextJS", "Firebase", "Material-UI", "Stripe"]
-      },
-      {
-        "name": "Issueless",
-        "links": [
-          {
-            "text": "live",
-            "url": "https://issueless.vercel.app",
-            "icon": "Visibility"
-          },
-          {
-            "type": "repo",
-            "url": "https://github.com/kelvinsanchez15/issueless",
-            "icon": "GitHub"
-          }
-        ],
-        "imgPath": "projectMedia/issueless.png",
-        "imgAlt": "Issueless preview",
-        "summary": "JAMStack Issue Tracker project inspired on GitHub issues.",
-        "keyFeatures": [
-          "Hybrid static & server rendering",
-          "OAuth sign-in services",
-          "Markdown support",
-          "Custom MUI theme"
+          "NextJs",
+          "Portfolio",
+          "Blog",
+          "i18n"
         ],
         "technologies": [
-          "React",
-          "NextJS",
-          "PostgreSQL",
-          "Prisma",
-          "Material-UI"
+          "NextJs",
+          "HTML5",
+          "MaterialUI",
+          "React"
         ]
-      },
-      {
-        "name": "Codebank",
-        "links": [
-          {
-            "text": "live",
-            "url": "https://issueless.vercel.app",
-            "icon": "Visibility"
-          },
-          {
-            "type": "repo",
-            "url": "https://github.com/kelvinsanchez15/issueless",
-            "icon": "GitHub"
-          }
-        ],
-        "imgPath": "projectMedia/easybank.png",
-        "imgAlt": "Codebank website preview",
-        "summary": "Fully responsive SAAS product landing page designed with Tailwind CSS.",
-        "keyFeatures": [
-          "Pixel perfect design",
-          "Absolute positioning",
-          "Custom classes"
-        ],
-        "technologies": ["Tailwind", "TypeScript", "React", "NextJS"]
-      },
-      {
-        "name": "BombaiMTY",
-        "links": [
-          {
-            "text": "live",
-            "url": "https://issueless.vercel.app",
-            "icon": "Visibility"
-          },
-          {
-            "type": "repo",
-            "url": "https://github.com/kelvinsanchez15/issueless",
-            "icon": "GitHub"
-          }
-        ],
-        "imgPath": "projectMedia/bombai-mty.png",
-        "imgAlt": "BombaiMTY website preview",
-        "summary": "Fast food sales portal with WhatsApp checkout.",
-        "keyFeatures": [
-          "Product filter",
-          "Shopping cart",
-          "Cover photo",
-          "Google Sheets integration"
-        ],
-        "technologies": ["Chakra UI", "TypeScript", "React", "NextJS"]
       }
     ]
   },

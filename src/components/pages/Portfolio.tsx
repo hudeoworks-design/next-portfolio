@@ -41,7 +41,7 @@ export default function Portfolio() {
   const [rowsPerPage, setRowsPerPage] = useState(2);
   const paginatedItems = projectsData.slice((page - 1) * rowsPerPage, (page - 1) * rowsPerPage + rowsPerPage);
 
-  
+
   const handleChangePage = (event: any, newPage: SetStateAction<number>) => {
     setPage(newPage);
   };
@@ -51,42 +51,40 @@ export default function Portfolio() {
       component="section"
       id="portfolio"
     >
+      <Card
+        sx={{
+          bgcolor: 'background.paper',
+          borderRadius: 2,
+          p: 4,
+          height: '100%',
+          transition: 'background-color 0.3s'
+        }}
+      >
+        <Button
+          color="primary"
+          endIcon={<DashboardTwoTone />}
+          href="/portfolio"
+          sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s', mb: 2 }}
+          variant="outlined"
+        >
+          {t('title')}
+        </Button>
         <Grid container spacing={4}>
-          <Card
-            sx={{
-              bgcolor: 'background.paper',
-              borderRadius: 2,
-              p: 4,
-              height: '100%',
-              transition: 'background-color 0.3s'
-            }}
-          >
-            <Grid container spacing={4}>
-              <Button
-                color="primary"
-                endIcon={<DashboardTwoTone />}
-                href="/portfolio"
-                sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s' }}
-                variant="outlined"
-              >
-                {t('title')}
-              </Button>
-              <Projects projectItems={paginatedItems} />
-              <Grid size={{ xs: 12 }}>
-                <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                  <Pagination
-                    count={Math.ceil(projectsData.length / rowsPerPage)}
-                    page={page}
-                    onChange={handleChangePage}
-                    variant="outlined" shape="rounded"
-                  />
-                </Box>
-              </Grid>
+          <Projects projectItems={paginatedItems} />
+          <Grid size={{ xs: 12 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+              <Pagination
+                count={Math.ceil(projectsData.length / rowsPerPage)}
+                page={page}
+                onChange={handleChangePage}
+                variant="outlined" shape="rounded"
+              />
+            </Box>
+          </Grid>
 
-            </Grid>
-
-          </Card>
         </Grid>
+
+      </Card>
     </Box>
   );
 }

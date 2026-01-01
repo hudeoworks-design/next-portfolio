@@ -1,71 +1,45 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid"; 
+import { Box, Container, Typography, Grid } from "@mui/material";
 import { SearchContainer } from "./components";
 import { Blog } from "@/types/blog";
 import { getAllPostsBySelectedTag, getAllPostsData, getAllTagsFromAllPosts } from "@/lib/posts";
-import Tag from "@/components/pages/blog/Tag";
 import PostCard from "@/components/pages/blog/PostCard";
 
-export default async function BlogsPage({ 
+export default async function BlogsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ tag?: string }> | { tag?: string };
+  searchParams: Promise<{ tag?: string }>;
 }) {
-  const params = await searchParams;
-  const selectedTag = params.tag || "";
+  const { tag } = await searchParams;
+  const selectedTag = tag || "";
 
-  // list all blogs from all folders
   const allBlogs = getAllPostsData();
-  // filtered blogs by tags
-  const filteredBlogs = getAllPostsBySelectedTag(allBlogs, selectedTag);
-  // list all tags from entire blog
   const allTags = getAllTagsFromAllPosts(allBlogs);
-
-  // tag click event
-  const handleTagClick = (tag: string) => {
-    return tag === selectedTag ? "/blogs" : `/blogs?tag=${tag}`;
-  };
+  const filteredBlogs = getAllPostsBySelectedTag(allBlogs, selectedTag);
 
   return (
     <Container>
-      {/* Grid container here refers to Grid2 */}
+      {/* Use Grid2 for modern Next.js/MUI layouts */}
       <Grid container>
         <Grid size={12}>
-          <Box
-            sx={{ pt: 10, bgcolor: 'background.paper', color: 'text.primary' }}
-          >
-            <SearchContainer>
-              <Container>
-                <Typography variant="h5" component="h1" sx={{ mb: 5, px: 3 }}>
-                  Search by topic:
-                </Typography>
-                <Stack gap={3} direction="row" px={3} flexWrap="wrap">
-                  {allTags.map((tag) => (
-                    <Tag
-                      label={tag}
-                      link={handleTagClick(tag)}
-                      key={tag}
-                      size="large"
-                      selected={tag === selectedTag}
-                      bgColor="blogs.tagBgColor"
-                      selectedColor="blogs.tagSelectedColor"
-                    />
-                  ))}
-                </Stack>
-              </Container>
-            </SearchContainer>
-      
+          <Box sx={{ pt: 10 }}>
+            <Container>
+              <Typography variant="h5" component="h1" sx={{ mb: 3, px: 3 }}>
+                Filter by tags:
+              </Typography>
+
+              <SearchContainer activeTag={selectedTag} tags={allTags} />
+
+            </Container>
+
             <Container sx={{ my: 6 }}>
               <Grid container spacing={{ xs: 3, lg: 5 }}>
                 {filteredBlogs.map((blog: Blog) => {
-                  // FIX 2: Normalize Image
-                  const imageProp = typeof blog.featuredImage === "string" 
+                  const imageProp = typeof blog.featuredImage === "string"
                     ? { src: blog.featuredImage, alt: blog.title }
                     : blog.featuredImage;
 
-                  // FIX 3: Normalize Tags for PostCard
-                  const tagsArray = typeof blog.tags === "string" 
-                    ? blog.tags.split(",").map(t => t.trim()) 
+                  const tagsArray = typeof blog.tags === "string"
+                    ? blog.tags.split(",").map((t: string) => t.trim())
                     : blog.tags || [];
                   const tagsString = tagsArray.join(", ");
 
@@ -76,7 +50,7 @@ export default async function BlogsPage({
                         image={imageProp}
                         tags={tagsString}
                         description={blog.description}
-                        link={blog.slug} 
+                        link={blog.slug}
                         maxWidth={{ xs: 554, lg: 355 }}
                       />
                     </Grid>

@@ -21,6 +21,9 @@ const nextConfig:NextConfig = {
 
     return config;
   },
+  outputFileTracingIncludes: {
+    '/blogs/*': ['./content/**/*'],
+  },
 };
 
 export default withNextIntl(withMDX()(nextConfig));

@@ -1,107 +1,88 @@
 "use client";
 
+import { ReactNode, useMemo, useState, useEffect } from 'react';
 import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider as NextThemesProvider, useTheme } from "next-themes";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { useMemo, ReactNode, useState, useEffect } from 'react';
-import { getLayoutDirection } from '@/lib/utils';
-import { useParams } from 'next/navigation';
-
-import { CacheProvider } from '@emotion/react';
-import createCache from '@emotion/cache';
 import { prefixer } from 'stylis';
 import rtlPlugin from '@mui/stylis-plugin-rtl';
-import globalStyles from '@/styles/global';
 
+import { getLayoutDirection } from '@/lib/utils';
+import { createAppTheme } from '@/styles/theme';
 
-// Define a helper function to create the correct emotion cache
-const createEmotionCache = (direction: 'rtl' | 'ltr') => {
-    if (direction === 'rtl') {
-        return createCache({
-            key: 'muirtl',
-            stylisPlugins: [prefixer, rtlPlugin],
-        });
-    }
-    return createCache({
-        key: 'mui',
-        // No rtlPlugin needed for ltr
-    });
-};
+interface ProviderProps {
+    children: ReactNode;
+    locale: string;
+    messages: Record<string, any>;
+}
 
-
-function MUIThemeProvider({ children }: { children: React.ReactNode }) {
-    const params = useParams();
-    // Safely retrieve the locale, defaulting to 'en' or your default locale if undefined
-    const locale = params.locale ? String(params.locale) : 'en'; 
-
+function MUIThemeProvider({ children, locale }: { children: ReactNode; locale: string }) {
     const { resolvedTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
-    // Determine the layout direction immediately based on the locale from params
-    const direction = useMemo(() => getLayoutDirection(locale) as 'rtl' | 'ltr', [locale]);
-
-    // Use a single emotion cache based on the determined direction
-    const emotionCache = useMemo(() => createEmotionCache(direction), [direction]);
-
-
-    // Avoid hydration mismatch by waiting for mount
     useEffect(() => {
         setMounted(true);
     }, []);
 
-    const theme = useMemo(() =>
-        createTheme({
-            // Set the MUI theme direction property
-            direction: direction, 
-            palette: {
-                mode: resolvedTheme === "dark" ? "dark" : "light",
-            },
-        }), [resolvedTheme, direction]);
+    const direction = useMemo(() => getLayoutDirection(locale) as 'rtl' | 'ltr', [locale]);
 
+    const theme = useMemo(() => {
+        const mode = resolvedTheme === "dark" ? "dark" : "light";
+        return createAppTheme(mode, direction);
+    }, [resolvedTheme, direction]);
+
+    // Render children with visibility hidden during hydration to prevent style flash
     if (!mounted) {
-        // Prevent flash of wrong theme by returning null or a placeholder
-        // Setting 'visibility: hidden' works well if you need space reserved
-        return <div style={{ visibility: "hidden" }}>{children}</div>;
+        return <div style={{ visibility: 'hidden' }}>{children}</div>;
     }
 
-    // Crucially, wrap with CacheProvider using the correct cache instance
     return (
-        <CacheProvider value={emotionCache}>
-            <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
+            {/* Critical: ensures CSS logic like 'left' vs 'right' works for MUI components */}
+            <div dir={direction} style={{ display: 'contents' }}>
                 <CssBaseline />
-                {globalStyles}
                 {children}
-            </ThemeProvider>
-        </CacheProvider>
+            </div>
+        </ThemeProvider>
     );
 }
 
-// Keep the main wrapper component the same
-export function CustomThemeProvider({
-    children,
-    locale,
-    messages
-}: {
-    children: ReactNode;
-    locale: string;
-    
-    messages: Record<string, any>;
-}) {
-    // You must also set the 'dir' attribute on the document root manually for native elements
-    useEffect(() => {
-        if (typeof document !== 'undefined') {
-            document.documentElement.setAttribute('dir', getLayoutDirection(locale));
-        }
-    }, [locale]);
+export function CustomThemeProvider({ children, locale, messages }: ProviderProps) {
+    const direction = useMemo(() => getLayoutDirection(locale), [locale]);
 
-    const timeZone = 'America/New_York';
+    useEffect(() => {
+        document.documentElement.dir = direction;
+        document.documentElement.lang = locale;
+    }, [direction, locale]);
+
     return (
-        <NextIntlClientProvider locale={locale} messages={messages} timeZone={timeZone}>
-            <AppRouterCacheProvider>
-                <NextThemesProvider attribute="class" defaultTheme="system" enableSystem>
-                    <MUIThemeProvider>{children}</MUIThemeProvider>
+        <NextIntlClientProvider
+            locale={locale}
+            messages={messages}
+            timeZone="America/New_York"
+        >
+            {/* 
+                FIX: Adding 'key={locale}' ensures the Cache Provider reloads 
+                the Stylis plugins when switching between RTL/LTR locales.
+            */}
+            <AppRouterCacheProvider
+                key={locale} 
+                options={{
+                    key: direction === 'rtl' ? 'muirtl' : 'mui',
+                    stylisPlugins: direction === 'rtl' ? [prefixer, rtlPlugin] : [],
+                }}
+            >
+                <NextThemesProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    <MUIThemeProvider locale={locale}>
+                        {children}
+                    </MUIThemeProvider>
                 </NextThemesProvider>
             </AppRouterCacheProvider>
         </NextIntlClientProvider>

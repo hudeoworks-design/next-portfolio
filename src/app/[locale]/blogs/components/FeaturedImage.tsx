@@ -1,6 +1,6 @@
 "use client";
 
-import { borderRadius } from "@/styles/tokens";
+import { borderRadius } from "@/styles/themes/tokens";
 import { Box } from "@mui/material";
 import Image from "next/image";
 
@@ -42,7 +42,7 @@ export default function FeaturedImage({ frontmatter }: FeaturedImageProps) {
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         fill
         style={{
-          // borderRadius: borderRadius?.medium || "8px",
+          borderRadius: borderRadius?.medium || "8px",
           objectFit: "cover"
         }}
         priority

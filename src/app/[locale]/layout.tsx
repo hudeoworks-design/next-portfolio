@@ -2,11 +2,16 @@
 import type { Metadata } from 'next';
 import { getLayoutDirection } from '@/lib/utils';
 import { CustomThemeProvider } from '@/components/CustomThemeProvider';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { Roboto } from 'next/font/google';
 import Navbar from '@/components/layout/Navbar';
+import { routing } from '@/i18n/routing';
+import { notFound } from 'next/navigation';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NODE_ENV === 'production' 
+    ? 'https://subashmaharjan.com' 
+    : 'http://localhost:3000'),
   title: {
     template: "%s | Subash Maharjan",
     default: "Subash Maharjan",
@@ -30,6 +35,14 @@ export default async function RootLayout({
 }) {
   const { locale } = await params;
   const messages = await getMessages();
+
+   // Validate locale immediately to prevent 404 on deep links
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
+
+  // Mandatory for static rendering in Next.js 15
+  setRequestLocale(locale); 
 
   return (
     <html lang={locale} className={roboto.variable} suppressHydrationWarning dir={getLayoutDirection(locale)} data-scroll-behavior="smooth">

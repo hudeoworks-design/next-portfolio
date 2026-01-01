@@ -9,7 +9,6 @@ const AnimatedLink = styled(Link)(({ theme }) => ({
   padding: '12px 15px',
   textDecoration: 'none',
   position: 'relative',
-  color: theme.palette.text.primary, 
   
   '&::before': {
     content: '""',

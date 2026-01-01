@@ -23,6 +23,11 @@ interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
 
+// Next.js 15 ISR Config
+export const revalidate = 60; 
+export const dynamicParams = true; 
+export const dynamic = "force-static"; // Forces static generation and avoids DYNAMIC_SERVER_USAGE
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Await params for Next.js 15
   const { slug } = await params;
@@ -37,12 +42,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { content, data: frontmatter } = matter(fileContents);
   const headings = await extractHeadings(content);
 
-  // Normalize tags: handle string "js, react" or array ["js", "react"]
   const tagsArray = typeof frontmatter.tags === 'string'
     ? frontmatter.tags.split(",").map((t: string) => t.trim())
     : (frontmatter.tags || []);
 
-  // Ensure frontmatter is typed correctly for components
   const typedFrontmatter = {
     ...frontmatter,
     title: frontmatter.title || "Untitled",
@@ -51,68 +54,32 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <Box
-        sx={{
-          backgroundColor: 'background.paper',
-          py: 12,
-          position: "relative",
-          ":after": {
-            content: `""`,
-            position: "absolute",
-            left: 0, right: 0, bottom: 0,
-            height: { xs: "15%", md: "33%" },
-            backgroundColor: 'background.paper',
-            zIndex: 1,
-          },
-        }}
-      >
+      <Box sx={{ backgroundColor: 'background.paper', py: 12, position: "relative" }}>
         <Container sx={{ position: 'relative', zIndex: 2 }}>
           <Grid container spacing={2}>
             <Grid size={6}>
-              <Typography variant="h4" component="h1" color="text.primary" fontWeight="600" mb={1}>
+              <Typography variant="h4" component="h1" fontWeight="600" mb={1}>
                 {typedFrontmatter.title}
               </Typography>
-              <Typography variant="body1" color="text.secondary" maxWidth={600} mb={1}>
+              <Typography variant="body1" color="text.secondary" mb={1}>
                 {frontmatter.description}
               </Typography>
-              <Stack mb={5} gap={2}>
-                <Typography variant="body2" color="text.secondary">
-                  Last Updated: {frontmatter.date}
-                </Typography>
-                <Stack direction="row" gap={1} flexWrap="wrap">
-                  {tagsArray.map((tag: string) => (
-                    <Tag
-                      key={tag}
-                      size="small"
-                      label={tag}
-                      link={`/blogs?tag=${tag}`}
-                      bgColor="blogs.tagBgColor"
-                      selectedColor="blogs.tagSelectedColor"
-                    />
-                  ))}
-                </Stack>
+              <Stack direction="row" gap={1} flexWrap="wrap" mt={2}>
+                {tagsArray.map((tag: string) => (
+                  <Tag key={tag} label={tag} link={`/blogs?tag=${tag}`} />
+                ))}
               </Stack>
             </Grid>
             <Grid size={6}>
-              <Box sx={{ display: { xs: "none", md: "block" } }}>
-                <FeaturedImage frontmatter={typedFrontmatter} />
-              </Box>
+              <FeaturedImage frontmatter={typedFrontmatter} />
             </Grid>
           </Grid>
-
-
         </Container>
       </Box>
 
       <Container sx={{ py: 2 }}>
         <Stack gap={7} direction={{ xs: "column", lg: "row" }}>
-          <Box sx={{
-            display: { xs: "none", lg: "block" },
-            width: { lg: "250px" },
-            position: 'sticky',
-            top: 100,
-            height: 'fit-content'
-          }}>
+          <Box sx={{ width: { lg: "250px" }, position: 'sticky', top: 100, height: 'fit-content' }}>
             <TableOfContents headings={headings} />
           </Box>
           <Box sx={{ flexGrow: 1, width: '100%', maxWidth: '800px' }}>
@@ -125,7 +92,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     mdxOptions: {
                       rehypePlugins: [
                         rehypeSlug,
-                        [rehypePrettyCode, { theme: "github-dark", keepBackground: false }],
+                        [rehypePrettyCode, { theme: "github-dark" }],
                       ],
                     },
                     parseFrontmatter: true,
@@ -147,11 +114,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 export async function generateStaticParams() {
   const blogDir = path.join(process.cwd(), "content", "blogs");
   if (!existsSync(blogDir)) return [];
-  const slugs = readdirSync(blogDir);
-  return slugs.map((slug) => ({ slug }));
+  
+  // Only return directories (slugs)
+  const slugs = readdirSync(blogDir, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => ({ slug: dirent.name }));
+    
+  return slugs;
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  // CRITICAL FIX: Await params here to avoid DYNAMIC_SERVER_USAGE error
   const { slug } = await params;
   const filePath = path.join(process.cwd(), "content", "blogs", slug, "page.mdx");
 
@@ -160,7 +133,6 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const fileContents = readFileSync(filePath, "utf8");
   const { data: frontmatter } = matter(fileContents);
 
-  // Safeguard: Extract image URL correctly whether it's a string or object
   const imageUrl = typeof frontmatter.featuredImage === 'object'
     ? frontmatter.featuredImage.src
     : frontmatter.featuredImage;
@@ -169,34 +141,31 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     title: frontmatter.title,
     description: frontmatter.description,
     openGraph: {
-      title: frontmatter.title,
-      description: frontmatter.description,
-      images: [{ url: imageUrl, alt: frontmatter.title }],
+      images: [{ url: imageUrl || "/placeholder.jpg" }],
     },
-    twitter: {
-      card: "summary_large_image",
-      images: [imageUrl],
-    }
   };
 }
 
 async function extractHeadings(content: string) {
   const headings: any[] = [];
-  const processor = unified().use(remarkParse).use(remarkMdx);
-  const ast = processor.parse(content);
+  try {
+    const processor = unified().use(remarkParse).use(remarkMdx);
+    const ast = processor.parse(content);
 
-  visit(ast, "heading", (node: any) => {
-    const text = node.children
-      .filter((c: any) => c.type === 'text' || c.type === 'inlineCode')
-      .map((child: any) => child.value)
-      .join("");
+    visit(ast, "heading", (node: any) => {
+      const text = node.children
+        .filter((c: any) => c.type === 'text' || c.type === 'inlineCode')
+        .map((child: any) => child.value)
+        .join("");
 
-    headings.push({
-      depth: node.depth,
-      text,
-      slug: text.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, ""),
+      headings.push({
+        depth: node.depth,
+        text,
+        slug: text.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, ""),
+      });
     });
-  });
-
+  } catch (e) {
+    console.error("Heading parsing error:", e);
+  }
   return headings;
 }
