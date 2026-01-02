@@ -106,7 +106,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       
       <SuggestedArticles currentTags={tagsArray} />
       <EmailSubscription />
-      <Footer />
     </>
   );
 }
