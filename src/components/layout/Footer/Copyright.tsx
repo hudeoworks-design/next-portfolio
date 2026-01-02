@@ -6,10 +6,11 @@ const Copyright = (): JSX.Element => {
 
   return (
     <Typography variant="body2" color="text.secondary" mt={2}>
-      © {currentYear} Subash Maharjan™ |{" "}
-      <Link href="/terms" color="inherit" underline="always">
+      © {currentYear} Subash Maharjan™ 
+      {/* |{" "} */}
+      {/* <Link href="/terms" color="inherit" underline="always">
         Terms of Service
-      </Link>
+      </Link> */}
     </Typography>
   );
 };

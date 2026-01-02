@@ -9,7 +9,7 @@ export default function PortfolioPage() {
   const projectsData = t.raw('projects') as Array<ProjectData>;
 
   return (
-    <Container sx={{ py: 10 }}>
+    <Container sx={{ py: 3 }}>
       <Grid container spacing={3}>
         <Grid size={12}>
           <Projects projectItems={projectsData} />

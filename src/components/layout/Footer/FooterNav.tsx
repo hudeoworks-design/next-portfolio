@@ -14,6 +14,9 @@ const FooterNav = (): JSX.Element => (
     >
       About
     </Link>
+    <Link href="/portfolio" color="text.secondary" variant="body2" underline="hover">
+      Portfolio
+    </Link>
     <Link href="/blog" color="text.secondary" variant="body2" underline="hover">
       Blog
     </Link>
