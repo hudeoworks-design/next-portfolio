@@ -6,8 +6,6 @@ import withMDX from '@next/mdx';
 const withNextIntl = createNextIntlPlugin();
 const nextConfig:NextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
-  cacheComponents: true,
-  bundlePagesRouterDependencies: true, 
   serverExternalPackages: ["rehype-pretty-code", "shiki"],
   outputFileTracingIncludes: {
     '/blogs/*': ['./content/**/*'],
@@ -20,9 +18,6 @@ const nextConfig:NextConfig = {
     }
 
     return config;
-  },
-  outputFileTracingIncludes: {
-    '/blogs/*': ['./content/**/*'],
   },
 };
 
