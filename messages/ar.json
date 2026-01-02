@@ -100,12 +100,12 @@
         "name": "حقيبة أعمال نكست (Next Portfolio)",
         "links": [
           {
-            "text": "عرض مباشر",
-            "url": "https://vercel.com/hudeoworks-design/next-portfolio/2vKFCaaRQxdpMJhhkekuisTxDEBs",
+            "type": "عرض مباشر",
+            "url": "https://next-portfolio-git-main-hudeoworks-design.vercel.app/ar",
             "icon": "Visibility"
           },
           {
-            "type": "repo",
+            "type": "مستودع",
             "url": "https://github.com/hudeoworks-design/next-portfolio",
             "icon": "GitHub"
           }

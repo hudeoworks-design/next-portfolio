@@ -100,8 +100,8 @@
         "name": "Next Portfolio",
         "links": [
           {
-            "text": "live",
-            "url": "https://vercel.com/hudeoworks-design/next-portfolio/2vKFCaaRQxdpMJhhkekuisTxDEBs",
+            "type": "live",
+            "url": "https://next-portfolio-git-main-hudeoworks-design.vercel.app",
             "icon": "Visibility"
           },
           {

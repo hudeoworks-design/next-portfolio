@@ -100,13 +100,13 @@
         "name": "Next Portfolio",
         "links": [
           {
-            "text": "en vivo",
-            "url": "vercel.com",
+            "type": "en vivo",
+            "url": "https://next-portfolio-git-main-hudeoworks-design.vercel.app/es",
             "icon": "Visibility"
           },
           {
             "type": "repo",
-            "url": "github.com",
+            "url": "https://github.com/hudeoworks-design/next-portfolio",
             "icon": "GitHub"
           }
         ],
