@@ -12,7 +12,6 @@ import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import { BlogContent, FeaturedImage } from "../components";
 import { Metadata } from "next";
 import EmailSubscription from "@/components/EmailSubscription";
-import Footer from "@/components/layout/Footer";
 import SuggestedArticles from "@/components/pages/blog/SuggestedArticles";
 import TableOfContents from "@/components/pages/blog/TableOfContents";
 import Counter from "../components/tutorials/Counter";
