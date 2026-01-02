@@ -15,14 +15,13 @@ import SkillSet from '@/components/shared/SkillSet';
 export default function AboutPage() {
   const t = useTranslations('about');
   return (
-    <Container>
+    <Container sx={{ py: 3 }}>
       <Grid>
         <Grid size={12}>
           <Box
             component="section"
             id="about"
             sx={{
-              pt: 10,
               color: 'text.primary'
             }}
           >

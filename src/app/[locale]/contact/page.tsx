@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
     };
 
     return (
-        <Container maxWidth="sm" sx={{ py: 8 }}>
+        <Container sx={{ py: 3 }}>
             <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
                 <Typography variant="h4" component="h2" gutterBottom>
                     {t('title')}

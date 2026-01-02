@@ -1,9 +1,11 @@
-import { Box, Container, Stack } from "@mui/material";
+import { Box, Container, Fab, Stack } from "@mui/material";
 import Attribution from "./Attribution";
 import Copyright from "./Copyright";
 import FooterNav from "./FooterNav";
 import SocialLinks from "./SocialLinks";
 import { JSX } from "react";
+import { ScrollTop } from "../ScrollTop";
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 const Footer = (): JSX.Element => {
   return (
@@ -40,6 +42,11 @@ const Footer = (): JSX.Element => {
           </Stack>
         </Stack>
       </Container>
+      <ScrollTop>
+          <Fab size="small" aria-label="scroll back to top">
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollTop>
     </Box>
   );
 };
