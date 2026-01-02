@@ -42,6 +42,7 @@ export default async function RootLayout({
   }
 
   // Mandatory for static rendering in Next.js 15
+  // CRITICAL: Call this before any next-intl hooks or components
   setRequestLocale(locale); 
 
   return (
@@ -55,3 +56,13 @@ export default async function RootLayout({
     </html>
   );
 }
+
+// To avoid the "blocking-route" error entirely, Next.js needs to know which locales are valid at build time so it can pre-render the "static shell".
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+// Rules to fix issues: 
+// Params are Promises: Always await params in layouts and pages.
+// Explicit Static Signal: Use setRequestLocale(locale) in every layout and page file within the [locale] segment to prevent Next.js from bailing out to dynamic rendering.
+// Suspense Requirement: If you must access truly dynamic data (like cookies() or headers()) in your layout, wrap the children or the specific dynamic component in a <Suspense> boundary. 

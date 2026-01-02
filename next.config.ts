@@ -6,6 +6,10 @@ import withMDX from '@next/mdx';
 const withNextIntl = createNextIntlPlugin();
 const nextConfig:NextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  serverExternalPackages: ["rehype-pretty-code", "shiki"],
+  outputFileTracingIncludes: {
+    '/blogs/*': ['./content/**/*'],
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback = {
@@ -14,9 +18,6 @@ const nextConfig:NextConfig = {
     }
 
     return config;
-  },
-  outputFileTracingIncludes: {
-    '/blogs/*': ['./content/**/*'],
   },
 };
 
