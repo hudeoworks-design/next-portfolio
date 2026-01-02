@@ -100,13 +100,13 @@
         "name": "नेक्स्ट पोर्टफोलियो (Next Portfolio)",
         "links": [
           {
-            "text": "प्रत्यक्ष अवलोकन",
-            "url": "vercel.com",
+            "type": "प्रत्यक्ष अवलोकन",
+            "url": "https://next-portfolio-git-main-hudeoworks-design.vercel.app/ne",
             "icon": "Visibility"
           },
           {
-            "type": "repo",
-            "url": "github.com",
+            "type": "रिपो",
+            "url": "https://github.com/hudeoworks-design/next-portfolio",
             "icon": "GitHub"
           }
         ],
