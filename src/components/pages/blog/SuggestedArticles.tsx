@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import Grid from "@mui/material/Grid"; 
 import PostCard from "./PostCard";
 import { Container, Box, Typography } from "@mui/material";
-import { Blog } from "@/types/blog";
+import { Blog } from "@/lib/types/blog";
 
 // Update path to include 'blogs' folder
 const blogsDirectory = path.join(process.cwd(), "content", "blogs");

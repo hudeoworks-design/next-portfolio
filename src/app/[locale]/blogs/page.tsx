@@ -1,6 +1,6 @@
 import { Box, Container, Typography, Grid } from "@mui/material";
 import { SearchContainer } from "./components";
-import { Blog } from "@/types/blog";
+import { Blog } from "@/lib/types/blog";
 import { getAllPostsBySelectedTag, getAllPostsData, getAllTagsFromAllPosts } from "@/lib/posts";
 import PostCard from "@/components/pages/blog/PostCard";
 

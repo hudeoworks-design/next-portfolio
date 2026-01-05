@@ -2,7 +2,7 @@
 import fs, { existsSync, readdirSync, readFileSync } from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { Blog, BlogPostPageProps } from "@/types/blog";
+import { Blog, BlogPostPageProps } from "@/lib/types/blog";
 import remarkMdx from "remark-mdx";
 import remarkParse from "remark-parse";
 import { unified } from "unified";

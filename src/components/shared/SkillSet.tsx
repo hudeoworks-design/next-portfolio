@@ -1,13 +1,13 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import skillIcons from '../pages/constants/skillIcons';
+import skillIcons from '@/lib/constants/skillIcons';
 
 const SkillSet: React.FC = () => {
     return (
         <Box
             flex={1}
             bgcolor="background.default"
-            borderRadius={2}
+            borderRadius={0}
             p={2}
             mb={4}
             mt={2}
