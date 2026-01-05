@@ -1,9 +1,10 @@
 "use client";
 
 import { JSX, forwardRef } from "react";
-import { Chip, ChipProps, SxProps, Theme } from "@mui/material";
+import { Chip, SxProps, Theme } from "@mui/material";
 import { borderRadius } from "@/styles/themes/tokens";
 import Link from "@/components/shared/Link";
+import { TagProps } from "@/lib/types/blog";
 
 /**
  * 1. Create a Type-Safe Bridge
@@ -15,16 +16,6 @@ const TagLink = forwardRef<HTMLAnchorElement, any>((props, ref) => (
   <Link href={""} ref={ref} {...props} />
 ));
 TagLink.displayName = "TagLink";
-
-type TagProps = {
-  size?: "small" | "medium" | "large";
-  label: string;
-  link: string;
-  selected?: boolean;
-  bgColor?: string;
-  textColor?: string;
-  selectedColor?: string;
-} & Omit<ChipProps, "size" | "component">;
 
 const sizeConfigs = {
   small: {

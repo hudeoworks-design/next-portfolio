@@ -1,15 +1,6 @@
 import { Box, ButtonGroup, Button } from "@mui/material";
-import DynamicMuiIcon, { IconNames } from "./DynamicMuiIcon";
-
-export interface ImageOverlayProps {
-  type: string;
-  url: string;
-  icon: IconNames;
-}
-
-interface LinkProps {
-  links: ImageOverlayProps[];
-}
+import DynamicMuiIcon from "./DynamicMuiIcon";
+import { LinkProps } from "@/lib/types/blog";
 
 export function ImageOverlay({ links }: LinkProps) {
   const overlayStyles = {

@@ -17,10 +17,7 @@ import TableOfContents from "@/components/pages/blog/TableOfContents";
 import Counter from "../components/tutorials/Counter";
 import { notFound } from "next/navigation";
 import Tag from "@/components/pages/blog/Tag";
-
-interface BlogPostPageProps {
-  params: Promise<{ slug: string }>;
-}
+import { BlogPostPageProps } from "@/lib/types/blog";
 
 // Next.js 15 ISR Config
 export const revalidate = 60; 

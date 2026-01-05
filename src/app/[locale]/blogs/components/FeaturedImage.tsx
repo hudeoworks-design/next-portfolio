@@ -1,15 +1,9 @@
 "use client";
 
+import { FeaturedImageProps } from "@/lib/types/blog";
 import { borderRadius } from "@/styles/themes/tokens";
 import { Box } from "@mui/material";
 import Image from "next/image";
-
-interface FeaturedImageProps {
-  frontmatter: {
-    title?: string;
-    featuredImage: string | { src: string; alt?: string };
-  };
-}
 
 export default function FeaturedImage({ frontmatter }: FeaturedImageProps) {
   // Normalize the image source and alt text

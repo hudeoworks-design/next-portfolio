@@ -11,17 +11,7 @@ import {
 } from '@mui/material/';
 import { BookTwoTone } from '@mui/icons-material';
 import { Blogs } from './blog/blogs';
-
-// --- Define Interfaces for Type Safety (Corresponds to your data source from en.json) ---
-export interface BlogData {
-  id: string;
-  name: string;
-  blogLink: string;
-  imgPath: string;
-  imgAlt: string;
-  summary: string; // The literal summary text is loaded here
-  tags: string[];
-}
+import { BlogData } from '@/lib/types/blog';
 
 // --- Component Definition ---
 export default function Blog() {
