@@ -47,7 +47,7 @@ export default function Blog() {
       component="section"
       id="blogs"
       sx={{
-        pt: 10,
+        py: 2,
         color: 'text.primary'
       }}
     >
@@ -58,7 +58,7 @@ export default function Blog() {
           <Card
             sx={{
               bgcolor: 'background.paper',
-              borderRadius: 2,
+              borderRadius: 0,
               p: 4,
               height: '100%',
               transition: 'background-color 0.3s'

@@ -54,7 +54,7 @@ export default function Portfolio() {
       <Card
         sx={{
           bgcolor: 'background.paper',
-          borderRadius: 2,
+          borderRadius: 0,
           p: 4,
           height: '100%',
           transition: 'background-color 0.3s'

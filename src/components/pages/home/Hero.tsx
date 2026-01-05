@@ -7,6 +7,7 @@ export default function Hero() {
   return (
     <Box
       sx={{
+        pb: 10,
         minHeight: {
           xs: '100vh',
           lg: '95vh',

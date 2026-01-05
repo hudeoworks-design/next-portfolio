@@ -9,7 +9,7 @@ import Contact from "@/components/pages/Contact";
 
 export default function Page() {
   return (
-    <Container sx={{ py: 3 }}>
+    <Container>
       <Box component="section" id="home">
         <Hero />
         <About />

@@ -13,7 +13,7 @@ export default function About() {
       component="section"
       id="about"
       sx={{
-        py: 10,
+        py: 2,
         color: 'text.primary'
       }}
     >

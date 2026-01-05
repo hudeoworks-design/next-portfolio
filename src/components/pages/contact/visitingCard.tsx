@@ -7,7 +7,7 @@ export default function VisitingCard() {
     <Card 
       sx={{  
         display: 'flex', 
-        borderRadius: 3, 
+        borderRadius: 0, 
         boxShadow: 10,
         background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
         color: 'white',

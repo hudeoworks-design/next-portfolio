@@ -127,6 +127,7 @@ export const {
     large: "10px",
     pill: "50px",
     circle: "50%",
+    none: "0"
   },
   letterSpacing: {
     large: "0.05em",

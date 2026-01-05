@@ -55,7 +55,7 @@ const ProfessionalTimeline: React.FC = () => {
       <Box
         flex={1}
         bgcolor="background.default"
-        borderRadius={2}
+        borderRadius={0}
         p={2}
       >
         <Box display="flex" flexDirection="column">
@@ -76,7 +76,7 @@ const ProfessionalTimeline: React.FC = () => {
                   <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: '12px', px: 2 }}>
-                  <Paper elevation={3} sx={{ p: 3, borderRadius: 2 }}>
+                  <Paper elevation={3} sx={{ p: 3, borderRadius: 0 }}>
                     <Typography variant="h6" component="span" fontWeight="bold">
                       {t(`items.${item.key}.title`)}
                     </Typography>
