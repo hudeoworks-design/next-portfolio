@@ -11,7 +11,7 @@ import {
 } from '@mui/material/';
 import { Projects } from './portfolio/projects';
 import { DashboardTwoTone } from '@mui/icons-material';
-import { ImageOverlayProps } from '../shared/ui/ImageOverlay';
+import { ImageOverlayProps } from '@/lib/types/blog';
 
 // --- Define Interfaces for Type Safety (Corresponds to your data source from en.json) ---
 export interface ProjectData {

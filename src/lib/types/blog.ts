@@ -1,3 +1,7 @@
+import { IconNames } from "@/components/shared/ui/DynamicMuiIcon";
+import { ChipProps } from "@mui/material/Chip";
+import { ReactNode } from "react";
+
 export interface Blog {
   slug: string;
   title: string;
@@ -8,20 +12,48 @@ export interface Blog {
   [key: string]: any;
 }
 
+export interface BlogData {
+  id: string;
+  name: string;
+  blogLink: string;
+  imgPath: string;
+  imgAlt: string;
+  summary: string; // The literal summary text is loaded here
+  tags: string[];
+}
+
+export interface BlogProps {
+  blogItems: BlogData[];
+}
+
+export interface BlogContentProps {
+  mdxContent: ReactNode;
+}
+
+// Image
 export interface FeaturedImage {
   src: string;
   alt: string;
 } 
 
-// export interface Tag {
-//   label: string;
-//   link: string;
-//   size?: "small" | "medium" | "large";
-//   selected?: boolean;
-//   bgColor?: string;
-//   selectedColor?: string;
-// }
+export interface FeaturedImageProps {
+  frontmatter: {
+    title?: string;
+    featuredImage: string | { src: string; alt?: string };
+  };
+}
 
+export interface ImageOverlayProps {
+  type: string;
+  url: string;
+  icon: IconNames;
+}
+
+export interface LinkProps {
+  links: ImageOverlayProps[];
+}
+
+// Blog posts
 export interface PostCardProps {  
   title: string;
   image: string | FeaturedImage;
@@ -31,92 +63,31 @@ export interface PostCardProps {
   maxWidth?: { xs: number; lg: number };
 }
 
-// export interface SuggestedArticlesProps {
-//   currentTags: string[];
-// }
+export interface SuggestedArticlesProps {
+  currentTags: string[];
+}
 
-// export interface RecentArticlesProps {
-//   count?: number;
-// }
+export interface BlogPostPageProps {
+  params: Promise<{ slug: string }>;
+}
 
-// export interface EmailSubscriptionProps {
-//   title?: string;
-//   description?: string;
-// }
+// toc
+export interface TOCProps {
+  headings: { text: string; slug: string; depth: number }[];
+}
 
-// export interface BlogPageProps {
-//   params: {
-//     locale: string;
-//   };
-//   searchParams: {
-//     tag?: string;
-//   };
-// }
+// tags
+export type TagProps = {
+  size?: "small" | "medium" | "large";
+  label: string;
+  link: string;
+  selected?: boolean;
+  bgColor?: string;
+  textColor?: string;
+  selectedColor?: string;
+} & Omit<ChipProps, "size" | "component">;
 
-// export interface BlogPostPageProps {
-//   params: Promise<{ slug: string }>;
-// }
-
-// export interface BlogListProps {
-//   allBlogs: Blog[];
-// }
-
-// export interface PaginatedBlogsProps {
-//   paginatedBlogs: Blog[];
-// }
-
-// export interface PaginationProps {
-//   totalBlogs: number;
-//   blogsPerPage: number;
-//   currentPage: number;
-//   onPageChange: (event: React.ChangeEvent<unknown>, page: number) => void;
-// }
-
-// export interface TagProps {
-//   size?: "small" | "large";
-//   label: string;
-//   link: string;
-//   selected?: boolean;
-//   bgColor?: string;
-//   selectedColor?: string;
-//   key?: number | string;
-// } 
-
-// export interface SearchContainerProps {
-//   children: React.ReactNode;
-// }
-
-// export interface HeaderProps {
-//   title?: string;
-//   subtitle?: string;
-// }
-
-// export interface FooterProps {  
-//   copyright?: string; 
-//   links?: { label: string; url: string }[];
-// }
-
-// export interface LayoutProps {
-//   children: React.ReactNode;
-// }
-
-// export interface PostCardImage {
-//   src: string;
-//   alt: string;
-// }
-
-// export interface PostCardProps {  
-//   title: string;
-//   image: string | PostCardImage;
-//   tags: string;
-//   description: string;
-//   link: string;
-//   maxWidth?: { xs: number; lg: number };
-// } 
-// export interface BlogListProps {
-//   paginatedBlogs: Blog[];
-// }
-
-// export interface BlogListProps {
-//   paginatedBlogs: Blog[];
-// }
+export interface SearchContainerProps {
+  activeTag: string;
+  tags: string[]; // Use a more specific type if possible
+}

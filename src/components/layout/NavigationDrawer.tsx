@@ -1,4 +1,3 @@
-import { JSX } from 'react';
 import {
   Box,
   List,
@@ -13,15 +12,10 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 
 import Link from '../shared/Link';
-
-interface MenuItems {
-  link: string;
-  name: string;
-  icon: JSX.Element;
-}
+import { MenuItem } from '@/lib/navUtils';
 
 interface NavigationDrawerProps {
-  menuItems: MenuItems[];
+  menuItems: MenuItem[];
   open: boolean;
   onClose: () => void;
 }
@@ -42,7 +36,7 @@ export default function NavigationDrawer(props: NavigationDrawerProps) {
         }}
       >
         <IconButton size="large" onClick={onClose}>
-          <CloseIcon color="secondary" fontSize="large" />
+          <CloseIcon color="primary" fontSize="large" />
         </IconButton>
       </Box>
       <Divider />

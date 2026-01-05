@@ -2,11 +2,7 @@
 
 import { Box, Stack } from "@mui/material";
 import Tag from "@/components/pages/blog/Tag";
-
-interface SearchContainerProps {
-  activeTag: string;
-  tags: string[]; // Use a more specific type if possible
-}
+import { SearchContainerProps } from "@/lib/types/blog";
 
 export default function SearchContainer({ activeTag, tags }: SearchContainerProps) {
 
