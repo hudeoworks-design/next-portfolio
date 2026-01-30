@@ -12,7 +12,7 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 
 import Link from '../shared/Link';
-import { MenuItem } from '@/lib/navUtils';
+import { MenuItem } from '@/lib/nav.utils';
 
 interface NavigationDrawerProps {
   menuItems: MenuItem[];

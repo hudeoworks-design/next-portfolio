@@ -18,7 +18,7 @@ import AnimatedLink from '../shared/ui/AnimatedLink';
 import LanguageSelector from '../LanguageSelector';
 import ThemeSwitcher from '../ThemeSwitcher';
 import NavigationDrawer from './NavigationDrawer';
-import { useNavigationLinks } from '@/lib/navUtils';
+import { useNavigationLinks } from '@/lib/nav.utils';
 
 
 export default function ElevateAppBar() {

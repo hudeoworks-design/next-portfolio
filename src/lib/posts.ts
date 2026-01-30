@@ -10,9 +10,10 @@ import { visit } from "unist-util-visit";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-const postsDirectory = path.join(process.cwd(), "content", "blogs");
+// const postsDirectory = path.join(process.cwd(), "content", "blogs");
 
-export function getAllPostsData() {
+export function getAllPostsData(parentDir: string = "content", contentDir: string = "blogs") {
+  const postsDirectory = path.join(process.cwd(), parentDir, contentDir);
   // Get folder and file names under /content/blogs
   const postFolders = fs.existsSync(postsDirectory)
     ? fs.readdirSync(postsDirectory)
@@ -108,11 +109,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: BlogPostPageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, contentDir } = await params;
   const filePath = path.join(
     process.cwd(),
     "content",
-    "blogs",
+    contentDir,
     slug,
     "page.mdx"
   );

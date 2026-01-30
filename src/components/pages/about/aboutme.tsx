@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import parse from 'html-react-parser';
 import { getLayoutDirection } from "@/lib/utils";
-import { Description, Face } from "@mui/icons-material";
+import { Description, Face, Interests } from "@mui/icons-material";
 import { Box, Avatar, Button, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
@@ -26,7 +26,6 @@ export const AboutMe: React.FC = () => {
       <Box flexShrink={0}>
         <Link href="/about">
           <Avatar sx={{ width: 96, height: 96, ring: 2, borderColor: 'primary.main', ringOpacity: 0.2 }}>
-            {/* Next/Image inside Avatar or a custom wrapper for better control */}
             <Image
               src={heroImage}
               alt={t('aboutme.profileAltText')} // Localized alt text
@@ -41,7 +40,6 @@ export const AboutMe: React.FC = () => {
 
       <Box flex={1} minWidth={0}>
         <Box display="flex" flexDirection="column" height="100%">
-          {/* Profile Header */}
           <Box>
             <Typography variant="h4" component="h1" color="text.primary" mb={0.5}>
               {t('aboutme.name')}
@@ -69,6 +67,16 @@ export const AboutMe: React.FC = () => {
                 variant="outlined"
               >
                 {t('resume.resumeButton')}
+              </Button>
+              <Button
+                color="primary"
+                endIcon={<Interests />}
+                href={t('aboutme.hobbies.title').toLocaleLowerCase()}
+                rel="noopener noreferrer"
+                sx={{ '&:hover': { color: 'primary.main' }, transition: 'color 0.3s' }}
+                variant="outlined"
+              >
+                {t('aboutme.hobbies.title')}
               </Button>
               {/* <SocialLinks direction={getLayoutDirection(currentLocale)} /> */}
             </Box>

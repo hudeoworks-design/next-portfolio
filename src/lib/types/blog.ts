@@ -60,6 +60,7 @@ export interface PostCardProps {
   tags: string;
   description: string;
   link: string;
+  contentDirectory?: string;
   maxWidth?: { xs: number; lg: number };
 }
 
@@ -68,7 +69,7 @@ export interface SuggestedArticlesProps {
 }
 
 export interface BlogPostPageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string, contentDir: string }>;
 }
 
 // toc

@@ -1,5 +1,5 @@
 import Image from 'next/image'; // Use the modern Next Image component
-import { getDataUrlWithShimmerEffect } from "@/lib/image-utils";
+import { getDataUrlWithShimmerEffect } from "@/lib/image.utils";
 import { ChevronRight } from "@mui/icons-material";
 import { Card, Box, CardContent, Typography, List, ListItem, ListItemIcon, ListItemText, Chip } from "@mui/material";
 import { ProjectData } from "../Portfolio";

@@ -4,7 +4,7 @@ import { getAllPostsBySelectedTag, getAllPostsData, getAllTagsFromAllPosts } fro
 import PostCard from "@/components/pages/blog/PostCard";
 import SearchContainer from "@/components/shared/ui/SearchContainer";
 
-export default async function BlogsPage({
+export default async function PoemsPage({
   searchParams,
 }: {
   searchParams: Promise<{ tag?: string }>;
@@ -12,13 +12,12 @@ export default async function BlogsPage({
   const { tag } = await searchParams;
   const selectedTag = tag || "";
 
-  const allBlogs = getAllPostsData();
+  const allBlogs = getAllPostsData("content", "poems");
   const allTags = getAllTagsFromAllPosts(allBlogs);
   const filteredBlogs = getAllPostsBySelectedTag(allBlogs, selectedTag);
 
   return (
     <Container>
-      {/* Use Grid2 for modern Next.js/MUI layouts */}
       <Grid container>
         <Grid size={12}>
           <Box sx={{ pt: 10 }}>
@@ -46,12 +45,14 @@ export default async function BlogsPage({
                   return (
                     <Grid size={{ xs: 12, lg: 4 }} key={blog.slug}>
                       <PostCard
+                        contentDirectory="hobbies"
                         title={blog.title}
                         image={imageProp}
                         tags={tagsString}
                         description={blog.description}
                         link={blog.slug}
-                        maxWidth={{ xs: 554, lg: 355 }}                     />
+                        maxWidth={{ xs: 554, lg: 355 }}
+                      />
                     </Grid>
                   );
                 })}
