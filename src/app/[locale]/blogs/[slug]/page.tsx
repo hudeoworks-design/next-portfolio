@@ -1,4 +1,6 @@
 import { readFileSync, readdirSync, existsSync } from "fs";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import matter from "gray-matter";
 import { unified } from "unified";
@@ -8,16 +10,15 @@ import { visit } from "unist-util-visit";
 import rehypeSlug from "rehype-slug";
 import rehypePrettyCode from "rehype-pretty-code";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
-import { BlogContent, FeaturedImage } from "../components";
-import { Metadata } from "next";
+import { BlogPostPageProps } from "@/lib/types/blog";
+import { getFilePath } from "@/lib/file.utils";
 import EmailSubscription from "@/components/EmailSubscription";
 import SuggestedArticles from "@/components/pages/blog/SuggestedArticles";
 import TableOfContents from "@/components/pages/blog/TableOfContents";
-import Counter from "../components/tutorials/Counter";
-import { notFound } from "next/navigation";
+import Counter from "../../../../components/pages/blog/tutorials/Counter";
+import BlogContent from "@/components/pages/blog/BlogContent";
+import FeaturedImage from "@/components/shared/ui/FeaturedImage";
 import Tag from "@/components/pages/blog/Tag";
-import { BlogPostPageProps } from "@/lib/types/blog";
-import { getFilePath } from "@/lib/file.utils";
 
 // Next.js 15 ISR Config
 export const revalidate = 60; 

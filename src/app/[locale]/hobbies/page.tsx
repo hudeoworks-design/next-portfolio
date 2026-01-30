@@ -12,7 +12,7 @@ interface HobbyCategory {
 export default async function HobbiesPage({
   searchParams,
 }: {
-  searchParams: Promise<{ type?: string }>;
+  searchParams: Promise<{ type?: string, fields?: string[] }>;
 }) {
     const resolvedParams = await searchParams;
     const type = resolvedParams.type;
