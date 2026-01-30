@@ -16,7 +16,7 @@ export interface MenuItem {
   icon: React.ReactNode; // Use ElementType for component references
 }
 
-export type NavbarKeys = 'logo' | 'home' | 'about' | 'portfolio' | 'contact' | 'blog';
+export type NavbarKeys = 'logo' | 'home' | 'about' | 'portfolio' | 'contact' | 'blog' | 'hobbies';
 
 export const localeNames: Record<string, Record<NavbarKeys, string>> = {
   ar: {
@@ -26,6 +26,7 @@ export const localeNames: Record<string, Record<NavbarKeys, string>> = {
     portfolio: 'أعمالي',
     contact: 'اتصل بي',
     blog: 'المدونة',
+    hobbies: 'هِوايات',
   },
   en: {
     logo: 'Subash',
@@ -34,6 +35,7 @@ export const localeNames: Record<string, Record<NavbarKeys, string>> = {
     portfolio: 'PORTFOLIO',
     contact: 'CONTACT',
     blog: 'BLOG',
+    hobbies: 'HOBBIES',
   },
   es: {
     logo: 'Subash',
@@ -42,6 +44,7 @@ export const localeNames: Record<string, Record<NavbarKeys, string>> = {
     portfolio: 'PORTAFOLIO',
     contact: 'CONTACTO',
     blog: 'BLOG',
+    hobbies: 'AFICIONES',
   },
   ne: {
     logo: 'सुबास',
@@ -50,6 +53,7 @@ export const localeNames: Record<string, Record<NavbarKeys, string>> = {
     portfolio: 'मेरो कामहरू',
     contact: 'सम्पर्क गर्नुहोस्',
     blog: 'ब्लग',
+    hobbies: 'शौकहरू',
   },
 };
 

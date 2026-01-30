@@ -10,7 +10,6 @@ import {
   Grid,
   useTheme,
   useMediaQuery,
-  Card,
 } from '@mui/material';
 import {
   Timeline,

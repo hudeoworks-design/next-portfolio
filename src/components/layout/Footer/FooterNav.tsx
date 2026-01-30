@@ -3,7 +3,7 @@
 import React, { JSX } from "react";
 import { Box, Stack } from "@mui/material";
 import AnimatedLink from "@/components/shared/ui/AnimatedLink";
-import { useNavigationLinks } from "@/lib/navUtils";
+import { useNavigationLinks } from "@/lib/nav.utils";
 
 const FooterNav = (): JSX.Element => {
   const { menuItems } = useNavigationLinks();

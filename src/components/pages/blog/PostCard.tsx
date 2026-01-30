@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { styled } from "@mui/material/styles";
 import { PostCardProps } from "@/lib/types/blog";
-import { getDataUrlWithShimmerEffect } from "@/lib/image-utils";
+import { getDataUrlWithShimmerEffect } from "@/lib/image.utils";
 import Tag from "./Tag";
 
 const ImagePostLink = styled(Link)({
@@ -34,6 +34,7 @@ export default function PostCard({
   description,
   link,
   maxWidth,
+  contentDirectory = "blogs"
 }: PostCardProps) {
   return (
     <Card
@@ -47,7 +48,7 @@ export default function PostCard({
       }}
     >
       <Box sx={{ display: { xs: "none", lg: "block" }, position: 'relative' }}>
-        <ImagePostLink href={`/blogs/${link.replace(/^\//, "")}`}>
+        <ImagePostLink href={`/${contentDirectory}/${link.replace(/^\//, "")}`}>
           <Image
             // Safety check: Fallback to an empty string or placeholder if image is missing
             alt={typeof image === 'string' ? "Blog post cover" : image?.alt || "Blog post cover"}
@@ -68,7 +69,7 @@ export default function PostCard({
       </Box>
 
       <CardContent sx={{ pt: 3, px: 2, pb: 1, flexGrow: 1 }}>
-        <PostLink href={`/blogs/${link}`}>
+        <PostLink href={`/${contentDirectory}/${link}`}>
           <Typography
             variant="h6" // Using variants is safer than raw numbers
             sx={{

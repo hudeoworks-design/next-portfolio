@@ -8,12 +8,12 @@ import { visit } from "unist-util-visit";
 import rehypeSlug from "rehype-slug";
 import rehypePrettyCode from "rehype-pretty-code";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
-import { BlogContent, FeaturedImage } from "../components";
+import { BlogContent, FeaturedImage } from "../../blogs/components";
 import { Metadata } from "next";
-import EmailSubscription from "@/components/EmailSubscription";
-import SuggestedArticles from "@/components/pages/blog/SuggestedArticles";
+// import EmailSubscription from "@/components/EmailSubscription";
+// import SuggestedArticles from "@/components/pages/blog/SuggestedArticles";
 import TableOfContents from "@/components/pages/blog/TableOfContents";
-import Counter from "../components/tutorials/Counter";
+// import Counter from "../../ components/tutorials/Counter";
 import { notFound } from "next/navigation";
 import Tag from "@/components/pages/blog/Tag";
 import { BlogPostPageProps } from "@/lib/types/blog";
@@ -23,7 +23,7 @@ import { getFilePath } from "@/lib/file.utils";
 export const revalidate = 60; 
 export const dynamicParams = true; 
 export const dynamic = "force-static"; // Forces static generation and avoids DYNAMIC_SERVER_USAGE
-const CONTENT_FOLDER = "blogs";
+const CONTENT_FOLDER = "poems";
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Await params for Next.js 15
@@ -83,7 +83,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               mdxContent={
                 <MDXRemote
                   source={content}
-                  components={{ Counter }}
+                  // components={{ Counter }}
                   options={{
                     mdxOptions: {
                       rehypePlugins: [
@@ -100,8 +100,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </Stack>
       </Container>
       
-      <SuggestedArticles currentTags={tagsArray} />
-      <EmailSubscription />
+      {/* <SuggestedArticles currentTags={tagsArray} />
+      <EmailSubscription /> */}
     </>
   );
 }
@@ -119,7 +119,6 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  // CRITICAL FIX: Await params here to avoid DYNAMIC_SERVER_USAGE error
   const { slug } = await params;
   const filePath = getFilePath(CONTENT_FOLDER, slug);
 

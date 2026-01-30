@@ -1,5 +1,5 @@
 import Image from 'next/image'; // Use the modern Next Image component
-import { getDataUrlWithShimmerEffect } from "@/lib/image-utils";
+import { getDataUrlWithShimmerEffect } from "@/lib/image.utils";
 import { Grid, Card, Box, CardContent, Typography, Chip } from "@mui/material";
 import Link from '@/components/shared/Link';
 import { ImageOverlay } from '@/components/shared/ui/ImageOverlay';

@@ -8,9 +8,9 @@ import {
   Card,
   Typography
 } from '@mui/material';
-import ProfessionalTimeline from '@/components/pages/home/Timeline';
+import ProfessionalTimeline from '@/components/pages/about/Timeline';
 import { AboutMe } from '@/components/pages/about/aboutme';
-import SkillSet from '@/components/shared/SkillSet';
+import SkillSet from '@/components/pages/about/SkillSet';
 
 export default function AboutPage() {
   const t = useTranslations('about');

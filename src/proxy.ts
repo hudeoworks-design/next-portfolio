@@ -21,6 +21,6 @@ export const config = {
     // Match all localized paths (e.g., /en/about, /de/blog/post-1)
     '/(ar|en|es|ne)/:path*', 
     // Standard catch-all that excludes system assets
-    '/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)'
+    '/((?!api|_next/static|articles|_next/image|favicon.ico|.*\\..*).*)'
   ]
 };

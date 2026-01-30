@@ -1,10 +1,10 @@
 import { Box, Container, Typography, Grid } from "@mui/material";
-import { SearchContainer } from "./components";
+import { SearchContainer } from "../blogs/components";
 import { Blog } from "@/lib/types/blog";
 import { getAllPostsBySelectedTag, getAllPostsData, getAllTagsFromAllPosts } from "@/lib/posts";
 import PostCard from "@/components/pages/blog/PostCard";
 
-export default async function BlogsPage({
+export default async function PoemsPage({
   searchParams,
 }: {
   searchParams: Promise<{ tag?: string }>;
@@ -12,7 +12,7 @@ export default async function BlogsPage({
   const { tag } = await searchParams;
   const selectedTag = tag || "";
 
-  const allBlogs = getAllPostsData();
+  const allBlogs = getAllPostsData("content", "poems");
   const allTags = getAllTagsFromAllPosts(allBlogs);
   const filteredBlogs = getAllPostsBySelectedTag(allBlogs, selectedTag);
 
@@ -46,12 +46,14 @@ export default async function BlogsPage({
                   return (
                     <Grid size={{ xs: 12, lg: 4 }} key={blog.slug}>
                       <PostCard
+                        contentDirectory="hobbies"
                         title={blog.title}
                         image={imageProp}
                         tags={tagsString}
                         description={blog.description}
                         link={blog.slug}
-                        maxWidth={{ xs: 554, lg: 355 }}                     />
+                        maxWidth={{ xs: 554, lg: 355 }}
+                      />
                     </Grid>
                   );
                 })}
