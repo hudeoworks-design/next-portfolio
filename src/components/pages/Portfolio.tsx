@@ -11,7 +11,7 @@ import {
 } from '@mui/material/';
 import { Projects } from './portfolio/projects';
 import { DashboardTwoTone } from '@mui/icons-material';
-import { ImageOverlayProps } from '../shared/ui/ImageOverlay';
+import { ImageOverlayProps } from '@/lib/types/blog';
 
 // --- Define Interfaces for Type Safety (Corresponds to your data source from en.json) ---
 export interface ProjectData {
@@ -54,7 +54,7 @@ export default function Portfolio() {
       <Card
         sx={{
           bgcolor: 'background.paper',
-          borderRadius: 2,
+          borderRadius: 0,
           p: 4,
           height: '100%',
           transition: 'background-color 0.3s'

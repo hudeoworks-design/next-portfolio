@@ -11,17 +11,7 @@ import {
 } from '@mui/material/';
 import { BookTwoTone } from '@mui/icons-material';
 import { Blogs } from './blog/blogs';
-
-// --- Define Interfaces for Type Safety (Corresponds to your data source from en.json) ---
-export interface BlogData {
-  id: string;
-  name: string;
-  blogLink: string;
-  imgPath: string;
-  imgAlt: string;
-  summary: string; // The literal summary text is loaded here
-  tags: string[];
-}
+import { BlogData } from '@/lib/types/blog';
 
 // --- Component Definition ---
 export default function Blog() {
@@ -47,7 +37,7 @@ export default function Blog() {
       component="section"
       id="blogs"
       sx={{
-        pt: 10,
+        py: 2,
         color: 'text.primary'
       }}
     >
@@ -58,7 +48,7 @@ export default function Blog() {
           <Card
             sx={{
               bgcolor: 'background.paper',
-              borderRadius: 2,
+              borderRadius: 0,
               p: 4,
               height: '100%',
               transition: 'background-color 0.3s'

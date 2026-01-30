@@ -3,10 +3,7 @@
 import { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
 import { spacing } from "../../../styles/themes/tokens";
-
-interface TOCProps {
-  headings: { text: string; slug: string; depth: number }[];
-}
+import { TOCProps } from "@/lib/types/blog";
 
 export default function TableOfContents({ headings }: TOCProps) {
   const [activeHeading, setActiveHeading] = useState<string | null>(null);

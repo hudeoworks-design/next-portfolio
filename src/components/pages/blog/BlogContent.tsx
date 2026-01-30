@@ -1,11 +1,7 @@
 "use client";
 
+import { BlogContentProps } from "@/lib/types/blog";
 import { Box } from "@mui/material";
-import { ReactNode } from "react";
-
-interface BlogContentProps {
-  mdxContent: ReactNode;
-}
 
 export default function BlogContent({ mdxContent }: BlogContentProps) {
   return (

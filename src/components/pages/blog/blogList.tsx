@@ -2,7 +2,7 @@
 import { Key } from 'react';
 import { Grid, Container, } from "@mui/material";
 import PostCard from './PostCard';
-import { Blog } from '@/types/blog';
+import { Blog } from '@/lib/types/blog';
 
 export default function BlogsList({ paginatedBlogs }: any) {
 

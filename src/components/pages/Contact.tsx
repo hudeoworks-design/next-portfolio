@@ -36,14 +36,14 @@ const Contact: React.FC = () => {
             component="section"
             id="contact"
             sx={{
-                pt: 10,
+                py: 2,
                 color: 'text.primary'
             }}
         >
             <Card
                 sx={{
                     bgcolor: 'background.paper',
-                    borderRadius: 2,
+                    borderRadius: 0,
                     px: 4,
                     height: '100%',
                     transition: 'background-color 0.3s'
@@ -66,7 +66,7 @@ const Contact: React.FC = () => {
                     </Grid>
                     <Grid size={6} sx={{ xs: 12, md: 8, py: 4 }}>
 
-                        <Paper elevation={3} sx={{ p: 4, borderRadius: 2, width: '100%' }}>
+                        <Paper elevation={3} sx={{ p: 4, borderRadius: 0, width: '100%' }}>
                             <Typography variant="h4" component="h2" gutterBottom>
                                 {t('title')}
                             </Typography>

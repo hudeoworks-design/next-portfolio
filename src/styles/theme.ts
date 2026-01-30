@@ -80,7 +80,7 @@ export const getThemeOptions = (
       styleOverrides: {
         root: {
           textTransform: "none", // Capitalize is usually discouraged for UX
-          borderRadius: "8px",
+          borderRadius: 0, // "8px",
           "&.Mui-disabled": {
             backgroundColor: "var(--mui-palette-button-disabledBgColor)",
             color: "var(--mui-palette-button-disabledColor)",
@@ -94,7 +94,7 @@ export const getThemeOptions = (
       },
       styleOverrides: {
         root: {
-          borderRadius: "12px",
+          borderRadius: 0, // "12px",
           border: "1px solid var(--mui-palette-divider)",
         },
       },
@@ -106,7 +106,7 @@ export const getThemeOptions = (
     ...font.size,
   },
   shape: {
-    borderRadius: 8,
+    borderRadius: 0, // 8,
   },
   // Spacing and Shadows must be properly mapped
   spacing: 8,

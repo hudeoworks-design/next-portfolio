@@ -1,13 +1,9 @@
 import Image from 'next/image'; // Use the modern Next Image component
-import { getDataUrlWithShimmerEffect } from "@/lib/image-utils";
+import { getDataUrlWithShimmerEffect } from "@/lib/image.utils";
 import { Grid, Card, Box, CardContent, Typography, Chip } from "@mui/material";
 import Link from '@/components/shared/Link';
 import { ImageOverlay } from '@/components/shared/ui/ImageOverlay';
-import { BlogData } from '../Blog';
-
-interface BlogProps {
-  blogItems: BlogData[];
-}
+import { BlogProps, BlogData } from '@/lib/types/blog';
 
 export const Blogs: React.FC<BlogProps> = ({ blogItems }) => {
   return (

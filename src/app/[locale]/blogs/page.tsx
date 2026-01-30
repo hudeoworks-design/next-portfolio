@@ -1,8 +1,8 @@
 import { Box, Container, Typography, Grid } from "@mui/material";
-import { SearchContainer } from "./components";
-import { Blog } from "@/types/blog";
+import { Blog } from "@/lib/types/blog";
 import { getAllPostsBySelectedTag, getAllPostsData, getAllTagsFromAllPosts } from "@/lib/posts";
 import PostCard from "@/components/pages/blog/PostCard";
+import SearchContainer from "@/components/shared/ui/SearchContainer";
 
 export default async function BlogsPage({
   searchParams,
@@ -51,8 +51,7 @@ export default async function BlogsPage({
                         tags={tagsString}
                         description={blog.description}
                         link={blog.slug}
-                        maxWidth={{ xs: 554, lg: 355 }}
-                      />
+                        maxWidth={{ xs: 554, lg: 355 }}                     />
                     </Grid>
                   );
                 })}
