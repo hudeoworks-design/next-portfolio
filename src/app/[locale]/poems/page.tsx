@@ -1,8 +1,8 @@
 import { Box, Container, Typography, Grid } from "@mui/material";
-import { SearchContainer } from "../blogs/components";
 import { Blog } from "@/lib/types/blog";
 import { getAllPostsBySelectedTag, getAllPostsData, getAllTagsFromAllPosts } from "@/lib/posts";
 import PostCard from "@/components/pages/blog/PostCard";
+import SearchContainer from "@/components/shared/ui/SearchContainer";
 
 export default async function PoemsPage({
   searchParams,
@@ -18,7 +18,6 @@ export default async function PoemsPage({
 
   return (
     <Container>
-      {/* Use Grid2 for modern Next.js/MUI layouts */}
       <Grid container>
         <Grid size={12}>
           <Box sx={{ pt: 10 }}>

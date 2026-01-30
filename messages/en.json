@@ -32,10 +32,50 @@
       "hobbies": {
         "title": "Hobbies",
         "categories": [
-          { "type": "music", "fields" : ["Singing", "Dancing"]},
-          { "type": "sports", "fields" : ["Soccer", "Pickleball"]},
-          { "type": "literature", "fields" : ["Poems"]},
-          { "type": "outdoor", "fields": ["Hiking", "Biking", "Camping"]}
+          {
+            "type": "music",
+            "img": {
+              "src": "/hobbies/music.webp",
+              "alt": "mucic image"
+            },
+            "fields": [
+              "Singing",
+              "Dancing"
+            ]
+          },
+          {
+            "type": "sports",
+            "img": {
+              "src": "/hobbies/sports.webp",
+              "alt": "sports image"
+            },
+            "fields": [
+              "Soccer",
+              "Pickleball"
+            ]
+          },
+          {
+            "type": "literature",
+            "img": {
+              "src": "/hobbies/literature.webp",
+              "alt": "literature image"
+            },
+            "fields": [
+              "Poems"
+            ]
+          },
+          {
+            "type": "outdoor",
+            "img": {
+              "src": "/hobbies/outdoor.webp",
+              "alt": "outdoor image"
+            },
+            "fields": [
+              "Hiking",
+              "Biking",
+              "Camping"
+            ]
+          }
         ]
       }
     },
@@ -149,7 +189,11 @@
         "imgPath": "blogs/cover-1.webp",
         "imgAlt": "first blog",
         "summary": "Sample blog post to demonstrate the blog section.",
-        "tags": ["Sample", "Blog", "Post"]
+        "tags": [
+          "Sample",
+          "Blog",
+          "Post"
+        ]
       },
       {
         "name": "NextJS Blog",
@@ -157,7 +201,11 @@
         "imgPath": "blogs/cover-2.webp",
         "imgAlt": "Blog about NextJS",
         "summary": "Blog built with NextJS and MUI framework.",
-        "tags": ["React", "NextJS", "MUI"]
+        "tags": [
+          "React",
+          "NextJS",
+          "MUI"
+        ]
       },
       {
         "name": "My second Blog Post",
@@ -165,7 +213,11 @@
         "imgPath": "blogs/css-border.jpg",
         "imgAlt": "first blog",
         "summary": "Sample blog post to demonstrate the blog section.",
-        "tags": ["Sample", "Blog", "Post"]
+        "tags": [
+          "Sample",
+          "Blog",
+          "Post"
+        ]
       },
       {
         "name": "New NextJS Blog",
@@ -173,7 +225,11 @@
         "imgPath": "blogs/css-display.jpg",
         "imgAlt": "Blog about NextJS",
         "summary": "Blog built with NextJS and MUI framework.",
-        "tags": ["React", "NextJS", "MUI"]
+        "tags": [
+          "React",
+          "NextJS",
+          "MUI"
+        ]
       }
     ]
   },

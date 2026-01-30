@@ -1,26 +1,22 @@
 import { Card, Box, CardContent, Container, Grid, Typography, List, ListItem, ListItemIcon } from "@mui/material";
 
-import { getTranslations } from "next-intl/server"; 
-import CategoryDropdown from "@/components/pages/hobbies/CategoryDropdown";
+import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
-
-interface HobbyCategory {
-    type: string;
-    fields: string[];
-}
+import HobbiesList from "@/components/pages/hobbies/hobbiesList";
+import { HobbiesProps } from "@/components/pages/hobbies/hobbyCategories";
 
 export default async function HobbiesPage({
-  searchParams,
+    searchParams,
 }: {
-  searchParams: Promise<{ type?: string, fields?: string[] }>;
+    searchParams: Promise<{ type: string, fields: string[], img: {} }>;
 }) {
     const resolvedParams = await searchParams;
     const type = resolvedParams.type;
 
     const t = await getTranslations('about');
-    const hobbies = t.raw('aboutme.hobbies.categories') as Array<HobbyCategory>;
+    const hobbies = t.raw('aboutme.hobbies.categories') as Array<HobbiesProps>;
 
-    const filteredHobbies: HobbyCategory[] = (() => {
+    const filteredHobbies: HobbiesProps[] = (() => {
         if (type) {
             const found = hobbies.find(h => h.type.toLowerCase() === type.toLowerCase());
             return found ? [found] : [];
@@ -29,20 +25,27 @@ export default async function HobbiesPage({
     })();
 
     return (
-        <Container sx={{ py: 3 }}>
+        <Container sx={{ py: 3, gap: 1 }}>
             <Typography variant="h3" align="center" gutterBottom sx={{ mb: 3, mt: 4, fontWeight: 700 }}>
                 {t('aboutme.hobbies.title')}
             </Typography>
             
-            <Grid container spacing={3}>
-                <Suspense fallback={<div>Loading filters...</div>}>
-                    {filteredHobbies.map((hobby) => (
-                        <Grid size={{ xs: 12, lg: 4 }} key={hobby.type}>
-                            <CategoryDropdown currentCategory={hobby} />
-                        </Grid>
-                    ))}
+            {filteredHobbies.map((hobby) => (
+                <Suspense key={hobby.type} fallback={<div>Loading {`${hobby.type}`}...</div>}>
+                    <Box>
+                        <Typography variant="h5" align="left" gutterBottom sx={{ mb: 3, mt: 4, fontWeight: 700 }}>
+                            {hobby.type.toLocaleUpperCase()}
+                        </Typography>
+                    </Box>
+                    <Card key={hobby.type}>
+
+                        <CardContent>
+                            <HobbiesList category={hobby} />
+                        </CardContent>
+                    </Card>
                 </Suspense>
-            </Grid>
+            ))}
+            
         </Container>
     );
 }
