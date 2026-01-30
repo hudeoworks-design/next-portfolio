@@ -1,4 +1,4 @@
-import { Card, Box, CardContent, Container, Grid, Typography, List, ListItem, ListItemIcon } from "@mui/material";
+import { Card, Box, CardContent, Container, Typography } from "@mui/material";
 
 import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";

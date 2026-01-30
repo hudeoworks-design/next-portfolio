@@ -1,10 +1,7 @@
 'use client';
 
-import { ImageOverlay } from '@/components/shared/ui/ImageOverlay';
-import { getDataUrlWithShimmerEffect } from '@/lib/image.utils';
 import { Face } from '@mui/icons-material';
-import { Card, Box, CardContent, Typography, List, ListItem, ListItemIcon, ListItemText, Chip, Avatar, Button, Container, Divider, Grid, styled } from '@mui/material';
-import Link from 'next/link';
+import { Chip } from '@mui/material';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 
 export interface HobbiesProps {

@@ -8,25 +8,21 @@ import { visit } from "unist-util-visit";
 import rehypeSlug from "rehype-slug";
 import rehypePrettyCode from "rehype-pretty-code";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
-import { BlogContent, FeaturedImage } from "../../blogs/components";
 import { Metadata } from "next";
-// import EmailSubscription from "@/components/EmailSubscription";
-// import SuggestedArticles from "@/components/pages/blog/SuggestedArticles";
 import TableOfContents from "@/components/pages/blog/TableOfContents";
-// import Counter from "../../ components/tutorials/Counter";
 import { notFound } from "next/navigation";
 import Tag from "@/components/pages/blog/Tag";
 import { BlogPostPageProps } from "@/lib/types/blog";
 import { getFilePath } from "@/lib/file.utils";
+import BlogContent from "@/components/pages/blog/BlogContent";
+import FeaturedImage from "@/components/shared/ui/FeaturedImage";
 
-// Next.js 15 ISR Config
 export const revalidate = 60; 
 export const dynamicParams = true; 
-export const dynamic = "force-static"; // Forces static generation and avoids DYNAMIC_SERVER_USAGE
+export const dynamic = "force-static";
 const CONTENT_FOLDER = "poems";
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  // Await params for Next.js 15
   const { slug } = await params;
   const filePath = getFilePath(CONTENT_FOLDER, slug);
 
@@ -99,9 +95,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </Box>
         </Stack>
       </Container>
-      
-      {/* <SuggestedArticles currentTags={tagsArray} />
-      <EmailSubscription /> */}
     </>
   );
 }
@@ -110,7 +103,6 @@ export async function generateStaticParams() {
   const blogDir = getFilePath(CONTENT_FOLDER);
   if (!existsSync(blogDir)) return [];
   
-  // Only return directories (slugs)
   const slugs = readdirSync(blogDir, { withFileTypes: true })
     .filter(dirent => dirent.isDirectory())
     .map(dirent => ({ slug: dirent.name }));

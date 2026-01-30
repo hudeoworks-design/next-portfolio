@@ -1,34 +1,64 @@
-'use client';
-
-import { Container, Stack, Box } from "@mui/material";
-import { usePathname, useSearchParams, useRouter } from "next/navigation"; // Use next/navigation, NOT next/router
-import { use } from "react"; // Required to unwrap params in Client Components
+import fs from 'fs';
+import path from 'path';
+import { notFound } from 'next/navigation';
+import { MDXRemote } from "next-mdx-remote-client/rsc";
+import { Typography, Box, Container, Link } from '@mui/material';
+import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeSlug from 'rehype-slug';
+import matter from 'gray-matter';
+import { mdxComponents } from '@/components/shared/ui/MdxComponents';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export default function HobbyCategoryPage({ params }: PageProps) {
-  // 1. Unwrap the params Promise using the 'use' hook
-  const { slug } = use(params);
-  
-  // 2. Standard Client Component Hooks
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  
-  const activeField = searchParams.get('category') || '';
-  
-  console.log(slug, activeField);
+export default async function Page({ params, searchParams }: PageProps) {
+  const { slug } = await params;
+  const { category } = await searchParams;
+
+  if (!category) return notFound();
+
+  const filePath = path.join(process.cwd(), 'content/hobbies', slug, `${category}.mdx`);
+
+  if (!fs.existsSync(filePath)) {
+    return notFound();
+  }
+
+  const fileContent = fs.readFileSync(filePath, 'utf8');
+  const { content, data: frontmatter } = matter(fileContent);
 
   return (
-    <Container sx={{ py: 2 }}>
-      <Stack gap={7} direction={{ xs: "column", lg: "row" }}>
-        <Box sx={{ flexGrow: 1, width: '100%', maxWidth: '800px' }}>
-          <h1>Slug: {slug}</h1>
-          <p>Active Category: {activeField}</p>
-        </Box>
-      </Stack>
+    <Container maxWidth="md" sx={{ py: 8 }}>
+      <Box sx={{ mb: 4 }}>
+        <Typography variant="overline" color="text.secondary">
+          <Link
+            gutterBottom
+            href={`/hobbies`}
+            sx={{ display: 'inline-block' }}
+            underline="hover"
+          >
+            Hobbies
+          </Link>/<span>{slug}</span>
+        </Typography>
+        <Typography variant="h4" component="h1" fontWeight="600" mb={1}>
+          {frontmatter.title}
+        </Typography>
+      </Box>
+      {/* {frontmatter.videoID && <mdxComponents.YouTube id={frontmatter.videoID as string} />} */}
+      <MDXRemote
+        source={content}
+        components={mdxComponents}
+        options={{
+          mdxOptions: {
+            rehypePlugins: [
+              rehypeSlug,
+              [rehypePrettyCode, { theme: "github-dark" }],
+            ],
+          },
+          parseFrontmatter: true,
+        }}
+      />
     </Container>
   );
 }
