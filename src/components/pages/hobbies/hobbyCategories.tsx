@@ -14,7 +14,7 @@ export interface HobbiesProps {
 }
 
 export interface HobbiesCategoryProps {
-  category: HobbiesProps; // Nest the actual data interface here
+  category: HobbiesProps;
 }
 
 export default function HobbyCategory({category}: HobbiesCategoryProps) {
@@ -49,44 +49,3 @@ export default function HobbyCategory({category}: HobbiesCategoryProps) {
     ))
   );
 }
-
-{/* <div className="flex flex-wrap gap-2 mt-4">
-  <button
-    onClick={() => handleCategoryChange(currentCategory.type.toLowerCase())}
-    className={`px-4 py-2 rounded-full border text-sm transition-colors ${
-      activeField === currentCategory.type.toLowerCase()
-        ? "bg-blue-600 text-white border-blue-600"
-        : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
-    }`}
-  >
-    {currentCategory.type}
-  </button>
-
-  {currentCategory.fields.map((field) => (
-    <button
-      key={field}
-      onClick={() => handleCategoryChange(field.toLowerCase())}
-      className={`px-4 py-2 rounded-full border text-sm transition-colors ${
-        activeField === field.toLowerCase()
-          ? "bg-blue-600 text-white border-blue-600"
-          : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
-      }`}
-    >
-      {field}
-    </button>
-  ))}
-</div> */}
-
-    // <select 
-    //   // 3. Bind the value to the URL state
-    //   value={activeField} 
-    //   onChange={(e) => handleCategoryChange(e.target.value)}
-    //   className="mt-4 p-2 border rounded w-full"
-    // >
-    //   <option value={currentCategory.type.toLowerCase()}>All {currentCategory.type}</option>
-    //   {currentCategory.fields.map((field) => (
-    //     <option key={field} value={field.toLowerCase()}>
-    //       {field}
-    //     </option>
-    //   ))}
-    // </select>
